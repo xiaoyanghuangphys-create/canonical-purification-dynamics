@@ -1,5 +1,10 @@
 # Canonical purification dynamics
 
+**New: [matrix-free factor-TDVP research](factor_tdvp_accelerated/report.md)** —
+MPO-output LSQR, independent validation, measured comparisons with root and
+positive-witness evolution, and retained failure cases.
+[Reproduce](factor_tdvp_accelerated/README.md) · [Continue this work](HANDOFF.md)
+
 ## New: direct factor-TDVP and benchmark comparison (November 2026)
 
 | Research note | Read on GitHub | Typeset PDF |
