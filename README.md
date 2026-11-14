@@ -1,10 +1,18 @@
 # Canonical purification dynamics
 
+## New: direct factor-TDVP and benchmark comparison (November 2026)
+
+- **[Factor-TDVP mathematical note and implementation](factor_tdvp/report.md)** — positive canonical-root factorization \(X=HH^\dagger\), real-linear MPO tangent dynamics, rank-opening bridges, tests, and limitations.
+- **[Cross-algorithm benchmark report](factor_tdvp_comparison/report.md)** — matched comparisons against root TDVP, positive-witness correction, practical local-unitary fitting, and half-Petz, including measured global errors, failure cases, and scaling bottlenecks.
+- **[Reproduce the new experiments](factor_tdvp_comparison/README.md)** — tests, benchmark commands, tables, and plots. The earlier [overview of the methods](two_ways_to_evolve_canonical_purification.md) remains available.
+
+**Current status:** The factor representation enforces positivity of its reconstructed root, but the finite-size solver has not shown a speed or scalability advantage over existing methods. The comparison retains accuracy failures and distinguishes global errors from local diagnostics and certificate bounds.
+
 Research implementations for evolving the canonical purification of a mixed spin state under local noise.
 
 The current scope assumes a specified path of physical channels whose steps are locally reversible on the states encountered. The two approaches are tensor TDVP with explicit rank-opening treatment and finite local lifts on buffered physical and reference sites. The new half-Petz implementation constructs the latter directly from physical marginals and the channel.
 
-Read [the algorithm note](two_ways_to_evolve_canonical_purification.md) for the assumptions, algorithms and numerical evidence. The note proposes a common-trajectory comparison at matched global CP error. That comparison remains open.
+Read [the original algorithm note](two_ways_to_evolve_canonical_purification.md) for the assumptions, algorithms and earlier evidence. The [new benchmark comparison](factor_tdvp_comparison/report.md) now tests several shared physical examples, though a generic matched-accuracy scaling result remains open.
 
 **Latest comparison.** On a tilted-noise benchmark, fitting a three-site unitary gives about **289 times lower global CP error** than a three-site half-Petz update at tilt 0.1. A five-site active window restores numerical precision for both. The accuracy difference persists through 256 spins. The unitary fit uses five-site physical data, and half-Petz uses its active window. These are single-update results. [Comparison report and figure](tilted_half_petz_comparison/report.md)
 
