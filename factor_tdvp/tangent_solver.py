@@ -299,13 +299,16 @@ def retract_factor(raw, chi, tolerance=1e-13):
 
 
 def midpoint_step(h, hamiltonian_mpo, jumps_mpo, dt, chi, *, rcond=1e-11,
-                  work_bond=None, stage_scales=(1., 1.), guard=None):
+                  work_bond=None, stage_scales=(1., 1.), guard=None,
+                  velocity_solver=None, solver_options=None):
     """Retracted explicit midpoint on the H-MPO manifold.
 
     For physical time use stage_scales=(1,1). For t=t_*+u**4, pass dt=du
     and (4*u**3, 4*(u+du/2)**3). A clock does not change the tangent space;
     the caller must bridge any rank event before entering this routine.
     Optional guard(H) runs before BOTH velocity solves and may raise.
+    An optional velocity_solver uses the same (H, Hamiltonian, jumps, rcond,
+    work_bond) interface. Rank guards and retractions apply to every backend.
     """
     if dt <= 0 or not np.isfinite(dt):
         raise ValueError("dt must be finite and positive")
@@ -313,11 +316,13 @@ def midpoint_step(h, hamiltonian_mpo, jumps_mpo, dt, chi, *, rcond=1e-11,
         raise ValueError("Expected two finite clock speeds")
     if guard is not None:
         guard(h)
-    k1, i1 = factor_velocity(h, hamiltonian_mpo, jumps_mpo, rcond, work_bond)
+    solve = factor_velocity if velocity_solver is None else velocity_solver
+    options = {} if solver_options is None else dict(solver_options)
+    k1, i1 = solve(h, hamiltonian_mpo, jumps_mpo, rcond, work_bond, **options)
     midpoint, rm = retract_factor(tn.add(h, k1, beta=.5 * dt * stage_scales[0]), chi)
     if guard is not None:
         guard(midpoint)
-    k2, i2 = factor_velocity(midpoint, hamiltonian_mpo, jumps_mpo, rcond, work_bond)
+    k2, i2 = solve(midpoint, hamiltonian_mpo, jumps_mpo, rcond, work_bond, **options)
     result, re = retract_factor(tn.add(h, k2, beta=dt * stage_scales[1]), chi)
     return result, {"force1": i1, "force2": i2,
                     "mid_retraction": rm, "end_retraction": re,

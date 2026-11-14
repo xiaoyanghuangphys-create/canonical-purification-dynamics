@@ -55,13 +55,16 @@ def numerical_rank(factor, rtol=1e-9):
 
 
 def evolve(factor, hamiltonian, jumps, times, chi, *, clock="physical",
-           factor_rtol=1e-9, rcond=1e-11, work_bond=None):
+           factor_rtol=1e-9, rcond=1e-11, work_bond=None,
+           velocity_solver=None, solver_options=None):
     """Evolve a fixed generator on an explicit grid, auditing every stage.
 
     ``times`` includes its initial physical time. For piecewise generators,
     call again with the previous H and a new generator; the initial audit
     is repeated automatically. A failed support audit raises RankOpeningError
     with diagnostics. No inverse singular density/root eigenvalues are used.
+    velocity_solver optionally replaces the smooth force backend; the dense
+    finite-size support audits and positive channel bridge remain unchanged.
     """
     times = np.asarray(times, float)
     if len(times) < 2 or np.any(np.diff(times) <= 0):
@@ -116,7 +119,9 @@ def evolve(factor, hamiltonian, jumps, times, chi, *, clock="physical",
             candidate, info = ts.midpoint_step(state, ham_mpo, jump_mpos,
                                               coordinate_step, chi, rcond=rcond,
                                               work_bond=work_bond,
-                                              stage_scales=scales, guard=guard)
+                                              stage_scales=scales, guard=guard,
+                                              velocity_solver=velocity_solver,
+                                              solver_options=solver_options)
             after = guard(candidate)
             state = candidate
             record = dict(method="factor_tangent_midpoint", event=before["mode"],
