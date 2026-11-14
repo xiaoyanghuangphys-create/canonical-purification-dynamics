@@ -81,3 +81,11 @@ Never overwrite old measurements; choose fresh output directories.
 
 The typeset report is `factor_tdvp_accelerated/report.pdf`; its pages were rendered
 and visually checked. Build source is retained alongside the Markdown.
+
+## Publication
+
+Implementation and measured results were pushed in commit
+`001ccc1b426827c407c8fd16dcca72a62477e51c`.
+[PR #2](https://github.com/xiaoyanghuangphys-create/canonical-purification-dynamics/pull/2)
+is open against `research/factor-tdvp-benchmarks`; it has not been merged.
+The local branch tracks `origin/research/factor-tdvp-accelerated`.
