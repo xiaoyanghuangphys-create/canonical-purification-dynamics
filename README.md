@@ -16,6 +16,8 @@ Read [the algorithm note](two_ways_to_evolve_canonical_purification.md) for the 
 |---|---|
 | [cp_tdvp](cp_tdvp/report.md) | MPS tensor TDVP, square-root-time integration, dense and single-excitation force backends |
 | [scalable_cp_witness](scalable_cp_witness/report.md) | Two-site TDVP, positive-factor correction, global CP bounds and a long-range parity benchmark through 512 spins |
+| [factor_tdvp](factor_tdvp/report.md) | Recovered finite-size factor-MPO TDVP implementation with support audits |
+| [factor_tdvp_comparison](factor_tdvp_comparison/report.md) | Executed comparisons of factor/root TDVP, witness correction, local-unitary fitting and half-Petz, with timings and failure diagnostics |
 | [tilted_half_petz_comparison](tilted_half_petz_comparison/report.md) | Half-Petz versus local-data fitting and the exact-target unitary optimum, through 256 spins |
 | [half_petz_evolution](half_petz_evolution/report.md) | Explicit half-Petz MPS evolution, local Kraus-factor caches and global CP-error benchmarks through 256 spins |
 | [local_cp_large](local_cp_large/report.md) | Finite doubled-site unitary fitting from physical marginals, MPS application and local error checks |
