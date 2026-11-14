@@ -2,7 +2,12 @@
 
 ## New: direct factor-TDVP and benchmark comparison (November 2026)
 
-- **[Factor-TDVP mathematical note and implementation](factor_tdvp/report.md)** — positive canonical-root factorization $X=HH^\dagger$, real-linear MPO tangent dynamics, rank-opening bridges, tests, and limitations.
+| Research note | Read on GitHub | Typeset PDF |
+|---|---|---|
+| Factor-TDVP mathematics and implementation | [Mathematical note](factor_tdvp/report.md) | [Download PDF](factor_tdvp/factor_tdvp_note.pdf) |
+| Cross-algorithm benchmarks | [Comparison report](factor_tdvp_comparison/report.md) | [Download PDF](factor_tdvp_comparison/comparison_report.pdf) |
+
+- **[Factor-TDVP mathematical note and implementation](factor_tdvp/report.md)** — positive canonical-root factorization $`X=HH^\dagger`$, real-linear MPO tangent dynamics, rank-opening bridges, tests, and limitations.
 - **[Cross-algorithm benchmark report](factor_tdvp_comparison/report.md)** — matched comparisons against root TDVP, positive-witness correction, practical local-unitary fitting, and half-Petz, including measured global errors, failure cases, and scaling bottlenecks.
 - **[Reproduce the new experiments](factor_tdvp_comparison/README.md)** — tests, benchmark commands, tables, and plots. The earlier [overview of the methods](two_ways_to_evolve_canonical_purification.md) remains available.
 
@@ -16,7 +21,7 @@ Read [the original algorithm note](two_ways_to_evolve_canonical_purification.md)
 
 **Latest comparison.** On a tilted-noise benchmark, fitting a three-site unitary gives about **289 times lower global CP error** than a three-site half-Petz update at tilt 0.1. A five-site active window restores numerical precision for both. The accuracy difference persists through 256 spins. The unitary fit uses five-site physical data, and half-Petz uses its active window. These are single-update results. [Comparison report and figure](tilted_half_petz_comparison/report.md)
 
-**TDVP at 512 spins.** A positive MPO witness and an independent density-residual check bounded the global CP error by $2.97\times10^{-6}$ on a correlated mixed chain under uniform dephasing. On an exactly solvable noncommuting parity ensemble at the same size, the measured CP error was $2.32\times10^{-7}$. The full-rank extension and its scaling limits are described in the [witness study](scalable_cp_witness/report.md).
+**TDVP at 512 spins.** A positive MPO witness and an independent density-residual check bounded the global CP error by $`2.97\times10^{-6}`$ on a correlated mixed chain under uniform dephasing. On an exactly solvable noncommuting parity ensemble at the same size, the measured CP error was $`2.32\times10^{-7}`$. The full-rank extension and its scaling limits are described in the [witness study](scalable_cp_witness/report.md).
 
 ## Implementations
 
