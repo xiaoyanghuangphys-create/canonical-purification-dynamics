@@ -2,7 +2,7 @@
 
 ## New: direct factor-TDVP and benchmark comparison (November 2026)
 
-- **[Factor-TDVP mathematical note and implementation](factor_tdvp/report.md)** — positive canonical-root factorization \(X=HH^\dagger\), real-linear MPO tangent dynamics, rank-opening bridges, tests, and limitations.
+- **[Factor-TDVP mathematical note and implementation](factor_tdvp/report.md)** — positive canonical-root factorization $X=HH^\dagger$, real-linear MPO tangent dynamics, rank-opening bridges, tests, and limitations.
 - **[Cross-algorithm benchmark report](factor_tdvp_comparison/report.md)** — matched comparisons against root TDVP, positive-witness correction, practical local-unitary fitting, and half-Petz, including measured global errors, failure cases, and scaling bottlenecks.
 - **[Reproduce the new experiments](factor_tdvp_comparison/README.md)** — tests, benchmark commands, tables, and plots. The earlier [overview of the methods](two_ways_to_evolve_canonical_purification.md) remains available.
 
