@@ -10,9 +10,9 @@ The measurements do not establish a practical advantage for the current factor i
 
 All measured global CP errors use the raw Frobenius norm
 
-$$
+```math
 \epsilon_{\rm CP}=\|A-\sqrt{\rho_{\rm reference}}\|_F.
-$$
+```
 
 Here $A=HH^\dagger$ for factor-TDVP and is the actually produced amplitude for the other methods. No purification-unitary or phase alignment is performed in scoring. For a general amplitude the physical density is $AA^\dagger$, so its density error is $\|AA^\dagger-\rho_{\rm reference}\|_F$. This agrees with $X^2$ when the factor-defined amplitude is positive. The separate canonical-branch defect is $\|A-\sqrt{AA^\dagger}\|_F$. Applying a polar correction solely to obtain a better score would change the algorithm and is not done here.
 
@@ -22,7 +22,7 @@ The benchmark definitions follow the source implementations:
 
 | Family | Input and dynamics | Reference and comparison scope |
 |---|---|---|
-| A: cluster | Open $CZ$ chain on $|+\rangle^{\otimes N}$; $\gamma_j=0.7+0.15\cos^2j$; $T=1$ | Analytic global root MPO; default 20 sweeps, $h=0.05$ |
+| A: cluster | Open $CZ$ chain on $\lvert+\rangle^{\otimes N}$; $\gamma_j=0.7+0.15\cos^2j$; $T=1$ | Analytic global root MPO; default 20 sweeps, $h=0.05$ |
 | B: non-Clifford | Controlled-phase angle $0.27+0.03j$ on bond $j$; same dephasing | Analytic global root MPO; same rates and endpoints as A |
 | C: tilted noise | Uniform controlled-phase angle $0.37$; central $P_\theta=\cos\theta Z+\sin\theta X$; $p=0.1$ | Exact two-column Kraus reference; active widths three/five for lifts |
 | D: mixed correlated | Product $X$-polarization $0.12$, controlled phases $0.35$, then Hadamards; uniform dephasing to $0.1$ | Exact physical-density propagation; dense small-chain root or witness certificate |
@@ -38,11 +38,11 @@ For C the continuous generator is $\mathcal L=\gamma(P_\theta\rho P_\theta-\rho)
 
 The factor velocity minimizes
 
-$$
+```math
 \|\mathcal J_H(K)-\mathcal L((HH^\dagger)^2)\|_F^2,
 \quad
 \mathcal J_H(K)=X(KH^\dagger+HK^\dagger)+(KH^\dagger+HK^\dagger)X.
-$$
+```
 
 The code constructs MPO Jacobian columns on an orthonormal one-site tangent basis, includes both $B_j$ and $iB_j$, and solves the resulting real system by rank-revealing SVD. The physical right-unitary gauge produces null directions; least-squares stationarity and physical residual are reported separately. The state is normalized by $H\mapsto H/\operatorname{Tr}[(HH^\dagger)^2]^{1/4}$. For restricted tangents, normalization adds the radial correction described in the factor report; it is not claimed to solve a different trace-constrained least-squares problem.
 
