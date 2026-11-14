@@ -2,9 +2,9 @@
 
 This directory implements a **small-system, rank-aware factor-MPO TDVP prototype**. Its evolving variable is a generally non-Hermitian MPO $H$, with
 
-$$
+```math
 X=HH^\dagger\geq0,\qquad \rho_H=X^2.
-$$
+```
 
 Smooth steps solve a real least-squares problem in the genuine one-site MPO tangent space of $H$. Rank events take a finite CPTP physical-channel step, reconstruct a new factor from Kraus amplitudes, and audit the support before returning to smooth evolution. The smooth solver never obtains its force by solving a dense Sylvester equation for $X$, and never refits $H$ to a separately evolved root.
 
@@ -16,30 +16,30 @@ The code reuses the tensor core and MPO algebra in [`scalable_cp_witness/code`](
 
 Let $K=\dot H$, $X=HH^\dagger$, and $G=\mathcal L_t(X^2)$. Product differentiation gives
 
-$$
+```math
 \dot X=D_H(K):=KH^\dagger+HK^\dagger,
-$$
+```
 
-$$
+```math
 \boxed{\mathcal J_H(K)=X D_H(K)+D_H(K)X=G.}
 \tag{1}
-$$
+```
 
 This identity holds without Hermiticity or positivity of $H$. The derivative $D_H(K)$ and the image $\mathcal J_H(K)$ are Hermitian. The map is **real-linear**, not complex-linear: generally $\mathcal J_H(iK)\ne i\mathcal J_H(K)$.
 
 The implemented unconstrained factor velocity is
 
-$$
+```math
 \boxed{K_*\in\arg\min_{K\in T_H\mathcal M_\chi}
 \|\mathcal J_H(K)-\mathcal L_t((HH^\dagger)^2)\|_F^2.}
 \tag{2}
-$$
+```
 
 Here $T_H\mathcal M_\chi$ is the full one-site fixed-bond MPS tangent space for the interleaved operator $H$. This is **density-residual McLachlan TDVP**. If $F$ denotes the exact root velocity satisfying $XF+FX=G$, then the objective is
 
-$$
+```math
 \|S_X(D_H(K)-F)\|_F^2,\qquad S_X(V)=XV+VX.
-$$
+```
 
 In an $X$ eigenbasis it weights entry $ab$ of the root-velocity discrepancy by $(x_a+x_b)^2$. Thus it is not ordinary unweighted canonical-root-velocity TDVP. A small instantaneous density residual can coexist with a larger canonical-root error near small populations, and it does not include integration error.
 
@@ -47,34 +47,34 @@ In an $X$ eigenbasis it weights entry $ab$ of the root-velocity discrepancy by $
 
 There are two distinct redundancies. Bond gauges in the MPS parameterization are removed when constructing an orthonormal physical tangent basis. The factor right-unitary freedom $H\mapsto HU$ remains:
 
-$$
+```math
 K=H\Omega,\qquad \Omega^\dagger=-\Omega
 \quad\Longrightarrow\quad \mathcal J_H(K)=0.
-$$
+```
 
 For square invertible $H$, these are all the Jacobian null directions. Orthogonality to them in the real Frobenius metric is equivalent to
 
-$$
+```math
 H^\dagger K=K^\dagger H.
 \tag{3}
-$$
+```
 
 Consequently an unrestricted minimum-Frobenius-norm solution is horizontal. The code uses rank-revealing real SVD least squares on an orthonormal tangent basis. It therefore chooses the minimum-norm solution **within the represented tangent**, orthogonal to null directions available inside that tangent. A global horizontal projection can leave a restricted MPO tangent; equation (3) is not imposed as an extra constraint. The reported `horizontal_defect` is a diagnostic, not a required convergence test for restricted bonds.
 
 The positive gauge $H=\rho^{1/4}>0$ gives a different useful oracle. Restricting its derivative to Hermitian $K$ and diagonalizing $H$ yields
 
-$$
+```math
 \boxed{K^{\rm pos}_{ab}=
 \frac{G_{ab}}{(h_a+h_b)(h_a^2+h_b^2)}.}
 \tag{4}
-$$
+```
 
 This follows by differentiating $H^4$. In contrast, the full-space horizontal minimum-norm velocity is
 
-$$
+```math
 K^{\rm hor}_{ab}=\frac{h_bG_{ab}}{(h_a^2+h_b^2)^2}.
 \tag{5}
-$$
+```
 
 Both give $D_H(K)_{ab}=G_{ab}/(h_a^2+h_b^2)$ and therefore the same physical derivative. The positive-gauge velocity need not be horizontal unless it commutes with $H$. Tests of (4) compare its root/density derivative with the variational result rather than incorrectly requiring equality of raw factor velocities.
 
@@ -88,11 +88,11 @@ The one-site basis construction in [`tangent_solver.py`](tangent_solver.py) uses
 
 The generator is built from
 
-$$
+```math
 X=HH^\dagger,\quad \rho=X X,\quad
 G=-i[H_{\rm phys},\rho]+\sum_\mu
 \left(L_\mu\rho L_\mu^\dagger-\tfrac12\{L_\mu^\dagger L_\mu,\rho\}\right).
-$$
+```
 
 The resulting tangent velocity is reconstructed as an MPO sum. A retracted explicit midpoint update modifies $H$ itself. This is not unconstrained dense evolution disguised as a tensor method: the bond-two control uses the smaller actual MPO tangent, and the basis is independently testable against the repository's tangent projector. Conversely, full-capacity small-chain tests have a tangent equal to the full operator space; those controls alone would not establish restricted-bond performance.
 
@@ -106,25 +106,25 @@ The stored root is always the **uncompressed product** $HH^\dagger$. Its witness
 
 The required condition is
 
-$$
+```math
 T(H)=\operatorname{Tr}[(HH^\dagger)^2]=1,
-$$
+```
 
 not $\operatorname{Tr}(H^\dagger H)=1$. The retraction first compresses the factor and then rescales it by $T^{-1/4}$. Its implied root stays positive. The root change caused by normalization alone is exactly $|\sqrt T-1|$. Factor truncation, its induced root change, and normalization change are recorded separately. Positivity by construction does not prevent truncation from erasing a small physical sector; support is audited after retraction.
 
 Normalization also has an infinitesimal consequence when (2) has nonzero residual. Since
 
-$$
+```math
 \dot T=\operatorname{Tr}\mathcal J_H(K)=4\operatorname{Re}\operatorname{Tr}(K^\dagger XH),
-$$
+```
 
 normalizing an Euler increment changes its first-order velocity to
 
-$$
+```math
 \bar K=K_*-\alpha H,\qquad
 \alpha=\frac{\operatorname{Tr}\mathcal J_H(K_*)}{4T}.
 \tag{6}
-$$
+```
 
 Its density residual becomes $\mathcal J_H(K_*)-G-4\alpha\rho_H$. The code reports both raw and normalization-corrected residuals. Equation (2) is the actual stage solve, while the physically normalized integrator includes this radial correction. It is not claimed to solve the different constrained least-squares problem with $\dot T=0$. For full tangent controls the trace defect is at numerical precision, and second-order convergence is observed. No general second-order claim is made for restricted-tangent retraction with substantial trace residual.
 
@@ -132,16 +132,16 @@ Its density residual becomes $\mathcal J_H(K_*)-G-4\alpha\rho_H$. The code repor
 
 At positive diagonal $H$, the nonzero singular values of the full-space Jacobian restricted to horizontal directions are
 
-$$
+```math
 \sqrt2\,(h_a^2+h_b^2)^{3/2};
-$$
+```
 
 the diagonal entries give $4h_a^3$. Thus its nonzero condition number is
 
-$$
+```math
 \kappa(\mathcal J_H|_{\rm horizontal})
 =(h_{\max}/h_{\min})^3=(p_{\max}/p_{\min})^{3/4}.
-$$
+```
 
 A restricted tangent can be worse. This physical conditioning is distinct from exact gauge zeros. The denominator in (4) has the same extremal scales. Full-rank states with small populations are therefore tracked separately from true support-opening events.
 
@@ -151,19 +151,19 @@ Allowing a non-Hermitian $H$ lets the least-squares solver choose a convenient g
 
 Let $Q$ project onto the kernel of the input density. Then
 
-$$
+```math
 B=Q\mathcal L(\rho)Q
 =\sum_\mu(QL_\mu X)(QL_\mu X)^\dagger\ge0.
 \tag{7}
-$$
+```
 
 The Hamiltonian and anticommutator terms vanish in this block. If $B\ne0$, newborn populations scale as $h$, root eigenvalues as $h^{1/2}$, and factor singular values as $h^{1/4}$. The corresponding positive-gauge derivative can diverge as $h^{-3/4}$. No choice of right-unitary gauge changes those singular values. A finite physical-time tangent update cannot create the missing leading direction from an exact kernel.
 
 A zero instantaneous value of (7) does not rule out later opening. The implemented dense audit uses factor singular values, jump innovations, a finite channel probe, and an interaction-picture jump-word span diagnostic. For constant generator, set
 
-$$
+```math
 A=-iH_{\rm phys}-\tfrac12\sum_\mu L_\mu^\dagger L_\mu.
-$$
+```
 
 The code builds the numerical operator span generated from jumps by repeated $\operatorname{ad}_A$, then closes the input support under those operators. This tracks jump directions in the no-jump frame. Pure unitary support rotation is not classified as mixed-state rank growth. The numerical span uses thresholds; it is a conservative unresolved-sector diagnostic rather than an exact symbolic rank theorem. When the finite probe cannot resolve a sector suggested by this diagnostic, the state is explicitly classified as `delayed_opening_unresolved`.
 
@@ -171,16 +171,16 @@ The default support threshold is $10^{-9}$ relative to the largest **factor** si
 
 At an event, the handler takes a finite physical channel with Kraus operators $K_\mu$, forms
 
-$$
+```math
 Z'=[K_0X_{\rm old},K_1X_{\rm old},\ldots]=U\Sigma V^\dagger,
-$$
+```
 
 and sets
 
-$$
+```math
 \boxed{H_{\rm seed}=U\Sigma^{1/2}U^\dagger.}
 \tag{8}
-$$
+```
 
 Indeed $Z'Z'^\dagger=U\Sigma^2U^\dagger$, so $H_{\rm seed}H_{\rm seed}^\dagger=U\Sigma U^\dagger=\sqrt{Z'Z'^\dagger}$. The SVD acts on Kraus amplitudes, rather than first squaring them into density eigenvalues. Roundoff-scale amplitude singular values may still be removed; the removed factor singular values, root norm, and density mass are explicit diagnostics. There is no hidden division by zero or inverse of a newborn population.
 
@@ -196,37 +196,37 @@ The optional clock is $u=(t-t_*)^{1/4}$, with stage speed $dt/du=4u^3$. It is us
 
 All reported canonical-purification errors are global Frobenius distances
 
-$$
+```math
 \epsilon_{\rm CP}=\|HH^\dagger-\sqrt{\rho_{\rm exact}(t)}\|_F.
-$$
+```
 
 Independent dense Lindblad exponentials supply physical references only for scoring. Future exact roots never enter smooth factor updates. Dense channel actions at rank events are the explicitly stated bridge exception. The positive-gauge factor-error diagnostic compares $\rho_H^{1/4}$ with $\rho_{\rm exact}^{1/4}$; it does not compare a gauge-dependent raw $H$ with a positive target.
 
 For $E=X^2-\rho$ and a valid $M\succeq\rho^{-1}$, the witness report specializes to
 
-$$
+```math
 \|X-\sqrt\rho\|_F\le
 \sqrt{\operatorname{Tr}(E^\dagger E M)},
 \tag{9}
-$$
+```
 
 because $X=HH^\dagger$ is exactly positive and the witness distance is zero. To see (9), write $D=X-\sqrt\rho$ and $XD+D\sqrt\rho=E$; in the left-$X$/right-$\sqrt\rho$ eigenbases, each denominator is at least the right root eigenvalue. If the independent density reference has trace-norm error $\delta$, add $\sqrt{\|M\|_{\rm op}}\,\delta$, requiring an inverse upper bound for the **true** density. A numerical inverse of an approximate reference does not by itself prove that assumption.
 
 The finite-size scoring routine uses the inverse of the dense physical reference only when its spectrum is resolved as full rank. These are endpoint diagnostics under the numerical-reference assumption, not a scalable online certificate. For any positive target, Powers–Størmer also gives the gap-free bound
 
-$$
+```math
 \|X-\sqrt\rho\|_F\le\sqrt{\|X^2-\rho\|_1}.
 \tag{10}
-$$
+```
 
 Both bounds are stored. The dense reference-root eigensolver threshold is reported through a discarded-root allowance, so tiny numerical kernel eigenvalues are not silently counted as exact physical sectors. No interval-arithmetic rounding guarantee is claimed.
 
 For a continuously interpolated factor path, $R=\mathcal J_H(\dot H)-\mathcal L_t(\rho_H)$ would yield
 
-$$
+```math
 \|\rho_H(T)-\rho(T)\|_1
 \le\|\rho_H(0)-\rho(0)\|_1+\int_0^T\|R(t)\|_1dt,
-$$
+```
 
 followed by (10). Retraction jumps and bridge errors must also be included. The code does not replace this integral by a few stage samples and call it a certified global bound. Local product-compression sums, stage residuals, and measured global errors are kept distinct.
 
