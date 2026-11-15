@@ -189,3 +189,8 @@ MPLCONFIGDIR=/tmp/tdvp-mpl python3 -m factor_tdvp_accelerated.analyze_scaling
 Use a new output directory to retain historical measurements. The analysis script performs integrity and timing checks before generating tables and figures; it does not alter raw data. [The complete recovered-case table](scaling_figures/tables.md), [local repeated groups](scaling_figures/local_groups.csv), and [exploratory frontier](scaling_figures/exploratory_matched_accuracy.csv) include settings and omissions that do not fit the selected table above. Exploratory singletons are labeled separately and never enter the repeated frontier.
 
 The final validation passes [70 numerical, accounting and frontier regression tests](scaling_validation/regression_tests.log) and [four publication integration tests](scaling_validation/publication_tests.log). Frontier regressions reject incomplete/duplicate repeats, missing/nonfinite accuracy or runtimes, and mixed final endpoints; mixed measured/bound evidence must qualify in every repeat. The production matrix-free solver and predecessor rank-opening regressions remain included. Publication tests exercise concurrent branch advances without force-pushing or overwriting historical measurements. The separately completed Actions run validates the publication path in GitHub itself.
+
+The published GitHub preview at commit `164fb0d` was checked after loading its
+math renderer. All three display-equation blocks render as typeset mathematics;
+the parity definition and optimization objectives were also visually inspected.
+The generated scaling and error/runtime plots were visually checked locally.

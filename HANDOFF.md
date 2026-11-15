@@ -79,6 +79,9 @@ success for these incomplete runs.
 Validation: 70 numerical/accounting/frontier regressions and four publication
 integration tests pass; logs are retained in
 `factor_tdvp_accelerated/scaling_validation/`.
+The full study and raw results were pushed in commit `164fb0d`. The published
+GitHub preview was inspected: all three display-equation blocks render as
+typeset mathematics. PR #3 remains open and unmerged.
 
 The observed disadvantage is implementation-specific and at matched global
 error. It does not establish universal or asymptotic inferiority. Conventional
