@@ -2,6 +2,12 @@
 
 [Typeset PDF](report.pdf) · [Reproduction commands](README.md) · [Continuation handoff](../HANDOFF.md)
 
+**Follow-up:** the [recovered and repeated scaling study](scaling_report.md)
+extends this force-acceleration result with four-method D/E trajectories,
+matched global-error timings, full auxiliary costs and bounded large-size trials.
+Its measurements form a separate cohort; the results and PDF below retain the
+original force study.
+
 The original density-residual factor force can be accelerated without building
 its exponentially tall Jacobian. The implementation here uses compact real
 one-site tangent coordinates and MPO-output LSQR. On the correlated mixed-chain

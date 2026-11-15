@@ -1,8 +1,12 @@
 # Canonical purification dynamics
 
-**New: [matrix-free factor-TDVP research](factor_tdvp_accelerated/report.md)** —
-MPO-output LSQR, independent validation, measured comparisons with root and
-positive-witness evolution, and retained failure cases.
+**Latest: [factor versus positive-witness scaling study](factor_tdvp_accelerated/scaling_report.md)** —
+recovered Actions experiments, repeated comparisons at matched global error,
+separate witness/force/physical-reference costs, and explicit resource limits.
+At three and four spins and global error at most 1e-7, factor MPO-LSQR is
+22.7 and 29.3 times slower than root plus witness in the measured configurations.
+This is an implementation-specific result, not a universal scaling law.
+[Original matrix-free force study](factor_tdvp_accelerated/report.md) ·
 [Reproduce](factor_tdvp_accelerated/README.md) · [Continue this work](HANDOFF.md)
 
 ## New: direct factor-TDVP and benchmark comparison (November 2026)
@@ -35,6 +39,7 @@ Read [the original algorithm note](two_ways_to_evolve_canonical_purification.md)
 | [cp_tdvp](cp_tdvp/report.md) | MPS tensor TDVP, square-root-time integration, dense and single-excitation force backends |
 | [scalable_cp_witness](scalable_cp_witness/report.md) | Two-site TDVP, positive-factor correction, global CP bounds and a long-range parity benchmark through 512 spins |
 | [factor_tdvp](factor_tdvp/report.md) | Recovered finite-size factor-MPO TDVP implementation with support audits |
+| [factor_tdvp_accelerated](factor_tdvp_accelerated/scaling_report.md) | Matrix-free MPO-LSQR force, repeated four-method scaling comparisons, retained raw measurements and resource failures |
 | [factor_tdvp_comparison](factor_tdvp_comparison/report.md) | Executed comparisons of factor/root TDVP, witness correction, local-unitary fitting and half-Petz, with timings and failure diagnostics |
 | [tilted_half_petz_comparison](tilted_half_petz_comparison/report.md) | Half-Petz versus local-data fitting and the exact-target unitary optimum, through 256 spins |
 | [half_petz_evolution](half_petz_evolution/report.md) | Explicit half-Petz MPS evolution, local Kraus-factor caches and global CP-error benchmarks through 256 spins |
