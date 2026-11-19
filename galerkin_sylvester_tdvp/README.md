@@ -2,6 +2,8 @@
 
 [Research report](report.md) · [Dense oracle and conditioning](oracle_report.md) · [Integrator ablations](integration_ablation.md) · [Restricted interacting comparison](restricted_comparison.md) · [Measured configurations](figures/configurations.csv) · [Accuracy-matched costs](figures/matched_accuracy.csv)
 
+[Method A and Method B with the same positive witness at 8–64 spins](witness_pair_report.md)
+
 Method B advances a matrix-product operator for the positive root of a density matrix. Its force solves the Sylvester equation **inside** a one-site or two-site tangent space. The small-system dense oracle and the production MPO operator have separate entry points.
 
 ## Reproduce from the repository root

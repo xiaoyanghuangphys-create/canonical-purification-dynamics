@@ -4,6 +4,10 @@ Run directories are immutable. Each main driver refuses an existing destination.
 
 | Data | Scope |
 |---|---|
+| [witness_pair_20261119](witness_pair_20261119) | Two-site A and B with a shared positive endpoint witness, correlated and parity chains at 8, 16, 32 and 64 spins. [Study and reproduction commands](../witness_pair_report.md) |
+| [witness_pair_streamed_20261119](witness_pair_streamed_20261119) | Fresh paired runs with one and two midpoint intervals, streamed Galerkin contractions, a stronger stage-positivity check and additional witness levels at the tight D target. |
+| [witness_pair_two_step_20261119](witness_pair_two_step_20261119) | Repeated fixed two-interval comparison using the streamed B solver and identical endpoint grids for A and B at $10^{-5}$. |
+| [witness_pair_brackets_20261119](witness_pair_brackets_20261119/report.md) | Conditional two-sided estimates of achieved global root errors using tighter completed checkpoints. |
 | [comparison_20261119](comparison_20261119) | Definitive D/E measured-error comparison, 180 workers on one frozen implementation. |
 | [restricted_20261119](restricted_20261119) | Four-spin interacting loss with aligned Euclidean and Galerkin integrator geometry. 51 workers, including six factor failures. |
 | [physics_20261119](physics_20261119) | 60 interacting and exactly soluble controls. |

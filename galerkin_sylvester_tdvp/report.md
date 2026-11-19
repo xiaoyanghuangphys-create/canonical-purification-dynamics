@@ -1,5 +1,7 @@
 # Does a tangent-space Sylvester solve improve canonical-root dynamics?
 
+The [8–64-spin positive-witness follow-up](witness_pair_report.md) compares the two root predictors using a shared positive witness at matched global accuracy. It includes independent parity-root errors through 64 spins and conditional bounds for the larger correlated chains.
+
 On the four-spin interacting-loss control, two-site B reached measured global error below $10^{-5}$ in **0.288 s**. Two-site A took **0.154 s** on the same state, retraction, stage audits, step grid and bond cap. B was 1.87 times slower in this restricted comparison. It did outperform both factor implementations on the common three-spin D/E grid.
 
 The target is the positive canonical root $X=\sqrt{\rho}$ of a physical density matrix. We compare the **measured global Frobenius error** of the stored root at the requested endpoint. The numerical state is never aligned to the reference by an auxiliary unitary. Full target roots enter the benchmark only at initialization or during independent scoring.
