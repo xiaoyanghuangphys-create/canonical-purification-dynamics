@@ -61,5 +61,6 @@ class EvidenceTests(unittest.TestCase):
             return [w['target'] for w in frontier(rows)[1] if w['attained']]
         self.assertEqual(pass_at(rows),[1e-3,1e-5])
         for override in (dict(status='timeout'),dict(reached_time=.09),dict(global_cp_error=None),
-                         dict(global_cp_error=float('nan')),dict(repeat=2)):
+                         dict(global_cp_error=float('nan')),dict(global_cp_error=-1),dict(repeat=2),
+                         dict(repeat=4),dict(source_files_sha256={'solver':'changed'})):
             self.assertEqual(pass_at(rows[:2]+[dict(rows[2],**override)]),[])

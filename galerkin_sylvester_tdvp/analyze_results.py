@@ -44,9 +44,13 @@ def frontier(rows):
     for key,group in sorted(groups.items()):
         f,n,m,t,k,chi,work,cert=key
         reps=int(group[0]['repeats'])
-        valid=len(group)==reps and len({r['repeat'] for r in group})==reps
+        same_run_keys=('repeats','source_sha','source_files_sha256','rtol','atol','maxiter','memory_mib')
+        comparable=all(all(r.get(name)==group[0].get(name) for name in same_run_keys) for r in group)
+        valid=(comparable and len(group)==reps and
+               {int(r['repeat']) for r in group}==set(range(1,reps+1)))
         successes=[r for r in group if r['status']=='completed' and r.get('reached_time')==t]
-        scored=[r for r in successes if r.get('global_cp_error') is not None and np.isfinite(r['global_cp_error'])]
+        scored=[r for r in successes if r.get('global_cp_error') is not None and
+                np.isfinite(r['global_cp_error']) and r['global_cp_error']>=0]
         all_ok=valid and len(scored)==len(group)
         production=[r['setup_seconds']+r['integration_seconds'] for r in scored
                     if not r.get('native_scoring_and_io_inclusive')]
