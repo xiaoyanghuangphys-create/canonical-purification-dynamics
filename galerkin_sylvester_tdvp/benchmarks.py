@@ -68,6 +68,15 @@ def grid(suite):
         if suite=='baselines': return [r for r in rows if not r['method'].startswith('B_')]
         if suite=='galerkin': return [r for r in rows if r['method'].startswith('B_')]
         return rows
+    if suite=='comparison':
+        rows=grid('bench')
+        # Prespecified follow-up grid after the pilot, common T and endpoint counts.
+        for family in ('D','E'):
+            for method in OBJECTIVES:
+                c=config(family,3,method,steps=20,work=8,repeats=3)
+                c['cert_tol']=1e-7
+                rows.append(c)
+        return rows
     if suite=='physics':
         rows=[config(f,n,m,steps=4,total=.03,chi=4,work=32)
               for n in (2,3,4,5) for f in ('loss_mixed','loss_pure','pair_mixed','pair_pure')
@@ -108,10 +117,15 @@ def score(state, model, t, family):
     return result
 
 
+def source_hashes():
+    here=Path(__file__).parent
+    return {name: hashlib.sha256((here/name).read_bytes()).hexdigest()
+            for name in ('benchmarks.py','models.py','galerkin_solver.py','tangent_frame.py','evolution.py')}
+
 def worker(c,out):
     stop=start_memory_watchdog(out,c['memory_mib'],interval=.04)
     begin=perf_counter()
-    row=dict(c,status='failed',global_cp_error=None,global_cp_bound=None,accepted_steps=0,rejected_steps=0,
+    row=dict(c,source_files_sha256=source_hashes(),status='failed',global_cp_error=None,global_cp_bound=None,accepted_steps=0,rejected_steps=0,
              reached_time=0.,objective=OBJECTIVES[c['method']],scoring_seconds=0.)
     try:
         method,f,n,chi,work=c['method'],c['family'],c['n'],c['chi'],c['work']
@@ -122,6 +136,7 @@ def worker(c,out):
         state,compression=tn.compress(model.root,chi,normalize=True)
         row.update(initial_global_cp_error=tn.distance(state,model.root),initial_discard= compression['discarded_bound'])
         history=[]
+        row['initial_root_bond']=state.bond_dimension()
         def event(info):
             append_event(out/'events.jsonl',info)
         if method.startswith('B_'):
@@ -193,9 +208,13 @@ def worker(c,out):
                 from factor_tdvp_accelerated.matrix_free_solver import factor_velocity
                 options.update(velocity_solver=factor_velocity,solver_options=dict(tolerance=c['rtol'],maxiter=c['maxiter']))
             row['setup_seconds']=perf_counter()-begin
-            factor,history=fd.evolve(factor,h,jumps,times,chi,work_bond=work,**options)
+            # Stream accepted physical-clock steps so a later failure preserves progress.
+            for i,(a,b) in enumerate(zip(times[:-1],times[1:])):
+                factor,batch=fd.evolve(factor,h,jumps,[a,b],chi,work_bond=work,**options)
+                history.extend(batch)
+                event(batch[0])
+                row.update(accepted_steps=i+1,reached_time=b)
             state=ts.root_mpo(factor)
-            for item in history: event(item)
             row.update(status='completed',accepted_steps=len(history),reached_time=times[-1],factor_bond=factor.bond_dimension())
         else:
             row['setup_seconds']=perf_counter()-begin
@@ -272,13 +291,13 @@ def run(args):
     out=out.resolve()
     out.mkdir(parents=True,exist_ok=False)
     source=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    sources={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(__file__).parent.glob('*.py')}
+    sources=source_hashes()
     try:
         from threadpoolctl import threadpool_info
         blas=threadpool_info()
     except ImportError: blas=[]
     save(out/'environment.json',dict(platform=platform.platform(),python=sys.version,numpy=np.__version__,scipy=scipy.__version__,
-         processor=platform.processor(),blas=blas,threads_requested=1,base_sha=BASE,source_sha=source,source_files_sha256=sources,
+         processor=platform.processor(),blas=blas,blas_build=np.__config__.show(mode='dicts')['Build Dependencies']['blas'] if hasattr(np.__config__,'CONFIG') else None,threads_requested=1,base_sha=BASE,source_sha=source,source_files_sha256=sources,
          memory_limit_semantics='per-worker peak RSS watchdog sampled every 40 ms; OS scheduling permits overshoot',command=sys.argv))
     configs=grid(args.suite)
     save(out/'grid.json',configs)
@@ -289,7 +308,7 @@ def run(args):
             key=f"{i:03d}_{c['family']}{c['n']}_{c['method']}_s{c['steps']}_r{r}"
             folder=out/key
             folder.mkdir()
-            cfg=dict(c,repeat=r,memory_mib=args.memory_mib,base_sha=BASE,source_sha=source)
+            cfg=dict(c,repeat=r,memory_mib=args.memory_mib,base_sha=BASE,source_sha=source,source_files_sha256=sources)
             remaining=args.budget-(perf_counter()-start)
             if remaining<=0:
                 row=dict(cfg,status='not_run_budget',global_cp_error=None)
@@ -303,7 +322,7 @@ def run(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--suite',default='smoke',choices=['smoke','bench','baselines','galerkin','physics','scaling','refine'])
+    p.add_argument('--suite',default='smoke',choices=['comparison','smoke','bench','baselines','galerkin','physics','scaling','refine'])
     p.add_argument('--out',type=Path)
     p.add_argument('--timeout',type=float,default=40.)
     p.add_argument('--budget',type=float,default=1200.)

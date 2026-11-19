@@ -8,13 +8,12 @@ from __future__ import annotations
 
 from collections import deque
 from dataclasses import dataclass
-from pathlib import Path
-import sys
 from time import perf_counter
 import traceback
 
 import numpy as np
 
+from factor_tdvp.baseline import _legacy_module
 from factor_tdvp.tangent_solver import matrix, matrix_to_mpo, mpo, tn
 from cp_accuracy_refinement import hermitian_round
 from .galerkin_solver import GalerkinError, solve_velocity
@@ -96,7 +95,7 @@ def _kernel_forcing(state, generator, info):
     x = matrix(state)
     val, vec = np.linalg.eigh((x + x.conj().T) / 2)
     kernel = vec[:, val <= info["support_resolution"]]
-    g = generator(mpo.multiply(state, state))
+    g = generator(matrix_to_mpo(x @ x, state.n))
     if isinstance(g, tuple):
         g = g[0]
     leakage = np.linalg.norm(kernel.conj().T @ matrix(g) @ kernel)
@@ -159,12 +158,17 @@ class KrausStartup:
                 continue
             unit = jump / np.sqrt(rate)
             proj = unit.conj().T @ unit
-            is_involution = np.allclose(unit, unit.conj().T) and np.allclose(proj, np.eye(len(h)))
+            is_involution = (np.linalg.norm(unit - unit.conj().T) < 1e-11 and
+                             np.linalg.norm(proj - np.eye(len(h))) < 1e-11)
             is_lowering = (np.linalg.norm(proj @ proj - proj) < 1e-11 and
                            np.linalg.norm(unit @ unit) < 1e-11 and
                            np.linalg.norm(proj - np.eye(len(h))) > 1e-10)
             if not (is_involution or is_lowering):
                 raise EvolutionError("unsupported_seed_channel")
+            # Upstream classifies each jump with an absolute 1e-12 test.
+            # Refuse a lowering jump it would misidentify as an involution.
+            if is_lowering and np.linalg.norm(rate*(proj-np.eye(len(h)))) < 1e-12:
+                raise EvolutionError("unresolved_seed_channel_rate", rate=float(rate))
             for other in normalized:
                 for adj in (other, other.conj().T):
                     if np.linalg.norm(unit @ adj - adj @ unit) > 1e-11:
@@ -172,11 +176,7 @@ class KrausStartup:
             channels.append(jump)
             normalized.append(unit)
         # This legacy routine reads only the current amplitude and finite channel.
-        cp_path = str(Path(__file__).resolve().parents[1] / "cp_tdvp")
-        if cp_path not in sys.path:
-            sys.path.append(cp_path)
-        from cp_tdvp.cp_tdvp_evolution import positive_start_root
-        root = positive_start_root(matrix(state), h, channels, elapsed, self.substeps)
+        root = _legacy_module().positive_start_root(matrix(state), h, channels, elapsed, self.substeps)
         return matrix_to_mpo(root, state.n), dict(
             seed_backend="dense_kraus_factor_svd", seed_substeps=self.substeps,
             seed_raw_min_eigenvalue=float(np.linalg.eigvalsh(root)[0]),
@@ -303,6 +303,8 @@ def integrate(initial, generator, times, chi, *, mode="one", clock="physical",
     def retract(raw):
         return timed("retraction_seconds", _retract, raw, chi, polar, dense_audit_max_n)
     def timed_velocity(state, audit, guess, record):
+        if audit["lower_bound"] is None or audit["lower_bound"] <= 0:
+            audit.update(timed("audit_seconds", _kernel_forcing, state, generator, audit))
         lower = _require_floor(audit)
         velocity, diagnostics = timed("force_seconds", solve_velocity, state, generator, mode=mode,
                                       lower_bound=lower, initial=guess if warm_start else None,
@@ -352,7 +354,10 @@ def integrate(initial, generator, times, chi, *, mode="one", clock="physical",
             seed_state, seed_info = timed("seed_seconds", seed, current, times[1]-times[0])
             candidate, r = retract(seed_state)
             target_info = stage(candidate)
-            _require_floor(target_info)
+            if target_info["lower_bound"] is None or target_info["lower_bound"] <= 0:
+                target_info.update(_kernel_forcing(candidate, generator, target_info))
+                raise EvolutionError("rank_support_uncertain", endpoint=target_info,
+                                     initial_support=kernel, seed_retraction=r, **seed_info)
             event(dict(kind="seed", accepted=True, time=float(times[1]), initial_support=kernel,
                        seed_retraction=r, endpoint=target_info, **seed_info))
             current, current_time, audit = candidate, float(times[1]), target_info

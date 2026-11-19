@@ -17,13 +17,32 @@ from factor_tdvp.tangent_solver import mpo, tn
 from .tangent_frame import build_frame
 
 
+def _evidence(value):
+    """Convert diagnostic data (including arithmetic failures) to strict JSON."""
+    if isinstance(value, dict):
+        return {str(key): _evidence(item) for key, item in value.items()}
+    if isinstance(value, np.ndarray):
+        return _evidence(value.tolist())
+    if isinstance(value, (tuple, list)):
+        return [_evidence(item) for item in value]
+    if isinstance(value, np.generic):
+        value = value.item()
+    if isinstance(value, float) and not np.isfinite(value):
+        return None
+    if isinstance(value, complex):
+        return dict(real=_evidence(value.real), imag=_evidence(value.imag))
+    if value is None or isinstance(value, (bool, int, float, str)):
+        return value
+    raise TypeError(f'Unsupported generator diagnostic type {type(value).__name__}')
+
+
 class GalerkinError(RuntimeError):
     """A rejected solve, carrying JSON-serializable numerical evidence."""
 
     def __init__(self, status, message, **details):
         super().__init__(message)
         self.status = status
-        self.details = dict(status=status, **details)
+        self.details = _evidence(dict(status=status, **details))
 
 
 def bond(state):
@@ -50,7 +69,10 @@ def _fixed_round(state, cap):
 
 
 def _ratio(value, reference):
-    return float(value / reference) if reference else (0. if value == 0 else float('inf'))
+    if reference == 0:
+        return 0. if value == 0 else None
+    result = float(value / reference)
+    return result if np.isfinite(result) else None
 
 
 class GalerkinOperator:
@@ -68,7 +90,22 @@ class GalerkinOperator:
         if max_elements < 1:
             raise ValueError('max_elements must be positive')
         self.root, self.frame = root, frame
-        self.coefficient, self.discard = _fixed_round(root, work_bond)
+        coefficient, self.discard = _fixed_round(root, work_bond)
+        # An MPO with individually adjoint-fixed cores is exactly Hermitian.
+        # In any other gauge take the Hermitian part once, irrespective of
+        # the observed skew. This makes the represented Krylov map HPD under
+        # the supplied bound even when the smallest eigenvalue is very small.
+        self.manifest_hermitian = all(np.array_equal(a, a[:, [0, 2, 1, 3], :].conj())
+                                      for a in coefficient.tensors)
+        if self.manifest_hermitian:
+            self.coefficient = coefficient
+        else:
+            hermitian_sizes = [a.size * (2 if j > 0 else 1) * (2 if j < root.n-1 else 1)
+                               for j, a in enumerate(coefficient.tensors)]
+            if max(hermitian_sizes) > max_elements:
+                raise GalerkinError('memory_budget', 'Hermitian coefficient exceeds core element budget',
+                                    requested_core_elements=max(hermitian_sizes), max_elements=max_elements)
+            self.coefficient = _geometric_reduce(tn.add(coefficient, mpo.adjoint(coefficient), .5, .5))
         self.peak_product_bond = 0
         self.peak_product_core_elements = 0
         self.max_elements = max_elements
@@ -126,9 +163,11 @@ def _ritz_condition(alphas, betas):
 
 
 def _pcg(apply, pre, start, rhs, threshold, maxiter):
+    rhs_norm = np.linalg.norm(rhs)
+    if rhs_norm == 0:
+        return np.zeros_like(rhs), [0.], None
     x = start.copy()
     r = rhs - apply(x) if np.any(x) else rhs.copy()
-    rhs_norm = np.linalg.norm(rhs)
     residual = np.linalg.norm(r)
     history = [_ratio(residual, rhs_norm)]
     alphas, betas = [], []
@@ -172,9 +211,10 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
     computed solution onto its measured adjoint-fixed part before final audit.
     """
     t0 = perf_counter()
-    if (rtol < 0 or atol < 0 or not (rtol or atol) or maxiter < 0
+    if (not np.isfinite([rtol, atol, hermitian_tol, compression_rtol]).all()
+            or rtol < 0 or atol < 0 or not (rtol or atol) or maxiter < 0
             or compression_rtol < 0 or hermitian_tol <= 0
-            or (physical_rtol is not None and physical_rtol < 0)):
+            or (physical_rtol is not None and (not np.isfinite(physical_rtol) or physical_rtol < 0))):
         raise ValueError('Invalid solver tolerance or iteration cap')
     if lower_bound is None or not np.isfinite(lower_bound) or lower_bound <= 0:
         raise GalerkinError('rank_support_uncertain', 'A positive current-root lower bound is required',
@@ -189,11 +229,8 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
                             spectral_lower_bound=lower_bound, mean_root_eigenvalue=scale*.5)
     frame = build_frame(root, mode, rank_rtol=rank_rtol)
     op = GalerkinOperator(root, frame, work_bond=work_bond, max_elements=max_elements)
-    # SVDs on a fixed coefficient need not respect adjoint symmetry at a
-    # degenerate cut. Use its explicitly Hermitian part whenever approximated.
-    # Also make the current coefficient Hermitian if roundoff is material.
-    if op.discard or xdef > 1e-13 * root_norm:
-        op.coefficient = _geometric_reduce(tn.add(op.coefficient, mpo.adjoint(op.coefficient), .5, .5))
+    # Hermitian-part projection is contractive in Frobenius norm. Relative
+    # to Herm(X), the coefficient perturbation is at most its SVD discard.
     if op.discard >= lower_bound or op.discard > compression_rtol*root_norm:
         raise GalerkinError('compression_overflow', 'Fixed coefficient rounding exceeds its budget',
                             coefficient_discard=op.discard, spectral_lower_bound=lower_bound,
@@ -203,6 +240,8 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
     g, gen_info = generated if isinstance(generated, tuple) else (generated, {})
     if g.n != root.n:
         raise ValueError('Generator returned a different chain size')
+    if not all(np.isfinite(a).all() for a in g.tensors):
+        raise GalerkinError('nonfinite_generator', 'Generator produced a nonfinite MPO')
     g = _geometric_reduce(g)
     g_norm = tn.norm(g)
     gdef = tn.distance(g, mpo.adjoint(g))
@@ -267,14 +306,20 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
     projected_vector = frame.encode(res)
     raw_projected = np.linalg.norm(projected_vector)
     stationarity = np.linalg.norm(null(projected_vector))
-    exact_target = np.linalg.norm(null(frame.encode(g)))
+    # Directly measure R - BB†R. The difference of squared norms loses
+    # precision when R is almost entirely tangent (including full tangents).
+    orthogonal = tn.distance(res, _geometric_reduce(frame.decode(projected_vector)))
+    b_exact = frame.encode(g)
+    exact_target = np.linalg.norm(null(b_exact))
     audit_tol = max(atol, rtol*exact_target)
     # Relative stationarity of a roundoff-zero target is ill-conditioned;
     # the explicit absolute term covers that case. No physical residual is
     # used as a replacement for an unmet coordinate tolerance.
     multiplier = -np.vdot(c, projected_vector) / c_norm**2 if constrained else 0.
     diagnostics = dict(status='success', constrained=bool(constrained), mode=mode,
-        dimension=frame.dimension, state_bonds=list(frame.ranks), work_bond=work_bond,
+        dimension=frame.dimension, state_bonds=list(frame.ranks), frame_metadata=frame.metadata,
+        work_bond=work_bond, coefficient_hermitian_construction=(
+            'adjoint_fixed_cores' if op.manifest_hermitian else 'explicit_hermitian_part'),
         iterations=len(history)-1, history=history, condition_estimate=condition,
         preconditioner=preconditioner, preconditioner_setup_seconds=pre_seconds,
         preconditioner_local_density_floor=1e-12 if preconditioner == 'product' else None,
@@ -288,14 +333,16 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
         warm_start=initial is not None, multiplier_real=float(np.real(multiplier)),
         multiplier_imag=float(np.imag(multiplier)), galerkin_residual_abs=float(stationarity),
         galerkin_residual_rel=_ratio(stationarity, exact_target), projected_residual_abs=float(raw_projected),
-        projected_residual_rel=_ratio(raw_projected, np.linalg.norm(frame.encode(g))),
+        projected_residual_rel=_ratio(raw_projected, np.linalg.norm(b_exact)),
         physical_residual_abs=physical, physical_residual_rel=_ratio(physical, g_norm),
-        orthogonal_residual_abs=float(np.sqrt(max(0., (physical-raw_projected)*(physical+raw_projected)))),
+        orthogonal_residual_abs=orthogonal,
         generator_norm=g_norm, root_hermiticity_defect=xdef, generator_hermiticity_defect=gdef,
         hermiticity_defect_before=h_before, hermiticity_defect=h_after, adjoint_tangent_leakage=adj_leak,
         normalization_velocity_defect=float(abs(np.vdot(c, v))), operator_audit=probes)
     failure = None
-    if h_after > hermitian_tol*max(tn.norm(velocity), np.finfo(float).tiny):
+    if not all(np.isfinite(val) for val in (h_after, physical, stationarity, raw_projected, orthogonal)):
+        failure = 'nonfinite_residual'
+    elif h_after > hermitian_tol*max(tn.norm(velocity), np.finfo(float).tiny):
         failure = 'hermiticity_failure'
     elif stationarity > audit_tol * (1+1e-6):
         failure = 'nonconvergence'
@@ -304,7 +351,7 @@ def solve_velocity(root, generator, *, mode='one', lower_bound=None, constrained
     if failure:
         diagnostics.pop('status')
         raise GalerkinError(failure, 'Final audit on original unrounded equation failed', **diagnostics)
-    return velocity, diagnostics
+    return velocity, _evidence(diagnostics)
 
 
 def dense_oracle(root, g_matrix, *, mode='one', constrained=True, max_entries=2_000_000):

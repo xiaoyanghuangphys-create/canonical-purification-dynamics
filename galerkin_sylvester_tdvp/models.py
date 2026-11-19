@@ -45,9 +45,9 @@ class Model:
 
 class Generator:
     """Current-density MPO action. Compression in the RHS is separately audited."""
-    def __init__(self, n, kind, rates, ham=None, pair_jumps=None, work=32):
+    def __init__(self, n, kind, rates, ham=None, work=32):
         self.n, self.kind, self.rates = n, kind, rates
-        self.ham, self.pairs, self.work = ham, pair_jumps, work
+        self.ham, self.work = ham, work
         self.discards = []
 
     def __call__(self, rho):
