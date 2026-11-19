@@ -1,0 +1,27 @@
+{
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "processor": "arm",
+ "blas": [],
+ "threads_requested": 1,
+ "base_sha": "b337e8b7fb86fc3cccec64e13e2ddb35cc14c4e1",
+ "source_sha": "b337e8b7fb86fc3cccec64e13e2ddb35cc14c4e1",
+ "source_files_sha256": {
+  "galerkin_solver.py": "a5d76d68d8ce0f2a425dea9057ac801ec563f279ce0839e760ffee1ad0875807",
+  "models.py": "efdd74028f2deec865020c0283f4441c6a7e0448da04aa8b10dc5400adf86832",
+  "evolution.py": "aa99a19b17248a6073def180b69669954b3d49710e1199f5520413e5f77b692f",
+  "tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+  "__init__.py": "ab0de1fbc9c30eff4d8a0660990e2a711a5bc3f1319c47aa49350d2d917d097c",
+  "benchmarks.py": "878a78934020e5c30f4ce17fd77056c7235805507aa2f1d08ab327fa49bcbeed"
+ },
+ "memory_limit_semantics": "per-worker peak RSS watchdog sampled every 40 ms; OS scheduling permits overshoot",
+ "command": [
+  "/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/benchmarks.py",
+  "--suite",
+  "smoke",
+  "--out",
+  "galerkin_sylvester_tdvp/results/pilot_20261119"
+ ]
+}

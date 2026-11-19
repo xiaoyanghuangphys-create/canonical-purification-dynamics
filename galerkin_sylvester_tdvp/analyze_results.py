@@ -101,7 +101,7 @@ def plot(settings,out):
     fig,axes=plt.subplots(1,2,figsize=(10.4,4.8),sharey=True,layout='constrained')
     for ax,f in zip(axes,('D','E')):
         for i,(method,label) in enumerate(labels.items()):
-            data=sorted((s for s in settings if s['family']==f and s['method']==method and s['all_completed_measured']),key=lambda s:s['steps'])
+            data=sorted((s for s in settings if s['family']==f and s['n']==3 and s['repeats']>=3 and s['method']==method and s['all_completed_measured']),key=lambda s:s['steps'])
             if not data: continue
             ax.loglog([s['median_worker_s'] for s in data],[s['max_error'] for s in data],
                       marker=('o','s','^','D','v','P','X','*','<','>')[i],ms=5,lw=1,color=plt.cm.tab10(i),label=label)

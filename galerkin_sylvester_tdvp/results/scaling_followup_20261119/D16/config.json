@@ -1,0 +1,27 @@
+{
+ "family": "D",
+ "n": 16,
+ "method": "B_two",
+ "steps": 2,
+ "chi": 4,
+ "work": 64,
+ "total": 0.1,
+ "repeats": 1,
+ "rtol": 1e-09,
+ "atol": 7.8125e-16,
+ "cert_tol": 1e-05,
+ "maxiter": 80,
+ "base_sha": "b337e8b7fb86fc3cccec64e13e2ddb35cc14c4e1",
+ "source_sha": "0e0a94d77f34da437002211c4eff730c068b311a",
+ "source_files_sha256": {
+  "benchmarks.py": "f4a29de400b6c64c0b9f251482d16ccdfc9a8080b69bf1c562d38f41b08890ac",
+  "models.py": "3945c2005f664a431d2ce8d43e7417602b1823d5950d7eb3376c882f4637930a",
+  "galerkin_solver.py": "08a9b1d4db0fcfdcb535181ec6c3389bf797ecfab363b8a3251adc963108b7db",
+  "tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+  "evolution.py": "0afc5a7705b68908e21e3e1bce3a37f40d38c0c708f947211ed83e43cd8bde5d",
+  "scaling_followup.py": "4cb45d8b739a33f379fd627e0f4e485e995bb71b6957996c3fa835deef897759"
+ },
+ "timeout_seconds": 35,
+ "memory_mib": 768,
+ "rss_sample_seconds": 0.04
+}

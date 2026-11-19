@@ -1,0 +1,13 @@
+family,n,method,total,target,attained
+loss_mixed,4,A_shared_one,0.03,0.001,False
+loss_mixed,4,A_shared_one,0.03,1e-05,False
+loss_mixed,4,A_shared_one,0.03,1e-07,False
+loss_mixed,4,A_shared_two,0.03,0.001,False
+loss_mixed,4,A_shared_two,0.03,1e-05,False
+loss_mixed,4,A_shared_two,0.03,1e-07,False
+loss_mixed,4,B_one,0.03,0.001,False
+loss_mixed,4,B_one,0.03,1e-05,False
+loss_mixed,4,B_one,0.03,1e-07,False
+loss_mixed,4,B_two,0.03,0.001,False
+loss_mixed,4,B_two,0.03,1e-05,False
+loss_mixed,4,B_two,0.03,1e-07,False

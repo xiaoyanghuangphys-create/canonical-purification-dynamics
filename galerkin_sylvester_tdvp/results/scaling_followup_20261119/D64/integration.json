@@ -1,0 +1,690 @@
+{
+ "status": "rank_support_uncertain",
+ "accepted_steps": 0,
+ "rejected_steps": 1,
+ "final_time": 0.0,
+ "history": [
+  {
+   "kind": "midpoint",
+   "from_time": 0.0,
+   "time": 0.05,
+   "clock_step": 0.05,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 11776,
+     "state_bonds": [
+      1,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 11776,
+      "stored_ranks": [
+       1,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       1
+      ],
+      "active_ranks": [
+       1,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       1
+      ],
+      "block_shapes": [
+       [
+        0,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        12,
+        16
+       ],
+       [
+        16,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       0,
+       192,
+       384,
+       576,
+       768,
+       960,
+       1152,
+       1344,
+       1536,
+       1728,
+       1920,
+       2112,
+       2304,
+       2496,
+       2688,
+       2880,
+       3072,
+       3264,
+       3456,
+       3648,
+       3840,
+       4032,
+       4224,
+       4416,
+       4608,
+       4800,
+       4992,
+       5184,
+       5376,
+       5568,
+       5760,
+       5952,
+       6144,
+       6336,
+       6528,
+       6720,
+       6912,
+       7104,
+       7296,
+       7488,
+       7680,
+       7872,
+       8064,
+       8256,
+       8448,
+       8640,
+       8832,
+       9024,
+       9216,
+       9408,
+       9600,
+       9792,
+       9984,
+       10176,
+       10368,
+       10560,
+       10752,
+       10944,
+       11136,
+       11328,
+       11520,
+       11712,
+       11776
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 64,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 11,
+     "history": [
+      1.0,
+      0.1616566198905935,
+      0.028414097615570285,
+      0.004245803476243864,
+      0.000559146397323248,
+      8.833409978976873e-05,
+      9.906145635548415e-06,
+      1.2114602945562956e-06,
+      1.5238051607322437e-07,
+      2.4120726568740593e-08,
+      2.6553463098370738e-09,
+      3.135831300215496e-10
+     ],
+     "condition_estimate": 1.8997456333351839,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 4.1600000000308057e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 3.88381337053872e-12,
+     "effective_lower_bound": 3.88381337053872e-12,
+     "setup_seconds": 0.05977312500000004,
+     "solve_seconds": 7.913497958,
+     "audit_seconds": 6.245985792000001,
+     "max_elements": 2000000,
+     "peak_product_bond": 80,
+     "peak_product_core_elements": 25600,
+     "matvec_count": 11,
+     "coefficient_bond": 4,
+     "rhs_work_bond": 8,
+     "generator_bond": 8,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 2.6458172520977698e-21,
+     "multiplier_imag": -7.957072732472424e-26,
+     "galerkin_residual_abs": 5.832365457421175e-20,
+     "galerkin_residual_rel": 3.135830805297231e-10,
+     "projected_residual_abs": 5.838363667869449e-20,
+     "projected_residual_rel": 3.090951158522714e-10,
+     "physical_residual_abs": 6.492222816003789e-20,
+     "physical_residual_rel": 3.074980843681778e-10,
+     "orthogonal_residual_abs": 2.8394483221820876e-20,
+     "generator_norm": 2.1113051254753288e-10,
+     "root_hermiticity_defect": 8.2443692012631e-15,
+     "generator_hermiticity_defect": 8.531527281019676e-25,
+     "hermiticity_defect_before": 1.5319379904511651e-15,
+     "hermiticity_defect": 1.0390678691320015e-15,
+     "adjoint_tangent_leakage": 1.623371957228048e-15,
+     "normalization_velocity_defect": 1.0842021724855044e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 4,
+     "hermiticity_defect": 3.9486283604389434e-15,
+     "trace_defect": 7.438494265039913e-15,
+     "norm_defect": 4.440892098500626e-16,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.006842721519759656,
+     "lower_bound": -3.0982296186643162e-09,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 3.969637757812776e-15,
+     "svd_discard_norm": 3.213586481526664e-05,
+     "discarded_weight": 1.0327138074250923e-09,
+     "norm_before": 1.00002341300191,
+     "normalization_move": 2.3413001910110864e-05,
+     "polar_correction": 0.0
+    }
+   ],
+   "accepted": false,
+   "reason": "rank_support_uncertain",
+   "details": {
+    "root_bond": 4,
+    "hermiticity_defect": 3.9486283604389434e-15,
+    "trace_defect": 7.438494265039913e-15,
+    "norm_defect": 4.440892098500626e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.006842721519759656,
+    "lower_bound": -3.0982296186643162e-09,
+    "floor_source": "structural_stage_bound"
+   },
+   "error": "rank_support_uncertain",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 382, in integrate\n    candidate, next_guess = midpoint(current, audit, u, h, guess, record)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 326, in midpoint\n    v_mid = timed_velocity(mid, mid_info, v0, record)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 308, in timed_velocity\n    lower = _require_floor(audit)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 87, in _require_floor\n    raise EvolutionError(\"rank_support_uncertain\", **info)\ngalerkin_sylvester_tdvp.evolution.EvolutionError: rank_support_uncertain\n"
+  }
+ ],
+ "clock": "physical",
+ "constrained": true,
+ "warm_start": false,
+ "force_seconds": 14.22711375,
+ "retraction_seconds": 0.1927869169999988,
+ "audit_seconds": 0.4536618760000008,
+ "witness_seconds": 0.0,
+ "seed_seconds": 0.0,
+ "normalization_retraction": true,
+ "input": {
+  "root_bond": 4,
+  "hermiticity_defect": 7.303095353712625e-15,
+  "trace_defect": 2.442491487548243e-14,
+  "norm_defect": 2.7977620220553945e-14,
+  "min_eigenvalue": null,
+  "negative_part": null,
+  "polar_defect": null,
+  "anchor_distance": 0.0,
+  "lower_bound": 3.8714339427167725e-12,
+  "floor_source": "weyl_frobenius"
+ },
+ "initial_representation_error": 1.9864934240032648e-14,
+ "initial": {
+  "root_bond": 4,
+  "hermiticity_defect": 8.2443692012631e-15,
+  "trace_defect": 7.327471962530632e-15,
+  "norm_defect": 0.0,
+  "min_eigenvalue": null,
+  "negative_part": null,
+  "polar_defect": null,
+  "anchor_distance": 1.9864934240032648e-14,
+  "lower_bound": 3.88381337053872e-12,
+  "floor_source": "structural_stage_bound"
+ },
+ "initial_retraction": {
+  "input_skew_removed": 7.30424227772011e-15,
+  "svd_discard_norm": 1.1924873179431289e-14,
+  "discarded_weight": 1.422026003455197e-28,
+  "norm_before": 0.999999999999998,
+  "normalization_move": 1.9984014443252818e-15,
+  "polar_correction": 0.0
+ },
+ "initial_accepted": true,
+ "integration_seconds": 14.879734833999999
+}

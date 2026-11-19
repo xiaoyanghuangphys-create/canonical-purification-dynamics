@@ -1,0 +1,76 @@
+{
+ "status": "compression_overflow",
+ "accepted_steps": 0,
+ "rejected_steps": 1,
+ "final_time": 0.0,
+ "history": [
+  {
+   "kind": "midpoint",
+   "from_time": 0.0,
+   "time": 0.02,
+   "clock_step": 0.02,
+   "halving_depth": 0,
+   "solves": [],
+   "stages": [],
+   "retractions": [],
+   "accepted": false,
+   "reason": "compression_overflow",
+   "details": {
+    "status": "compression_overflow",
+    "coefficient_discard": 0.30500936306019616,
+    "spectral_lower_bound": 0.018953497657357883,
+    "compression_budget": 1e-09
+   },
+   "error": "Fixed coefficient rounding exceeds its budget",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 382, in integrate\n    candidate, next_guess = midpoint(current, audit, u, h, guess, record)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 321, in midpoint\n    v0 = timed_velocity(start_state, audit, guess, record)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 309, in timed_velocity\n    velocity, diagnostics = timed(\"force_seconds\", solve_velocity, state, generator, mode=mode,\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/evolution.py\", line 293, in timed\n    return fn(*args, **kwargs)\n  File \"/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/galerkin_solver.py\", line 198, in solve_velocity\n    raise GalerkinError('compression_overflow', 'Fixed coefficient rounding exceeds its budget',\ngalerkin_sylvester_tdvp.galerkin_solver.GalerkinError: Fixed coefficient rounding exceeds its budget\n"
+  }
+ ],
+ "clock": "physical",
+ "constrained": true,
+ "warm_start": false,
+ "force_seconds": 0.0005707079999999753,
+ "retraction_seconds": 0.0005876659999999867,
+ "audit_seconds": 0.0010232499999999756,
+ "witness_seconds": 0.0,
+ "seed_seconds": 0.0,
+ "normalization_retraction": true,
+ "input": {
+  "root_bond": 2,
+  "hermiticity_defect": 2.274821217482758e-16,
+  "trace_defect": 1.1102230246251565e-16,
+  "norm_defect": 0.0,
+  "min_eigenvalue": 0.018953497657370953,
+  "negative_part": 0.0,
+  "polar_defect": 5.475113595220177e-16,
+  "max_eigenvalue": 0.9200408502545856,
+  "support_resolution": 1.3074566855018838e-14,
+  "numerical_support": 8,
+  "lower_bound": 0.01895349765735788,
+  "floor_source": "dense_stage_spectrum"
+ },
+ "initial_representation_error": 6.333263113834032e-16,
+ "initial": {
+  "root_bond": 2,
+  "hermiticity_defect": 6.58695136481554e-16,
+  "trace_defect": 2.220446049250313e-16,
+  "norm_defect": 0.0,
+  "min_eigenvalue": 0.018953497657370956,
+  "negative_part": 0.0,
+  "polar_defect": 5.72116289654378e-16,
+  "max_eigenvalue": 0.920040850254586,
+  "support_resolution": 1.3074566855018845e-14,
+  "numerical_support": 8,
+  "lower_bound": 0.018953497657357883,
+  "floor_source": "dense_stage_spectrum"
+ },
+ "initial_retraction": {
+  "input_skew_removed": 2.4079688768387865e-16,
+  "svd_discard_norm": 4.627539191529391e-16,
+  "discarded_weight": 2.1414118969140487e-31,
+  "norm_before": 0.9999999999999991,
+  "normalization_move": 8.881784197001252e-16,
+  "polar_correction": 0.0
+ },
+ "initial_accepted": true,
+ "integration_seconds": 0.003848083000000002
+}

@@ -1,0 +1,5 @@
+family,n,method,total,steps,chi,work,cert_tol,repeats,observed,completed,scored,statuses,max_error,all_completed_measured,median_worker_s,median_process_s,median_setup_evolution_s,median_peak_mib
+loss_mixed,4,A_shared_one,0.03,2,2,32,1e-05,1,1,1,1,completed,0.040140053214647836,True,0.206537708,0.727832834,0.20293512499999994,64.9375
+loss_mixed,4,A_shared_two,0.03,2,2,32,1e-05,1,1,1,1,completed,0.04013995385722943,True,0.14325795800000002,0.5026065000000002,0.139539666,66.28125
+loss_mixed,4,B_one,0.03,2,2,32,1e-05,1,1,1,1,completed,0.04014683032914539,True,0.18533525,0.5150733750000003,0.18236512500000002,66.265625
+loss_mixed,4,B_two,0.03,2,2,32,1e-05,1,1,1,1,completed,0.040139953191094396,True,0.31049475000000004,0.5966925839999999,0.307536625,66.65625
