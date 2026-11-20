@@ -1,0 +1,3 @@
+*.csv whitespace=cr-at-eol
+results/** linguist-generated
+figures/*.csv linguist-generated

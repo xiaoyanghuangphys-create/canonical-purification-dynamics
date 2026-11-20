@@ -1,0 +1,74 @@
+{
+ "source_sha": "d43fc80d04f043011e8cb012ebb9044574fa734b",
+ "source_files_sha256": {
+  "galerkin_sylvester_tdvp/witness_pair_scaling.py": "05cd10534abacbb0c7a413aa285c3e3b3551025511e191d9d6cef09046c26b4a",
+  "galerkin_sylvester_tdvp/witness_pair_worker.py": "c840b899e1e03fad28d392564f9336de793000f7c0a91dd74295016971b70f8b",
+  "galerkin_sylvester_tdvp/witness_stage.py": "b5700e631af9ac5a3923dbf6ed97bf490b1fe8fd10abc47c0a42cefa2c0dff9c",
+  "galerkin_sylvester_tdvp/galerkin_solver.py": "08a9b1d4db0fcfdcb535181ec6c3389bf797ecfab363b8a3251adc963108b7db",
+  "galerkin_sylvester_tdvp/evolution.py": "0afc5a7705b68908e21e3e1bce3a37f40d38c0c708f947211ed83e43cd8bde5d",
+  "galerkin_sylvester_tdvp/tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+  "galerkin_sylvester_tdvp/models.py": "3945c2005f664a431d2ce8d43e7417602b1823d5950d7eb3376c882f4637930a",
+  "galerkin_sylvester_tdvp/benchmarks.py": "f4a29de400b6c64c0b9f251482d16ccdfc9a8080b69bf1c562d38f41b08890ac",
+  "galerkin_sylvester_tdvp/scaling_followup.py": "4cb45d8b739a33f379fd627e0f4e485e995bb71b6957996c3fa835deef897759",
+  "scalable_cp_witness/code/mpo_cp_force.py": "34f536512f10fbb951f5d0a260fc6d8781b71b57b7e0c33597311184cac14f8e",
+  "scalable_cp_witness/code/tdvp_core.py": "2aa8cc3550ac96ca0a498f204deb4d470deefe330b4d00d130d040de4834b7db",
+  "scalable_cp_witness/code/scalable_cp_witness.py": "408fd0c18437d158d9263ed35d87a8e18cd5d45a8fcaa853b1219c3bd785cd15",
+  "scalable_cp_witness/code/guarded_cp_tdvp.py": "ffdb6ad4ef35cad65646736bf5f398505fd33dbbf28b669ddad43b7361379731",
+  "scalable_cp_witness/code/cp_accuracy_refinement.py": "bd17b0ece7f5e160ec2359e61c137db1087f1e730cdd7b3e92a3664eca740f59",
+  "galerkin_sylvester_tdvp/witness_pair_supplement.py": "6baa97125a6a957e9639eba301573959530732d8947823368a53cf6eaf789710",
+  "galerkin_sylvester_tdvp/witness_block_stage.py": "e53925789c125da0db72557676ac0527e9f71adca4a1605afde879cd9d9f2d44",
+  "galerkin_sylvester_tdvp/witness_streaming.py": "5ef4ac677bb327d4685cce3da333a263e6d743d7834b20ed44782c71b6619e79"
+ },
+ "base_sha": "1924e962c7cf7ab165accee7d18c234bc067eb4d",
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "cpu": "arm64",
+ "threads": {
+  "VECLIB_MAXIMUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "NUMEXPR_NUM_THREADS": "1",
+  "OMP_NUM_THREADS": "1"
+ },
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "blas": {
+  "name": "accelerate",
+  "found": true,
+  "version": "unknown",
+  "detection method": "system",
+  "include directory": "unknown",
+  "lib directory": "unknown",
+  "openblas configuration": "unknown",
+  "pc file directory": "unknown"
+ },
+ "settings": {
+  "sizes": [
+   64,
+   32,
+   16,
+   8
+  ],
+  "families": [
+   "D",
+   "E"
+  ],
+  "tolerances": [
+   1e-05,
+   1e-07
+  ],
+  "timeout": 180.0,
+  "memory_mib": 1536.0,
+  "steps": [
+   1,
+   2
+  ],
+  "variant": "streamed-block",
+  "extended_witness": true,
+  "residual_bond": 24
+ },
+ "wall_cap_seconds": 180.0,
+ "peak_rss_guard_mib": 1536.0,
+ "hardware_reference": "../validation_20261119/hardware.json",
+ "schedule": "Run every screen serially. For each target and method select the cheapest valid screening time. Confirm that setting and any target-qualifying peer on its paired grid in three new processes; alternate confirmation order."
+}

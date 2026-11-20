@@ -1,0 +1,11 @@
+{
+ "eligible_pairs": 6,
+ "requested_pairs": 6,
+ "median_paired_ratio": 1.0662705059781719,
+ "median_paired_difference_seconds": 1.3403649170000005,
+ "B_faster_pairs": 0,
+ "min_paired_ratio": 1.044517994449204,
+ "max_paired_ratio": 1.1811506832887648,
+ "A_median_seconds": 20.203373833,
+ "B_pre_median_seconds": 21.5778507295
+}

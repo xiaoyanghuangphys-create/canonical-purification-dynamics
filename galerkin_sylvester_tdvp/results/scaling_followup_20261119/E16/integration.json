@@ -1,0 +1,3620 @@
+{
+ "status": "success",
+ "accepted_steps": 8,
+ "rejected_steps": 0,
+ "final_time": 1.0,
+ "history": [
+  {
+   "kind": "midpoint",
+   "from_time": 0.0,
+   "time": 0.125,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.1494531730968855,
+      3.825166483865744e-16
+     ],
+     "condition_estimate": 1.4433756729740652,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 1.669999999953653e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002062891123939444,
+     "effective_lower_bound": 0.002062891123939444,
+     "setup_seconds": 0.008568041999999998,
+     "solve_seconds": 0.021686916999999972,
+     "audit_seconds": 0.06579162500000002,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -9.839756576270959e-19,
+     "multiplier_imag": 0.0,
+     "galerkin_residual_abs": 5.732326260708285e-18,
+     "galerkin_residual_rel": 3.758575799925039e-15,
+     "projected_residual_abs": 5.816164754716677e-18,
+     "projected_residual_rel": 3.7223454430186885e-15,
+     "physical_residual_abs": 6.145752481723226e-18,
+     "physical_residual_rel": 3.9332815883028845e-15,
+     "orthogonal_residual_abs": 1.985573245337156e-18,
+     "generator_norm": 0.0015624999999999923,
+     "root_hermiticity_defect": 4.139435769135744e-15,
+     "generator_hermiticity_defect": 1.4123492310300935e-18,
+     "hermiticity_defect_before": 2.0389504613947866e-16,
+     "hermiticity_defect": 2.446352894964615e-16,
+     "adjoint_tangent_leakage": 4.015301408329675e-16,
+     "normalization_velocity_defect": 4.279639101770683e-19,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.13693476366446775,
+      2.699813097958737e-16
+     ],
+     "condition_estimate": 1.4146357731292847,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.919999999573264e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0021132857245259227,
+     "effective_lower_bound": 0.0021132857245259227,
+     "setup_seconds": 0.00936762499999999,
+     "solve_seconds": 0.019436167000000004,
+     "audit_seconds": 0.05149625000000002,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -1.1885331396854018e-18,
+     "multiplier_imag": -2.0942690781889623e-20,
+     "galerkin_residual_abs": 6.852583481309684e-18,
+     "galerkin_residual_rel": 4.779895822627677e-15,
+     "projected_residual_abs": 6.954922716230998e-18,
+     "projected_residual_rel": 4.7504184855073e-15,
+     "physical_residual_abs": 7.291196010294973e-18,
+     "physical_residual_rel": 4.980103118605511e-15,
+     "orthogonal_residual_abs": 2.188741481261656e-18,
+     "generator_norm": 0.0014640652686598577,
+     "root_hermiticity_defect": 6.609777738048717e-16,
+     "generator_hermiticity_defect": 1.7603743554514677e-18,
+     "hermiticity_defect_before": 2.591133825522857e-16,
+     "hermiticity_defect": 1.8188700675924162e-16,
+     "adjoint_tangent_leakage": 8.821194127725553e-16,
+     "normalization_velocity_defect": 1.25039633535954e-20,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 6.609777738048717e-16,
+     "trace_defect": 1.6653345369377348e-15,
+     "norm_defect": 0.0,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.015097134964594406,
+     "lower_bound": 0.0021132857245259227,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 4.107914202132389e-15,
+     "svd_discard_norm": 4.639132351057718e-15,
+     "discarded_weight": 2.1521548970630307e-29,
+     "norm_before": 1.000113974730825,
+     "normalization_move": 0.00011397473082497278,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 4.139635562354402e-15,
+     "svd_discard_norm": 5.403765259821198e-15,
+     "discarded_weight": 2.9200678983250465e-29,
+     "norm_before": 0.9999662899965449,
+     "normalization_move": 3.3710003455089677e-05,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 4.352229988499298e-15,
+    "trace_defect": 2.886579864025407e-15,
+    "norm_defect": 4.440892098500626e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.027763040106972097,
+    "lower_bound": 0.002152742972133647,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.125,
+   "time": 0.25,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.12686815113952027,
+      4.620266373772949e-16
+     ],
+     "condition_estimate": 1.3932154089259507,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.0800000000154029e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002152742972133647,
+     "effective_lower_bound": 0.002152742972133647,
+     "setup_seconds": 0.008586584000000008,
+     "solve_seconds": 0.01919683299999997,
+     "audit_seconds": 0.05108458300000007,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 4.0594751702996337e-19,
+     "multiplier_imag": -1.2226789096012657e-21,
+     "galerkin_residual_abs": 3.780974864069166e-18,
+     "galerkin_residual_rel": 2.7915095190534178e-15,
+     "projected_residual_abs": 3.8027050640628645e-18,
+     "projected_residual_rel": 2.7561041238042316e-15,
+     "physical_residual_abs": 4.0525134409866255e-18,
+     "physical_residual_rel": 2.937158895657828e-15,
+     "orthogonal_residual_abs": 1.4008209682639296e-18,
+     "generator_norm": 0.001379739259928256,
+     "root_hermiticity_defect": 4.352229988499298e-15,
+     "generator_hermiticity_defect": 1.1857037985840533e-18,
+     "hermiticity_defect_before": 2.7031053515804473e-16,
+     "hermiticity_defect": 1.8445645987720943e-16,
+     "adjoint_tangent_leakage": 3.1251840629166742e-16,
+     "normalization_velocity_defect": 6.382388187551758e-19,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.1169225209740877,
+      2.460217873706469e-16
+     ],
+     "condition_estimate": 1.3729520221393647,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 1.6700000005087645e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0021916909023102058,
+     "effective_lower_bound": 0.0021916909023102058,
+     "setup_seconds": 0.008655749999999962,
+     "solve_seconds": 0.02040183299999998,
+     "audit_seconds": 0.054327667000000024,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -5.354786803077115e-20,
+     "multiplier_imag": 6.934687773733418e-21,
+     "galerkin_residual_abs": 1.348469006957545e-18,
+     "galerkin_residual_rel": 1.0598279576615063e-15,
+     "projected_residual_abs": 1.3495496014560666e-18,
+     "projected_residual_rel": 1.0437318222349502e-15,
+     "physical_residual_abs": 2.8127777204680886e-18,
+     "physical_residual_rel": 2.1753817811205524e-15,
+     "orthogonal_residual_abs": 2.467880543699681e-18,
+     "generator_norm": 0.0012930041728212,
+     "root_hermiticity_defect": 6.788936206931108e-16,
+     "generator_hermiticity_defect": 1.4120688409088036e-18,
+     "hermiticity_defect_before": 2.370977942587122e-16,
+     "hermiticity_defect": 1.8032133608833678e-16,
+     "adjoint_tangent_leakage": 2.720947481545973e-16,
+     "normalization_velocity_defect": 3.400935513824172e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 6.788936206931108e-16,
+     "trace_defect": 1.5543122344752192e-15,
+     "norm_defect": 0.0,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.01289130812291171,
+     "lower_bound": 0.0021916909023102058,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 4.3090663763965925e-15,
+     "svd_discard_norm": 5.1621119245701854e-15,
+     "discarded_weight": 2.6647399521789706e-29,
+     "norm_before": 1.000083099817562,
+     "normalization_move": 8.309981756204898e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 4.343576734544234e-15,
+     "svd_discard_norm": 5.274186438819946e-15,
+     "discarded_weight": 2.7817042591432223e-29,
+     "norm_before": 0.9999767787200299,
+     "normalization_move": 2.3221279970120356e-05,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 3.0020526585828877e-16,
+    "trace_defect": 2.7755575615628914e-15,
+    "norm_defect": 0.0,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.023832189826472006,
+    "lower_bound": 0.0022225053966748445,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.25,
+   "time": 0.375,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.10875425858144835,
+      2.6693331845326797e-16
+     ],
+     "condition_estimate": 1.357511593068897,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.909999999856083e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0022225053966748445,
+     "effective_lower_bound": 0.0022225053966748445,
+     "setup_seconds": 0.008360667000000044,
+     "solve_seconds": 0.01910708299999997,
+     "audit_seconds": 0.05084241700000003,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 1.4156942809602955e-19,
+     "multiplier_imag": -1.1239272303831557e-20,
+     "galerkin_residual_abs": 1.3876968002934672e-18,
+     "galerkin_residual_rel": 1.1553683644267837e-15,
+     "projected_residual_abs": 1.3949446705006201e-18,
+     "projected_residual_rel": 1.145025230274042e-15,
+     "physical_residual_abs": 2.0007790586437764e-18,
+     "physical_residual_rel": 1.6423178286554501e-15,
+     "orthogonal_residual_abs": 1.4343103596325964e-18,
+     "generator_norm": 0.0012182654439559942,
+     "root_hermiticity_defect": 3.0020526585828877e-16,
+     "generator_hermiticity_defect": 2.134649128017816e-18,
+     "hermiticity_defect_before": 1.872432858257698e-16,
+     "hermiticity_defect": 4.784201807233394e-16,
+     "adjoint_tangent_leakage": 6.255660007421392e-16,
+     "normalization_velocity_defect": 9.4443535603547e-19,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.10065113409407363,
+      2.4488476013498926e-16
+     ],
+     "condition_estimate": 1.3428422979734864,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 1.2500000001747225e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002252753225348933,
+     "effective_lower_bound": 0.002252753225348933,
+     "setup_seconds": 0.008175749999999926,
+     "solve_seconds": 0.019161167000000034,
+     "audit_seconds": 0.05078625000000003,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -1.1333870507234025e-19,
+     "multiplier_imag": 2.9096413754195914e-21,
+     "galerkin_residual_abs": 1.5263039228289562e-18,
+     "galerkin_residual_rel": 1.3534304022953234e-15,
+     "projected_residual_abs": 1.530508997988404e-18,
+     "projected_residual_rel": 1.3404408894860762e-15,
+     "physical_residual_abs": 2.18454485070128e-18,
+     "physical_residual_rel": 1.9132545098689016e-15,
+     "orthogonal_residual_abs": 1.5587746507439753e-18,
+     "generator_norm": 0.0011417952182697154,
+     "root_hermiticity_defect": 4.7537284095338435e-15,
+     "generator_hermiticity_defect": 8.057502561335155e-19,
+     "hermiticity_defect_before": 1.7630145545523192e-16,
+     "hermiticity_defect": 1.2939033712204294e-16,
+     "adjoint_tangent_leakage": 2.0052766833922674e-16,
+     "normalization_velocity_defect": 4.621280561335818e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 4.7537284095338435e-15,
+     "trace_defect": 1.887379141862766e-15,
+     "norm_defect": 0.0,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.011105977449271155,
+     "lower_bound": 0.002252753225348933,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 2.66639701061042e-16,
+     "svd_discard_norm": 3.560304367180291e-15,
+     "discarded_weight": 1.267576718696305e-29,
+     "norm_before": 1.0000616751711409,
+     "normalization_move": 6.167517114086252e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 2.6708471960178783e-16,
+     "svd_discard_norm": 3.938213591966165e-15,
+     "discarded_weight": 1.5509526295947042e-29,
+     "norm_before": 0.9999834730111897,
+     "normalization_move": 1.652698881027259e-05,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 8.89369823610015e-16,
+    "trace_defect": 3.219646771412954e-15,
+    "norm_defect": 2.220446049250313e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.0206068735058268,
+    "lower_bound": 0.002276846385620871,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.375,
+   "time": 0.5,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.09389357075612227,
+      2.7997174226765564e-16
+     ],
+     "condition_estimate": 1.3314912730267898,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.500000000349445e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002276846385620871,
+     "effective_lower_bound": 0.002276846385620871,
+     "setup_seconds": 0.008415708999999993,
+     "solve_seconds": 0.019008665999999952,
+     "audit_seconds": 0.050619416999999944,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 1,
+     "generator_bond": 1,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 2.4930825951946776e-19,
+     "multiplier_imag": -5.13477951892681e-21,
+     "galerkin_residual_abs": 2.7275901876292242e-18,
+     "galerkin_residual_rel": 2.563696383663179e-15,
+     "projected_residual_abs": 2.738964988070596e-18,
+     "projected_residual_rel": 2.5463656496510706e-15,
+     "physical_residual_abs": 3.3931221718690562e-18,
+     "physical_residual_rel": 3.1545236179171283e-15,
+     "orthogonal_residual_abs": 2.0028352072381803e-18,
+     "generator_norm": 0.001075636952786383,
+     "root_hermiticity_defect": 8.89369823610015e-16,
+     "generator_hermiticity_defect": 8.190038232071182e-19,
+     "hermiticity_defect_before": 2.6253427859031184e-16,
+     "hermiticity_defect": 1.2268996768027903e-16,
+     "adjoint_tangent_leakage": 3.3018029848907836e-16,
+     "normalization_velocity_defect": 3.5049491669166533e-19,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.08716673709194847,
+      3.6356870070708773e-16
+     ],
+     "condition_estimate": 1.3206718011853316,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.500000000349445e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002300399098045337,
+     "effective_lower_bound": 0.002300399098045337,
+     "setup_seconds": 0.008335833999999931,
+     "solve_seconds": 0.018964083000000076,
+     "audit_seconds": 0.051971624999999966,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -2.0166419091061847e-19,
+     "multiplier_imag": -4.082781401196498e-21,
+     "galerkin_residual_abs": 7.8418488248564105e-19,
+     "galerkin_residual_rel": 7.852914679864721e-16,
+     "projected_residual_abs": 8.097104698091922e-19,
+     "projected_residual_rel": 8.031315663764768e-16,
+     "physical_residual_abs": 1.0436029555135548e-17,
+     "physical_residual_rel": 1.035123673940181e-14,
+     "orthogonal_residual_abs": 1.0404570237676519e-17,
+     "generator_norm": 0.0010081915637588478,
+     "root_hermiticity_defect": 3.096527026397915e-16,
+     "generator_hermiticity_defect": 1.0199025270547106e-18,
+     "hermiticity_defect_before": 1.6252543293761485e-16,
+     "hermiticity_defect": 7.513370977395493e-17,
+     "adjoint_tangent_leakage": 1.557498235226395e-16,
+     "normalization_velocity_defect": 1.0274427961649067e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 3.096527026397915e-16,
+     "trace_defect": 1.5543122344752192e-15,
+     "norm_defect": 2.220446049250313e-16,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.009627677630095127,
+     "lower_bound": 0.002300399098045337,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 8.853802173269769e-16,
+     "svd_discard_norm": 3.4982787963430546e-15,
+     "discarded_weight": 1.223795453694341e-29,
+     "norm_before": 1.0000463482363304,
+     "normalization_move": 4.634823633042906e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 8.597324911579387e-16,
+     "svd_discard_norm": 5.000292153876969e-15,
+     "discarded_weight": 2.500292162412358e-29,
+     "norm_before": 0.9999879635305073,
+     "normalization_move": 1.2036469492660018e-05,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 5.153470109990523e-16,
+    "trace_defect": 3.219646771412954e-15,
+    "norm_defect": 2.220446049250313e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.01791062256625155,
+    "lower_bound": 0.0023192438859452984,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.5,
+   "time": 0.625,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.08149303853166154,
+      4.719473094135521e-16
+     ],
+     "condition_estimate": 1.3122070387155302,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.500000000349445e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0023192438859452984,
+     "effective_lower_bound": 0.0023192438859452984,
+     "setup_seconds": 0.008623041000000109,
+     "solve_seconds": 0.019323916999999913,
+     "audit_seconds": 0.052897541999999964,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -4.1987429509597704e-19,
+     "multiplier_imag": 1.3425156477782473e-21,
+     "galerkin_residual_abs": 3.130300229106335e-18,
+     "galerkin_residual_rel": 3.324174441030613e-15,
+     "projected_residual_abs": 3.1583343316333343e-18,
+     "projected_residual_rel": 3.3257003206691563e-15,
+     "physical_residual_abs": 3.495999837328477e-18,
+     "physical_residual_rel": 3.6812593472489954e-15,
+     "orthogonal_residual_abs": 1.4989793568381622e-18,
+     "generator_norm": 0.0009496749637976573,
+     "root_hermiticity_defect": 5.153470109990523e-16,
+     "generator_hermiticity_defect": 7.703401750186571e-19,
+     "hermiticity_defect_before": 1.2525995030992863e-16,
+     "hermiticity_defect": 1.4716146097308548e-16,
+     "adjoint_tangent_leakage": 4.3446827148577125e-16,
+     "normalization_velocity_defect": 6.982314076165096e-20,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.07582921267610532,
+      2.684180293553777e-16
+     ],
+     "condition_estimate": 1.3041185607300836,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.080000001125626e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0023376079458685387,
+     "effective_lower_bound": 0.0023376079458685387,
+     "setup_seconds": 0.008798834000000033,
+     "solve_seconds": 0.020424624999999974,
+     "audit_seconds": 0.05469558299999999,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -9.761263742509552e-20,
+     "multiplier_imag": -6.33178471195048e-21,
+     "galerkin_residual_abs": 1.2452999235527716e-18,
+     "galerkin_residual_rel": 1.4093339027844442e-15,
+     "projected_residual_abs": 1.2491357884886896e-18,
+     "projected_residual_rel": 1.4032485896289296e-15,
+     "physical_residual_abs": 1.72244574659617e-18,
+     "physical_residual_rel": 1.9349534189135194e-15,
+     "orthogonal_residual_abs": 1.185950729113134e-18,
+     "generator_norm": 0.000890174269705845,
+     "root_hermiticity_defect": 5.047324355932848e-16,
+     "generator_hermiticity_defect": 6.8233571174681265e-19,
+     "hermiticity_defect_before": 1.601073459309453e-16,
+     "hermiticity_defect": 6.37401509740685e-17,
+     "adjoint_tangent_leakage": 3.7269058770551714e-16,
+     "normalization_velocity_defect": 1.208936086967782e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 5.047324355932848e-16,
+     "trace_defect": 1.7763568394002505e-15,
+     "norm_defect": 2.220446049250313e-16,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.008383683600440901,
+     "lower_bound": 0.0023376079458685387,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 8.289892612102395e-16,
+     "svd_discard_norm": 3.916115818322938e-15,
+     "discarded_weight": 1.5335963102519134e-29,
+     "norm_before": 1.0000351443104314,
+     "normalization_move": 3.514431043138977e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 8.220065550926822e-16,
+     "svd_discard_norm": 3.6094288353552345e-15,
+     "discarded_weight": 1.3027976517493845e-29,
+     "norm_before": 0.9999910868297157,
+     "normalization_move": 8.913170284285954e-06,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 4.619712401949511e-16,
+    "trace_defect": 3.1086244689504383e-15,
+    "norm_defect": 0.0,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.015626125649696978,
+    "lower_bound": 0.0023523462770088216,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.625,
+   "time": 0.75,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.07101127570229139,
+      2.42439642176324e-16
+     ],
+     "condition_estimate": 1.2977392475772709,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.500000000349445e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0023523462770088216,
+     "effective_lower_bound": 0.0023523462770088216,
+     "setup_seconds": 0.008644792000000123,
+     "solve_seconds": 0.01946629199999994,
+     "audit_seconds": 0.05420283299999995,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -2.2297058662149526e-20,
+     "multiplier_imag": 1.0509631762366091e-21,
+     "galerkin_residual_abs": 2.1027981791700465e-18,
+     "galerkin_residual_rel": 2.524453010787511e-15,
+     "projected_residual_abs": 2.1029166520976155e-18,
+     "projected_residual_rel": 2.508118706383296e-15,
+     "physical_residual_abs": 2.4595034005059134e-18,
+     "physical_residual_rel": 2.9334146367945852e-15,
+     "orthogonal_residual_abs": 1.2754993263152691e-18,
+     "generator_norm": 0.0008384438291320021,
+     "root_hermiticity_defect": 4.619712401949511e-16,
+     "generator_hermiticity_defect": 7.311197950430983e-19,
+     "hermiticity_defect_before": 2.1691826533837274e-16,
+     "hermiticity_defect": 2.0595551112587031e-16,
+     "adjoint_tangent_leakage": 1.4564377943864685e-16,
+     "normalization_velocity_defect": 3.0137134663898406e-20,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.0661908341730696,
+      2.2852300408193927e-16
+     ],
+     "condition_estimate": 1.2916319327602237,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 1.6599999996813608e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002366673490777904,
+     "effective_lower_bound": 0.002366673490777904,
+     "setup_seconds": 0.008548,
+     "solve_seconds": 0.019491541000000057,
+     "audit_seconds": 0.05265266699999982,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 2.086177708872026e-19,
+     "multiplier_imag": 9.745861580920604e-21,
+     "galerkin_residual_abs": 6.34001013633593e-19,
+     "galerkin_residual_rel": 8.11317080297196e-16,
+     "projected_residual_abs": 6.675130271660046e-19,
+     "projected_residual_rel": 8.493151394384596e-16,
+     "physical_residual_abs": 1.269411287160112e-18,
+     "physical_residual_rel": 1.6151448443432746e-15,
+     "orthogonal_residual_abs": 1.0797367153770267e-18,
+     "generator_norm": 0.0007859426921405681,
+     "root_hermiticity_defect": 4.388898386981963e-16,
+     "generator_hermiticity_defect": 1.1521216879761168e-18,
+     "hermiticity_defect_before": 1.1505729759620162e-16,
+     "hermiticity_defect": 1.132502010425604e-16,
+     "adjoint_tangent_leakage": 1.3491755254793812e-16,
+     "normalization_velocity_defect": 4.702834986035383e-20,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 4.388898386981963e-16,
+     "trace_defect": 1.6653345369377348e-15,
+     "norm_defect": 0.0,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.007324524366032399,
+     "lower_bound": 0.002366673490777904,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 4.584392335534941e-16,
+     "svd_discard_norm": 3.3764674828148303e-15,
+     "discarded_weight": 1.1400532662505916e-29,
+     "norm_before": 1.0000268250481548,
+     "normalization_move": 2.682504815476605e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 4.481423119473484e-16,
+     "svd_discard_norm": 4.717569518782956e-15,
+     "discarded_weight": 2.2255462164550054e-29,
+     "norm_before": 0.9999933183057491,
+     "normalization_move": 6.681694250887382e-06,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 2.0922445455926706e-15,
+    "trace_defect": 3.1086244689504383e-15,
+    "norm_defect": 2.220446049250313e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.01367128117167992,
+    "lower_bound": 0.002378196465972533,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.75,
+   "time": 0.875,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.06206375364308196,
+      2.5012727961036087e-16
+     ],
+     "condition_estimate": 1.2867862387008289,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 3.3299999979696793e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002378196465972533,
+     "effective_lower_bound": 0.002378196465972533,
+     "setup_seconds": 0.009489332999999878,
+     "solve_seconds": 0.02126483400000012,
+     "audit_seconds": 0.053927499999999906,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -6.940760776206096e-20,
+     "multiplier_imag": -2.1617796721415823e-20,
+     "galerkin_residual_abs": 5.660284016897479e-19,
+     "galerkin_residual_rel": 7.685600170961431e-16,
+     "projected_residual_abs": 5.706775768065459e-19,
+     "projected_residual_rel": 7.709484121664318e-16,
+     "physical_residual_abs": 1.750600310648426e-18,
+     "physical_residual_rel": 2.36494753725005e-15,
+     "orthogonal_residual_abs": 1.6549708610645008e-18,
+     "generator_norm": 0.0007402279683058068,
+     "root_hermiticity_defect": 2.0922445455926706e-15,
+     "generator_hermiticity_defect": 9.669355674074543e-19,
+     "hermiticity_defect_before": 2.250045508427387e-16,
+     "hermiticity_defect": 7.9606859251599e-17,
+     "adjoint_tangent_leakage": 1.72918814113369e-16,
+     "normalization_velocity_defect": 7.583612763969873e-20,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.05792709511073342,
+      1.8247570897917202e-16
+     ],
+     "condition_estimate": 1.2821404104414962,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 3.340000001017529e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0023893765486875493,
+     "effective_lower_bound": 0.0023893765486875493,
+     "setup_seconds": 0.008788790999999962,
+     "solve_seconds": 0.020098583999999864,
+     "audit_seconds": 0.0544905830000002,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": -1.0267083121485952e-19,
+     "multiplier_imag": -7.80591251656579e-21,
+     "galerkin_residual_abs": 1.0716130339905068e-18,
+     "galerkin_residual_rel": 1.55123042823582e-15,
+     "projected_residual_abs": 1.0765485249030373e-18,
+     "projected_residual_rel": 1.5514527288157333e-15,
+     "physical_residual_abs": 1.4117103029734638e-18,
+     "physical_residual_rel": 2.034466399963472e-15,
+     "orthogonal_residual_abs": 9.132191703257886e-19,
+     "generator_norm": 0.0006938970842668183,
+     "root_hermiticity_defect": 1.8158902155439708e-16,
+     "generator_hermiticity_defect": 1.9728122248125355e-18,
+     "hermiticity_defect_before": 1.5099335267192324e-16,
+     "hermiticity_defect": 1.667134275875158e-16,
+     "adjoint_tangent_leakage": 1.380866356241148e-16,
+     "normalization_velocity_defect": 4.9985605522945876e-20,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 1.8158902155439708e-16,
+     "trace_defect": 1.9984014443252818e-15,
+     "norm_defect": 4.440892098500626e-16,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.00641490551543482,
+     "lower_bound": 0.0023893765486875493,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 2.065676809888111e-15,
+     "svd_discard_norm": 4.158223674031677e-15,
+     "discarded_weight": 1.72908241232775e-29,
+     "norm_before": 1.0000205759297427,
+     "normalization_move": 2.05759297426944e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 2.1234496115696347e-15,
+     "svd_discard_norm": 5.636243500535858e-15,
+     "discarded_weight": 3.17672407973327e-29,
+     "norm_before": 0.9999949451059523,
+     "normalization_move": 5.054894047673564e-06,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 2.7469395139857577e-15,
+    "trace_defect": 2.9976021664879227e-15,
+    "norm_defect": 0.0,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.011986163954716333,
+    "lower_bound": 0.002398381886070222,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  },
+  {
+   "kind": "midpoint",
+   "from_time": 0.875,
+   "time": 1.0,
+   "clock_step": 0.125,
+   "halving_depth": 0,
+   "solves": [
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.05436791857944508,
+      4.119885550303575e-16
+     ],
+     "condition_estimate": 1.2784376879228563,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.500000000349445e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.002398381886070222,
+     "effective_lower_bound": 0.002398381886070222,
+     "setup_seconds": 0.00860358299999997,
+     "solve_seconds": 0.019218959000000035,
+     "audit_seconds": 0.0522050409999999,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 1.22206760173908e-19,
+     "multiplier_imag": 3.224654468694693e-22,
+     "galerkin_residual_abs": 8.26757835460083e-19,
+     "galerkin_residual_rel": 1.2701021473395154e-15,
+     "projected_residual_abs": 8.35741057212585e-19,
+     "projected_residual_rel": 1.2788518614177664e-15,
+     "physical_residual_abs": 3.935763155554155e-18,
+     "physical_residual_rel": 6.0225089986210935e-15,
+     "orthogonal_residual_abs": 3.846006825514847e-18,
+     "generator_norm": 0.0006535088874844824,
+     "root_hermiticity_defect": 2.7469395139857577e-15,
+     "generator_hermiticity_defect": 8.561405545968826e-19,
+     "hermiticity_defect_before": 1.4382130312867205e-16,
+     "hermiticity_defect": 8.917159017977856e-17,
+     "adjoint_tangent_leakage": 2.2684373283774554e-16,
+     "normalization_velocity_defect": 1.1622903130288376e-19,
+     "operator_audit": {}
+    },
+    {
+     "status": "success",
+     "constrained": true,
+     "mode": "two",
+     "dimension": 672,
+     "state_bonds": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 672,
+      "stored_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "active_ranks": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "block_shapes": [
+       [
+        2,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        6,
+        8
+       ],
+       [
+        8,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       16,
+       64,
+       112,
+       160,
+       208,
+       256,
+       304,
+       352,
+       400,
+       448,
+       496,
+       544,
+       592,
+       640,
+       672
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0
+     },
+     "work_bond": 16,
+     "coefficient_hermitian_construction": "adjoint_fixed_cores",
+     "iterations": 2,
+     "history": [
+      1.0,
+      0.05079540645769262,
+      3.693922591894785e-16
+     ],
+     "condition_estimate": 1.2748837273132152,
+     "preconditioner": "none",
+     "preconditioner_setup_seconds": 2.0799999989051798e-07,
+     "preconditioner_local_density_floor": null,
+     "spectral_lower_bound": 0.0024071060948264067,
+     "effective_lower_bound": 0.0024071060948264067,
+     "setup_seconds": 0.00846575000000005,
+     "solve_seconds": 0.019568499999999878,
+     "audit_seconds": 0.05246420799999996,
+     "max_elements": 2000000,
+     "peak_product_bond": 20,
+     "peak_product_core_elements": 1600,
+     "matvec_count": 2,
+     "coefficient_bond": 2,
+     "rhs_work_bond": 2,
+     "generator_bond": 2,
+     "coefficient_discard": 0.0,
+     "rhs_discard": 0.0,
+     "compression_discard_bound": 0.0,
+     "generator_diagnostics": {},
+     "warm_start": false,
+     "multiplier_real": 1.2783398993730848e-20,
+     "multiplier_imag": -1.3323806057630575e-21,
+     "galerkin_residual_abs": 8.392662741313734e-19,
+     "galerkin_residual_rel": 1.3747092503157612e-15,
+     "projected_residual_abs": 8.393646820198412e-19,
+     "projected_residual_rel": 1.370124475111001e-15,
+     "physical_residual_abs": 1.0760765513874464e-18,
+     "physical_residual_rel": 1.7565175801787295e-15,
+     "orthogonal_residual_abs": 6.733555338924829e-19,
+     "generator_norm": 0.0006126192891721319,
+     "root_hermiticity_defect": 6.083169474128653e-16,
+     "generator_hermiticity_defect": 1.0990044534855644e-18,
+     "hermiticity_defect_before": 7.148665575535543e-17,
+     "hermiticity_defect": 5.630028431045245e-17,
+     "adjoint_tangent_leakage": 1.7741631128021683e-16,
+     "normalization_velocity_defect": 1.0415979812532022e-19,
+     "operator_audit": {}
+    }
+   ],
+   "stages": [
+    {
+     "root_bond": 2,
+     "hermiticity_defect": 6.083169474128653e-16,
+     "trace_defect": 1.6653345369377348e-15,
+     "norm_defect": 2.220446049250313e-16,
+     "min_eigenvalue": null,
+     "negative_part": null,
+     "polar_defect": null,
+     "anchor_distance": 0.005628646721442219,
+     "lower_bound": 0.0024071060948264067,
+     "floor_source": "structural_stage_bound"
+    }
+   ],
+   "retractions": [
+    {
+     "input_skew_removed": 2.803013394599729e-15,
+     "svd_discard_norm": 2.7145604133970544e-15,
+     "discarded_weight": 7.368838237982386e-30,
+     "norm_before": 1.00001584108289,
+     "normalization_move": 1.584108289010011e-05,
+     "polar_correction": 0.0
+    },
+    {
+     "input_skew_removed": 2.7702405319363626e-15,
+     "svd_discard_norm": 3.8329441205759824e-15,
+     "discarded_weight": 1.4691460631457992e-29,
+     "norm_before": 0.9999961493758291,
+     "normalization_move": 3.850624170853578e-06,
+     "polar_correction": 0.0
+    }
+   ],
+   "endpoint": {
+    "root_bond": 2,
+    "hermiticity_defect": 8.215594718451076e-16,
+    "trace_defect": 2.886579864025407e-15,
+    "norm_defect": 4.440892098500626e-16,
+    "min_eigenvalue": null,
+    "negative_part": null,
+    "polar_defect": null,
+    "anchor_distance": 0.010525488362463621,
+    "lower_bound": 0.002414140841871123,
+    "floor_source": "structural_stage_bound"
+   },
+   "accepted": true
+  }
+ ],
+ "clock": "physical",
+ "constrained": true,
+ "warm_start": false,
+ "force_seconds": 1.3200797509999997,
+ "retraction_seconds": 0.12526541599999996,
+ "audit_seconds": 0.07790799899999978,
+ "witness_seconds": 0.0,
+ "seed_seconds": 0.0,
+ "normalization_retraction": true,
+ "input": {
+  "root_bond": 2,
+  "hermiticity_defect": 1.481121714754114e-15,
+  "trace_defect": 3.3306690738754696e-16,
+  "norm_defect": 0.0,
+  "min_eigenvalue": null,
+  "negative_part": null,
+  "polar_defect": null,
+  "anchor_distance": 0.0,
+  "lower_bound": 0.0020628911239402572,
+  "floor_source": "weyl_frobenius"
+ },
+ "initial_representation_error": 8.129592250514727e-16,
+ "initial": {
+  "root_bond": 2,
+  "hermiticity_defect": 4.139435769135744e-15,
+  "trace_defect": 2.7755575615628914e-15,
+  "norm_defect": 4.440892098500626e-16,
+  "min_eigenvalue": null,
+  "negative_part": null,
+  "polar_defect": null,
+  "anchor_distance": 8.129592250514727e-16,
+  "lower_bound": 0.002062891123939444,
+  "floor_source": "weyl_frobenius"
+ },
+ "initial_retraction": {
+  "input_skew_removed": 1.482038869069842e-15,
+  "svd_discard_norm": 2.975050545247557e-15,
+  "discarded_weight": 8.850925746777787e-30,
+  "norm_before": 0.9999999999999977,
+  "normalization_move": 2.3314683517128287e-15,
+  "polar_correction": 0.0
+ },
+ "initial_accepted": true,
+ "integration_seconds": 1.5308490829999999
+}

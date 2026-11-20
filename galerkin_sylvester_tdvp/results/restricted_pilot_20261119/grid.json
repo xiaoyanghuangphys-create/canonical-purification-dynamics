@@ -1,0 +1,58 @@
+[
+ {
+  "family": "loss_mixed",
+  "n": 4,
+  "method": "A_shared_one",
+  "steps": 2,
+  "chi": 2,
+  "work": 32,
+  "total": 0.03,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "atol": 5e-14,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ },
+ {
+  "family": "loss_mixed",
+  "n": 4,
+  "method": "A_shared_two",
+  "steps": 2,
+  "chi": 2,
+  "work": 32,
+  "total": 0.03,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "atol": 5e-14,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ },
+ {
+  "family": "loss_mixed",
+  "n": 4,
+  "method": "B_one",
+  "steps": 2,
+  "chi": 2,
+  "work": 32,
+  "total": 0.03,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "atol": 5e-14,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ },
+ {
+  "family": "loss_mixed",
+  "n": 4,
+  "method": "B_two",
+  "steps": 2,
+  "chi": 2,
+  "work": 32,
+  "total": 0.03,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "atol": 5e-14,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ }
+]

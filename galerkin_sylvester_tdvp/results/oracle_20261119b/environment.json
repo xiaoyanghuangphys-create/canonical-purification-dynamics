@@ -1,0 +1,38 @@
+{
+  "seed": 819,
+  "populations": [
+    0.25,
+    0.05,
+    0.005,
+    0.0005
+  ],
+  "n": 3,
+  "options": {
+    "rtol": 1e-10,
+    "atol": 1e-14,
+    "maxiter": 160,
+    "max_elements": 200000
+  },
+  "base_sha": "b337e8b7fb86fc3cccec64e13e2ddb35cc14c4e1",
+  "source_checkout_head": "0e0a94d77f34da437002211c4eff730c068b311a",
+  "source_sha256": {
+    "oracle_ablations.py": "fe5d45ee335873001d4607aa0dd90cebb47c4a746f1f3d43ec3d6fd6ea14cdab",
+    "galerkin_solver.py": "08a9b1d4db0fcfdcb535181ec6c3389bf797ecfab363b8a3251adc963108b7db",
+    "tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+    "models.py": "3945c2005f664a431d2ce8d43e7417602b1823d5950d7eb3376c882f4637930a"
+  },
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "python": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "cpu": "arm",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "max_wall_seconds": 60,
+  "rss_limit_mib": 512,
+  "rss_sampling_interval_seconds": 0.05
+}

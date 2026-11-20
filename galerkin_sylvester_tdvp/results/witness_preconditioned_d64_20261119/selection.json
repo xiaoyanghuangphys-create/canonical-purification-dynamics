@@ -1,0 +1,7 @@
+{
+ "D64_s2_tol1e-07": {
+  "A": "D64_A_s2_tol1e-07",
+  "B_pre": "D64_B_s2_tol1e-07_preparation_r0.00031622777",
+  "B_none": "D64_B_s2_tol1e-07_none_r0.00031622777"
+ }
+}

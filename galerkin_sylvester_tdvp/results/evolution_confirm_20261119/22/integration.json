@@ -1,0 +1,93 @@
+{
+ "status": "success",
+ "accepted_steps": 1,
+ "rejected_steps": 0,
+ "final_time": 1e-18,
+ "history": [
+  {
+   "kind": "seed",
+   "accepted": true,
+   "time": 1e-18,
+   "initial_support": {
+    "kernel_dimension": 1,
+    "kernel_forcing": 1.0
+   },
+   "seed_retraction": {
+    "input_skew_removed": 0.0,
+    "svd_discard_norm": 2.2370792784809037e-16,
+    "discarded_weight": 5.00452369820864e-32,
+    "norm_before": 0.9999999999999998,
+    "normalization_move": 2.220446049250313e-16,
+    "polar_correction": 0.0
+   },
+   "endpoint": {
+    "root_bond": 1,
+    "hermiticity_defect": 0.0,
+    "trace_defect": 0.0,
+    "norm_defect": 0.0,
+    "min_eigenvalue": 1.00000002722922e-09,
+    "negative_part": 0.0,
+    "polar_defect": 0.0,
+    "max_eigenvalue": 1.0,
+    "support_resolution": 3.552713678800501e-15,
+    "numerical_support": 2,
+    "lower_bound": 9.999964745155412e-10,
+    "floor_source": "dense_stage_spectrum"
+   },
+   "seed_backend": "dense_kraus_factor_svd",
+   "seed_substeps": 1,
+   "seed_raw_min_eigenvalue": 1e-09,
+   "seed_raw_norm": 1.0
+  }
+ ],
+ "clock": "sqrt",
+ "constrained": true,
+ "warm_start": false,
+ "force_seconds": 0.0,
+ "retraction_seconds": 0.00041924999999998214,
+ "audit_seconds": 0.007983709000000005,
+ "witness_seconds": 0.0,
+ "seed_seconds": 0.19522108400000004,
+ "normalization_retraction": true,
+ "input": {
+  "root_bond": 1,
+  "hermiticity_defect": 0.0,
+  "trace_defect": 0.0,
+  "norm_defect": 0.0,
+  "min_eigenvalue": 0.0,
+  "negative_part": 0.0,
+  "polar_defect": 0.0,
+  "max_eigenvalue": 1.0,
+  "support_resolution": 3.552713678800501e-15,
+  "numerical_support": 1,
+  "lower_bound": -3.552713678800501e-15,
+  "floor_source": "dense_stage_spectrum"
+ },
+ "initial_representation_error": 0.0,
+ "initial": {
+  "root_bond": 1,
+  "hermiticity_defect": 0.0,
+  "trace_defect": 0.0,
+  "norm_defect": 0.0,
+  "min_eigenvalue": 0.0,
+  "negative_part": 0.0,
+  "polar_defect": 0.0,
+  "max_eigenvalue": 1.0,
+  "support_resolution": 3.552713678800501e-15,
+  "numerical_support": 1,
+  "lower_bound": -3.552713678800501e-15,
+  "floor_source": "dense_stage_spectrum",
+  "kernel_dimension": 1,
+  "kernel_forcing": 1.0
+ },
+ "initial_retraction": {
+  "input_skew_removed": 0.0,
+  "svd_discard_norm": 2.220446049250313e-16,
+  "discarded_weight": 4.930380657631324e-32,
+  "norm_before": 0.9999999999999998,
+  "normalization_move": 2.220446049250313e-16,
+  "polar_correction": 0.0
+ },
+ "initial_accepted": true,
+ "integration_seconds": 0.20398333300000004
+}

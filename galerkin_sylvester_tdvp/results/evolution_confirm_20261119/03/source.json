@@ -1,0 +1,11 @@
+{
+ "source_sha": "0e0a94d77f34da437002211c4eff730c068b311a",
+ "source_files_sha256": {
+  "evolution_ablation.py": "40d4b17d79d4b213bd1616a5d6b9308603bca2978840cc670c1c3b3cd5531379",
+  "evolution.py": "0afc5a7705b68908e21e3e1bce3a37f40d38c0c708f947211ed83e43cd8bde5d",
+  "models.py": "3945c2005f664a431d2ce8d43e7417602b1823d5950d7eb3376c882f4637930a",
+  "tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+  "galerkin_solver.py": "08a9b1d4db0fcfdcb535181ec6c3389bf797ecfab363b8a3251adc963108b7db",
+  "benchmarks.py": "f4a29de400b6c64c0b9f251482d16ccdfc9a8080b69bf1c562d38f41b08890ac"
+ }
+}

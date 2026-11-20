@@ -1,0 +1,30 @@
+{
+ "source_sha": "0e0a94d77f34da437002211c4eff730c068b311a",
+ "source_files_sha256": {
+  "benchmarks.py": "f4a29de400b6c64c0b9f251482d16ccdfc9a8080b69bf1c562d38f41b08890ac",
+  "models.py": "3945c2005f664a431d2ce8d43e7417602b1823d5950d7eb3376c882f4637930a",
+  "galerkin_solver.py": "08a9b1d4db0fcfdcb535181ec6c3389bf797ecfab363b8a3251adc963108b7db",
+  "tangent_frame.py": "88f64f2504bc10bbb70e40d93eda81fd7425375229939e50caec598009a47957",
+  "evolution.py": "0afc5a7705b68908e21e3e1bce3a37f40d38c0c708f947211ed83e43cd8bde5d",
+  "restricted_comparison": "2550ce04a0b6cf52c9592071b92f2e19f1a5625297a97568eff0e14ef6f00f9d"
+ },
+ "base_sha": "b337e8b7fb86fc3cccec64e13e2ddb35cc14c4e1",
+ "command": [
+  "/Users/xiaoyanghuang/Documents/ChatGPT/Tensor Network study/canonical-purification-dynamics/galerkin_sylvester_tdvp/restricted_comparison.py",
+  "--out",
+  "galerkin_sylvester_tdvp/results/restricted_pilot_20261119",
+  "--smoke"
+ ],
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "threads_requested": 1,
+ "serial": true,
+ "memory_mib": 768.0,
+ "wall_seconds_per_case": 35.0,
+ "total_budget_s": 900.0,
+ "resource_semantics": "parent wall timeout; child peak RSS watchdog sampled at 40 ms",
+ "endpoints": "matched physical times and independent Lindblad expm scoring",
+ "target_rule": "all 3 repeats must finish and attain measured global CP accuracy; fastest median worker time"
+}

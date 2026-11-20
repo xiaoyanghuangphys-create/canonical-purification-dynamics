@@ -1,0 +1,41 @@
+[
+ {
+  "family": "D",
+  "n": 2,
+  "method": "A_dense_one",
+  "steps": 2,
+  "chi": 4,
+  "work": 16,
+  "total": 0.1,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ },
+ {
+  "family": "D",
+  "n": 2,
+  "method": "B_one",
+  "steps": 2,
+  "chi": 4,
+  "work": 16,
+  "total": 0.1,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ },
+ {
+  "family": "D",
+  "n": 2,
+  "method": "B_two",
+  "steps": 2,
+  "chi": 4,
+  "work": 16,
+  "total": 0.1,
+  "repeats": 1,
+  "rtol": 1e-09,
+  "cert_tol": 1e-05,
+  "maxiter": 80
+ }
+]
