@@ -49,7 +49,7 @@ def suffix_factors(canonical_root):
     return factors
 
 
-def _zip_product(a, b, bounds, budget, max_elements, max_rank=192):
+def _zip_product(a, b, bounds, budget, max_elements, max_rank=192, allow_wider=False):
     """Absolute allowance by left Schmidt discards times upper bounds for suffix maps."""
     carry = np.ones((1,1,1),complex)
     cores, radius = [], 0.
@@ -70,12 +70,19 @@ def _zip_product(a, b, bounds, budget, max_elements, max_rank=192):
             break
         u,s,vh = np.linalg.svd(panel,full_matrices=False)
         tails = np.sqrt(np.cumsum(s[::-1]**2))
-        threshold = (budget-radius)/((a.n-1-j)*bounds[j+1])
-        rank = max(1,len(s)-np.searchsorted(tails,threshold,side='right'))
+        remaining = budget-radius
+        rank = len(s)
+        if remaining > 0:
+            threshold = remaining/((a.n-1-j)*bounds[j+1])
+            rank = max(1,len(s)-np.searchsorted(tails,threshold,side='right'))
         if rank > max_rank:
-            raise gs.GalerkinError('memory_budget','Suffix-audit product rank exceeds cap',
-                                   required_rank=rank,max_rank=max_rank,site=j,
-                                   suffix_bound=bounds[j+1],absolute_budget=budget)
+            if not allow_wider:
+                raise gs.GalerkinError('memory_budget','Suffix-audit product rank exceeds cap',
+                                       required_rank=rank,max_rank=max_rank,site=j,
+                                       suffix_bound=bounds[j+1],absolute_budget=budget)
+            # Preserve every allowed direction after exhausting the target
+            # width. The cumulative radius always charges the actual tail.
+            rank = max_rank
         radius += np.linalg.norm(s[rank:])*bounds[j+1]
         cores.append(u[:,:rank].reshape(kept,4,rank))
         carry = (s[:rank,None]*vh[:rank]).reshape(rank,ar,br)
@@ -84,7 +91,7 @@ def _zip_product(a, b, bounds, budget, max_elements, max_rank=192):
     return out,radius
 
 
-def suffix_products(root, velocity, budget, max_elements, max_rank=192):
+def suffix_products(root, velocity, budget, max_elements, max_rank=192, allow_wider=False):
     """Approximate both ordered products, charging both truncation and skew."""
     x = base._canonical_right(root)
     v = base._canonical_right(velocity)
@@ -99,14 +106,14 @@ def suffix_products(root, velocity, budget, max_elements, max_rank=192):
     v_skew = tn.distance(velocity,mpo.adjoint(velocity))
     skew_allowance = v_skew*factors[0,0]+tn.norm(velocity)*x_skew
     if skew_allowance <= .05*budget:
-        left,err = _zip_product(x,v,suffix[:,0],(budget-skew_allowance)/2,max_elements,max_rank)
+        left,err = _zip_product(x,v,suffix[:,0],(budget-skew_allowance)/2,max_elements,max_rank,allow_wider)
         return left,mpo.adjoint(left),2*err+skew_allowance,'suffix_fourth_moment_adjoint_qr'
-    left,err_l = _zip_product(x,v,suffix[:,0],budget/2,max_elements,max_rank)
-    right,err_r = _zip_product(v,x,suffix[:,1],budget/2,max_elements,max_rank)
+    left,err_l = _zip_product(x,v,suffix[:,0],budget/2,max_elements,max_rank,allow_wider)
+    right,err_r = _zip_product(v,x,suffix[:,1],budget/2,max_elements,max_rank,allow_wider)
     return left,right,err_l+err_r,'suffix_fourth_moment_qr'
 
 
-def refined_audit_norms(root, velocity, g, projected, frame, g_norm, rtol, max_elements, *, max_rank=192, diagnostic_relative_width=1e-6):
+def refined_audit_norms(root, velocity, g, projected, frame, g_norm, rtol, max_elements, *, max_rank=192, diagnostic_relative_width=1e-6, allow_wider=False):
     """Use baseline exact QR at small bonds, tighten the high-bond audit."""
     projected_state = frame.decode(projected)
     previous = 1
@@ -120,7 +127,7 @@ def refined_audit_norms(root, velocity, g, projected, frame, g_norm, rtol, max_e
     else:
         return base_audit_norms(root,velocity,g,projected,frame,g_norm,rtol,max_elements)
     budget = max(1e-12,min(rtol*.01,diagnostic_relative_width))*g_norm
-    left,right,radius,method = suffix_products(root,velocity,budget,max_elements,max_rank=max_rank)
+    left,right,radius,method = suffix_products(root,velocity,budget,max_elements,max_rank=max_rank,allow_wider=allow_wider)
     physical,outside = _sum_norms([(1.,left),(1.,right),(-1.,g),(-1.,projected_state)],
                                    root.n,[range(3),range(4)])
     return physical,outside,radius,method
@@ -128,3 +135,24 @@ def refined_audit_norms(root, velocity, g, projected, frame, g_norm, rtol, max_e
 
 # Retain the unpatched implementation for workers injecting this callback.
 base_audit_norms = base._audit_norms
+
+def record_interval_quality(diag, rtol, diagnostic_relative_width):
+    """Expose actual relative half-width and tighten using the unrounded projection."""
+    requested = max(1e-12,min(.01*rtol,diagnostic_relative_width))
+    radius = diag['residual_norm_radius']
+    norm = diag['generator_norm']
+    relative = radius/norm if norm>0 else (0. if radius==0 else None)
+    diag.update(residual_relative_radius=relative,requested_relative_radius=requested,
+                width_met=relative is not None and relative<=requested)
+    # B is Frobenius-isometric. Its complete (pre-normalization) projection
+    # has norm no larger than the full physical residual. At roundoff, a
+    # separately contracted projection can marginally exceed a zero-radius
+    # QR estimate; keep that audit's original interval and expose the gap.
+    lower, upper = diag['physical_residual_interval']
+    projected = diag['projected_residual_abs']
+    usable = projected<=upper
+    diag.update(projection_lower_bound_compatible=usable,
+                projection_bound_excess=max(0.,projected-upper))
+    if usable:
+        diag['physical_residual_interval']=[max(lower,projected),upper]
+    return diag

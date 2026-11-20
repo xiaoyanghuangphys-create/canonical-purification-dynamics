@@ -31,9 +31,24 @@ def source_hashes():
 
 def worker(cfg, folder):
     audit = partial(suffix.refined_audit_norms, max_rank=cfg['audit_rank_cap'],
-                    diagnostic_relative_width=cfg['diagnostic_relative_width'])
-    with patch.object(solver,'_audit_norms',audit):
-        return primary.worker(cfg,folder)
+                    diagnostic_relative_width=cfg['diagnostic_relative_width'],
+                    allow_wider=cfg['allow_wider_diagnostic'])
+    native_solve = solver.solve_velocity
+    qualities=[]
+    def report_interval(*args, **kwargs):
+        velocity,diag = native_solve(*args,**kwargs)
+        suffix.record_interval_quality(diag,cfg['rtol'],cfg['diagnostic_relative_width'])
+        qualities.append((diag['residual_relative_radius'],diag['width_met']))
+        return velocity,diag
+    with patch.object(solver,'_audit_norms',audit), patch.object(solver,'solve_velocity',report_interval):
+        row=primary.worker(cfg,folder)
+    radii = [radius for radius,_ in qualities if radius is not None]
+    row.update(max_rel_radius=max(radii,default=None),
+               width_met=all(met for _,met in qualities) if qualities else None,
+               diagnostic_wide_stages=sum(not met for _,met in qualities),
+               diagnostic_stages=len(qualities))
+    bm.save(Path(folder)/'measurement.json',row)
+    return row
 
 
 def run(args):
@@ -46,6 +61,7 @@ def run(args):
                   tolerances={str(TARGET): primary.candidates(TARGET)},one_step_all=False,
                   one_step_fallback=False,timeout=args.timeout,memory_mib=args.memory_mib,
                   audit_rank_cap=args.audit_rank_cap,diagnostic_relative_width=args.diagnostic_relative_width,
+                  allow_wider_diagnostic=args.allow_wider_diagnostic,
                   diagnostic_radius_rule='max(1e-12,min(0.01*rtol,diagnostic_relative_width))*generator_norm')
     env_path=out/'environment.json'
     if env_path.exists():
@@ -71,7 +87,8 @@ def run(args):
         c=supplement.configuration('D',SIZE,method,STEPS,TARGET,args)
         c.update(preconditioner=variant,variant='prepared_congruence_suffix_study',rtol=rtol,
                  source_sha=env['source_sha'],source_files_sha256=hashes,base_sha=env['base_sha'],
-                 audit_rank_cap=args.audit_rank_cap,diagnostic_relative_width=args.diagnostic_relative_width)
+                 audit_rank_cap=args.audit_rank_cap,diagnostic_relative_width=args.diagnostic_relative_width,
+                 allow_wider_diagnostic=args.allow_wider_diagnostic)
         if method=='B':
             c['config_id']+=f'_{variant}_r{rtol:.8g}'
         return c
@@ -125,6 +142,8 @@ def main():
     ap.add_argument('--audit-rank-cap',type=int,default=384)
     ap.add_argument('--diagnostic-relative-width',type=float,default=1e-6,
                     help='Cap on diagnostic half-width relative to generator norm.')
+    ap.add_argument('--allow-wider-diagnostic',action='store_true',
+                    help='If the audit rank cap is reached, keep the true tail allowance even if the width target is missed.')
     ap.add_argument('--resume',action='store_true')
     args=ap.parse_args()
     args.extended_witness,args.residual_bond=True,24
