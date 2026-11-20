@@ -4,6 +4,9 @@ Run directories are immutable. Each main driver refuses an existing destination.
 
 | Data | Scope |
 |---|---|
+| [witness_preconditioned_20261119](witness_preconditioned_20261119) | Positive-witness A versus preparation-preconditioned B at matched endpoint accuracy, with same-tolerance unpreconditioned controls. [Results and reproduction](../witness_preconditioned_report.md) |
+| [witness_preconditioned_d64_20261119](witness_preconditioned_d64_20261119) | Fixed two-interval correlated 64-spin comparison at $10^{-7}$ with explicitly bounded high-bond force diagnostics. |
+| [witness_preconditioned_pairs_20261119](witness_preconditioned_pairs_20261119) | Six order-balanced, adjacent 64-spin pairs at the frozen one-interval setting from the main study. |
 | [witness_pair_20261119](witness_pair_20261119) | Two-site A and B with a shared positive endpoint witness, correlated and parity chains at 8, 16, 32 and 64 spins. [Study and reproduction commands](../witness_pair_report.md) |
 | [witness_pair_streamed_20261119](witness_pair_streamed_20261119) | Fresh paired runs with one and two midpoint intervals, streamed Galerkin contractions, a stronger stage-positivity check and additional witness levels at the tight D target. |
 | [witness_pair_two_step_20261119](witness_pair_two_step_20261119) | Repeated fixed two-interval comparison using the streamed B solver and identical endpoint grids for A and B at $10^{-5}$. |

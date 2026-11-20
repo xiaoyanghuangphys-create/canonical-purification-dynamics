@@ -4,6 +4,8 @@
 
 [Method A and Method B with the same positive witness at 8–64 spins](witness_pair_report.md)
 
+[Method B with A's preparation preconditioner and a tuned solve tolerance](witness_preconditioned_report.md)
+
 Method B advances a matrix-product operator for the positive root of a density matrix. Its force solves the Sylvester equation **inside** a one-site or two-site tangent space. The small-system dense oracle and the production MPO operator have separate entry points.
 
 ## Reproduce from the repository root
