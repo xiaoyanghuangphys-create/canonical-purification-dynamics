@@ -312,7 +312,7 @@ def plot_two_step(matched, path):
     families = sorted({r['family'] for r in matched})
     sizes = sorted({r['n'] for r in matched})
     fig, axes = plt.subplots(len(families),len(targets),squeeze=False,sharex=True,layout='constrained',
-                             figsize=(4.5*len(targets),3.0*len(families)+.35))
+                             figsize=(max(5.,4.5*len(targets)),3.0*len(families)+(.85 if len(targets)==1 else .35)))
     styles = [('A','A','o','#155789',.975),('B_pre','B, preparation PCG','s','#bc5919',1.),
               ('B_none','B, same-tolerance CG','D','#4f6a53',1.025)]
     legend = [Line2D([],[],marker=m,color=c,ls='none',label=l,markersize=6) for _,l,m,c,_ in styles]
@@ -341,7 +341,7 @@ def plot_two_step(matched, path):
             if j==0:
                 ax.set_ylabel('Production time (s)')
     fig.suptitle('Two midpoint intervals with a positive witness',fontsize=14)
-    fig.legend(handles=legend,loc='outside lower center',ncols=3,frameon=False)
+    fig.legend(handles=legend,loc='outside lower center',ncols=1 if len(targets)==1 else 3,frameon=False)
     fig.savefig(path,dpi=175)
     plt.close(fig)
 
