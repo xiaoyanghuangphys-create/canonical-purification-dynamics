@@ -1,0 +1,160 @@
+{
+ "D08_s2_tol1e-05": {
+  "A": "D08_A_s2_tol1e-05",
+  "B_pre": "D08_B_s2_tol1e-05_preparation_r0.1",
+  "B_none": "D08_B_s2_tol1e-05_none_r0.1"
+ },
+ "D08_s1_tol1e-05": {
+  "A": "D08_A_s1_tol1e-05",
+  "B_pre": "D08_B_s1_tol1e-05_preparation_r0.1",
+  "B_none": "D08_B_s1_tol1e-05_none_r0.1"
+ },
+ "E08_s2_tol1e-05": {
+  "A": "E08_A_s2_tol1e-05",
+  "B_pre": "E08_B_s2_tol1e-05_preparation_r1e-05",
+  "B_none": "E08_B_s2_tol1e-05_none_r1e-05"
+ },
+ "E08_s1_tol1e-05": {
+  "A": "E08_A_s1_tol1e-05",
+  "B_pre": "E08_B_s1_tol1e-05_preparation_r1e-09",
+  "B_none": "E08_B_s1_tol1e-05_none_r1e-09"
+ },
+ "D16_s2_tol1e-05": {
+  "A": "D16_A_s2_tol1e-05",
+  "B_pre": "D16_B_s2_tol1e-05_preparation_r0.01",
+  "B_none": "D16_B_s2_tol1e-05_none_r0.01"
+ },
+ "D16_s1_tol1e-05": {
+  "A": "D16_A_s1_tol1e-05",
+  "B_pre": "D16_B_s1_tol1e-05_preparation_r0.1",
+  "B_none": "D16_B_s1_tol1e-05_none_r0.1"
+ },
+ "E16_s2_tol1e-05": {
+  "A": "E16_A_s2_tol1e-05",
+  "B_pre": "E16_B_s2_tol1e-05_preparation_r0.1",
+  "B_none": "E16_B_s2_tol1e-05_none_r0.1"
+ },
+ "E16_s1_tol1e-05": {
+  "A": "E16_A_s1_tol1e-05",
+  "B_pre": "E16_B_s1_tol1e-05_preparation_r1e-09",
+  "B_none": "E16_B_s1_tol1e-05_none_r1e-09"
+ },
+ "D32_s2_tol1e-05": {
+  "A": "D32_A_s2_tol1e-05",
+  "B_pre": "D32_B_s2_tol1e-05_preparation_r1e-05",
+  "B_none": "D32_B_s2_tol1e-05_none_r1e-05"
+ },
+ "D32_s1_tol1e-05": {
+  "A": "D32_A_s1_tol1e-05",
+  "B_pre": "D32_B_s1_tol1e-05_preparation_r0.0031622777",
+  "B_none": "D32_B_s1_tol1e-05_none_r0.0031622777"
+ },
+ "E32_s2_tol1e-05": {
+  "A": "E32_A_s2_tol1e-05",
+  "B_pre": "E32_B_s2_tol1e-05_preparation_r0.1",
+  "B_none": "E32_B_s2_tol1e-05_none_r0.1"
+ },
+ "E32_s1_tol1e-05": {
+  "A": "E32_A_s1_tol1e-05",
+  "B_pre": "E32_B_s1_tol1e-05_preparation_r1e-05",
+  "B_none": "E32_B_s1_tol1e-05_none_r1e-05"
+ },
+ "D64_s2_tol1e-05": {
+  "A": "D64_A_s2_tol1e-05",
+  "B_pre": "D64_B_s2_tol1e-05_preparation_r0.01",
+  "B_none": "D64_B_s2_tol1e-05_none_r0.01"
+ },
+ "D64_s1_tol1e-05": {
+  "A": "D64_A_s1_tol1e-05",
+  "B_pre": "D64_B_s1_tol1e-05_preparation_r0.1",
+  "B_none": "D64_B_s1_tol1e-05_none_r0.1"
+ },
+ "E64_s2_tol1e-05": {
+  "A": "E64_A_s2_tol1e-05",
+  "B_pre": "E64_B_s2_tol1e-05_preparation_r0.1",
+  "B_none": "E64_B_s2_tol1e-05_none_r0.1"
+ },
+ "E64_s1_tol1e-05": {
+  "A": "E64_A_s1_tol1e-05",
+  "B_pre": "E64_B_s1_tol1e-05_preparation_r0.1",
+  "B_none": "E64_B_s1_tol1e-05_none_r0.1"
+ },
+ "D08_s2_tol1e-07": {
+  "A": "D08_A_s2_tol1e-07",
+  "B_pre": "D08_B_s2_tol1e-07_preparation_r0.00031622777",
+  "B_none": "D08_B_s2_tol1e-07_none_r0.00031622777"
+ },
+ "D08_s1_tol1e-07": {
+  "A": "D08_A_s1_tol1e-07",
+  "B_pre": "D08_B_s1_tol1e-07_preparation_r0.00031622777",
+  "B_none": "D08_B_s1_tol1e-07_none_r0.00031622777"
+ },
+ "E08_s2_tol1e-07": {
+  "A": "E08_A_s2_tol1e-07",
+  "B_pre": "E08_B_s2_tol1e-07_preparation_r1e-09",
+  "B_none": "E08_B_s2_tol1e-07_none_r1e-09"
+ },
+ "E08_s1_tol1e-07": {
+  "A": "E08_A_s1_tol1e-07",
+  "B_pre": "E08_B_s1_tol1e-07_preparation_r0.1",
+  "B_none": "E08_B_s1_tol1e-07_none_r0.1"
+ },
+ "D16_s2_tol1e-07": {
+  "A": "D16_A_s2_tol1e-07",
+  "B_pre": "D16_B_s2_tol1e-07_preparation_r0.1",
+  "B_none": "D16_B_s2_tol1e-07_none_r0.1"
+ },
+ "D16_s1_tol1e-07": {
+  "A": "D16_A_s1_tol1e-07",
+  "B_pre": "D16_B_s1_tol1e-07_preparation_r0.1",
+  "B_none": "D16_B_s1_tol1e-07_none_r0.1"
+ },
+ "E16_s2_tol1e-07": {
+  "A": "E16_A_s2_tol1e-07",
+  "B_pre": "E16_B_s2_tol1e-07_preparation_r1e-09",
+  "B_none": "E16_B_s2_tol1e-07_none_r1e-09"
+ },
+ "E16_s1_tol1e-07": {
+  "A": "E16_A_s1_tol1e-07",
+  "B_pre": "E16_B_s1_tol1e-07_preparation_r0.01",
+  "B_none": "E16_B_s1_tol1e-07_none_r0.01"
+ },
+ "D32_s2_tol1e-07": {
+  "A": "D32_A_s2_tol1e-07",
+  "B_pre": "D32_B_s2_tol1e-07_preparation_r0.00031622777",
+  "B_none": "D32_B_s2_tol1e-07_none_r0.00031622777"
+ },
+ "D32_s1_tol1e-07": {
+  "A": "D32_A_s1_tol1e-07",
+  "B_pre": "D32_B_s1_tol1e-07_preparation_r0.1",
+  "B_none": "D32_B_s1_tol1e-07_none_r0.1"
+ },
+ "E32_s2_tol1e-07": {
+  "A": "E32_A_s2_tol1e-07",
+  "B_pre": "E32_B_s2_tol1e-07_preparation_r1e-07",
+  "B_none": "E32_B_s2_tol1e-07_none_r1e-07"
+ },
+ "E32_s1_tol1e-07": {
+  "A": "E32_A_s1_tol1e-07",
+  "B_pre": "E32_B_s1_tol1e-07_preparation_r0.01",
+  "B_none": "E32_B_s1_tol1e-07_none_r0.01"
+ },
+ "D64_s2_tol1e-07": {
+  "A": "D64_A_s2_tol1e-07"
+ },
+ "D64_s1_tol1e-07": {
+  "A": "D64_A_s1_tol1e-07",
+  "B_pre": "D64_B_s1_tol1e-07_preparation_r0.1",
+  "B_none": "D64_B_s1_tol1e-07_none_r0.1"
+ },
+ "E64_s2_tol1e-07": {
+  "A": "E64_A_s2_tol1e-07",
+  "B_pre": "E64_B_s2_tol1e-07_preparation_r0.1",
+  "B_none": "E64_B_s2_tol1e-07_none_r0.1"
+ },
+ "E64_s1_tol1e-07": {
+  "A": "E64_A_s1_tol1e-07",
+  "B_pre": "E64_B_s1_tol1e-07_preparation_r0.01",
+  "B_none": "E64_B_s1_tol1e-07_none_r0.01"
+ }
+}
