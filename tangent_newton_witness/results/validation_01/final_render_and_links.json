@@ -1,0 +1,491 @@
+{
+  "tool": {
+    "library": "VS Code markdown-math / KaTeX",
+    "version": "0.16.21",
+    "bundle_sha256": "5afec7f3a69465b399df31c1fab6b0199a3e5ee1fde509780fae28270b65ed1b"
+  },
+  "scope": "Local KaTeX parsed every extracted dollar-delimited expression to MathML. Checked relative link targets on disk. GitHub uses MathJax; this is not a live GitHub visual inspection. Code blocks and inline code spans excluded.",
+  "files": [
+    {
+      "document": "tangent_newton_witness/report.md",
+      "sha256": "35db730ce5a22dd531aa67dec01a3d4347245eea89bd4e9f760d6f7fd1115164",
+      "inline_count": 130,
+      "display_count": 4,
+      "local_links": [
+        {
+          "line": 44,
+          "target": "tests/test_operator.py",
+          "exists": true
+        },
+        {
+          "line": 44,
+          "target": "tests/test_gn.py",
+          "exists": true
+        },
+        {
+          "line": 75,
+          "target": "figures/matched.csv",
+          "exists": true
+        },
+        {
+          "line": 75,
+          "target": "results/paired_native_smoke/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 77,
+          "target": "figures/matched.png",
+          "exists": true
+        },
+        {
+          "line": 79,
+          "target": "results/paired_confirm1/r01_001_D8_A-new.zip",
+          "exists": true
+        },
+        {
+          "line": 79,
+          "target": "results/paired_tuned_confirm/r01_001_D8_A-new.zip",
+          "exists": true
+        },
+        {
+          "line": 81,
+          "target": "results/paired_screen1/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 81,
+          "target": "results/paired_screen2/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 81,
+          "target": "results/paired_tuned_d8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 83,
+          "target": "results/paired_tuned_confirm/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 83,
+          "target": "figures/frontier.csv",
+          "exists": true
+        },
+        {
+          "line": 85,
+          "target": "figures/frontier.png",
+          "exists": true
+        },
+        {
+          "line": 87,
+          "target": "results/paired_scale/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 87,
+          "target": "results/paired_scale_tight/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 87,
+          "target": "results/paired_lateD8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 89,
+          "target": "figures/scale.png",
+          "exists": true
+        },
+        {
+          "line": 104,
+          "target": "results/paired_late_serial/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 106,
+          "target": "results/paired_late_confirm/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 106,
+          "target": "results/paired_horizon/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 106,
+          "target": "results/paired_step_refine/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 106,
+          "target": "results/paired_late8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 108,
+          "target": "figures/tracking.png",
+          "exists": true
+        },
+        {
+          "line": 110,
+          "target": "results/paired_frozen_replay/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 110,
+          "target": "frozen_report.md",
+          "exists": true
+        },
+        {
+          "line": 112,
+          "target": "figures/frozen.png",
+          "exists": true
+        },
+        {
+          "line": 114,
+          "target": "results/stress_late_final/",
+          "exists": true
+        },
+        {
+          "line": 114,
+          "target": "results/stress_frozen_final/",
+          "exists": true
+        },
+        {
+          "line": 114,
+          "target": "results/controls_final/",
+          "exists": true
+        },
+        {
+          "line": 116,
+          "target": "frozen_report.md",
+          "exists": true
+        },
+        {
+          "line": 118,
+          "target": "results/standard_d_long3/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 118,
+          "target": "results/standard_d_long8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 120,
+          "target": "results/validation_01/release_summary.json",
+          "exists": true
+        },
+        {
+          "line": 124,
+          "target": "conditioning.md",
+          "exists": true
+        },
+        {
+          "line": 124,
+          "target": "results/paired_ablate_one/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 128,
+          "target": "tests/test_support.py",
+          "exists": true
+        },
+        {
+          "line": 128,
+          "target": "results/stress_short_final/",
+          "exists": true
+        },
+        {
+          "line": 128,
+          "target": "results/controls_final/",
+          "exists": true
+        },
+        {
+          "line": 130,
+          "target": "results/controls_final/",
+          "exists": true
+        },
+        {
+          "line": 130,
+          "target": "results/context_02/",
+          "exists": true
+        }
+      ],
+      "external_links": [],
+      "errors": []
+    },
+    {
+      "document": "tangent_newton_witness/README.md",
+      "sha256": "146c240583fbc4e0be259e0262050b5ac7e9e2f06c822e6ecc5054db18288bc3",
+      "inline_count": 0,
+      "display_count": 0,
+      "local_links": [
+        {
+          "line": 5,
+          "target": "report.md",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "paired_methods.md",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "conditioning.md",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "frozen_report.md",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "HANDOFF.md",
+          "exists": true
+        },
+        {
+          "line": 74,
+          "target": "paired_methods.md",
+          "exists": true
+        },
+        {
+          "line": 74,
+          "target": "frozen_report.md",
+          "exists": true
+        },
+        {
+          "line": 74,
+          "target": "conditioning.md",
+          "exists": true
+        },
+        {
+          "line": 82,
+          "target": "results/paired_tables/configurations.csv",
+          "exists": true
+        },
+        {
+          "line": 83,
+          "target": "results/paired_tables/runs.csv",
+          "exists": true
+        },
+        {
+          "line": 84,
+          "target": "results/paired_tables/endpoints.csv",
+          "exists": true
+        },
+        {
+          "line": 84,
+          "target": "results/paired_tables/iterations.csv",
+          "exists": true
+        },
+        {
+          "line": 85,
+          "target": "results/paired_tuned_confirm/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 86,
+          "target": "results/paired_late_serial/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 87,
+          "target": "results/release_n8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 87,
+          "target": "results/release_late/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 88,
+          "target": "results/stress_late_final/index.tsv",
+          "exists": true
+        },
+        {
+          "line": 88,
+          "target": "results/stress_frozen_final/index.tsv",
+          "exists": true
+        },
+        {
+          "line": 88,
+          "target": "results/controls_final/index.tsv",
+          "exists": true
+        },
+        {
+          "line": 89,
+          "target": "results/validation_01/",
+          "exists": true
+        }
+      ],
+      "external_links": [],
+      "errors": []
+    },
+    {
+      "document": "tangent_newton_witness/HANDOFF.md",
+      "sha256": "06183e9eb09af0f4ea705c339df61a878e0494c14709960c85af7a934dd45dbf",
+      "inline_count": 1,
+      "display_count": 0,
+      "local_links": [
+        {
+          "line": 3,
+          "target": "report.md",
+          "exists": true
+        },
+        {
+          "line": 3,
+          "target": "README.md",
+          "exists": true
+        },
+        {
+          "line": 18,
+          "target": "results/validation_01/final_pytest.log",
+          "exists": true
+        },
+        {
+          "line": 18,
+          "target": "results/validation_01/predecessor.log",
+          "exists": true
+        },
+        {
+          "line": 18,
+          "target": "results/validation_01/supplemental_checks.md",
+          "exists": true
+        },
+        {
+          "line": 22,
+          "target": "results/paired_tables/archives.sha256",
+          "exists": true
+        },
+        {
+          "line": 22,
+          "target": "results/paired_tables/runs.csv",
+          "exists": true
+        },
+        {
+          "line": 23,
+          "target": "results/validation_01/release_summary.json",
+          "exists": true
+        },
+        {
+          "line": 24,
+          "target": "results/standard_d_long3/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 24,
+          "target": "results/standard_d_long8/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "results/stress_late_final/archive_manifest.json",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "frozen_report.md",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "results/conditioning_01/manifest.json",
+          "exists": true
+        },
+        {
+          "line": 26,
+          "target": "results/context_02/index.tsv",
+          "exists": true
+        },
+        {
+          "line": 26,
+          "target": "results/paired_gn_verified/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 35,
+          "target": "paired_methods.md",
+          "exists": true
+        },
+        {
+          "line": 35,
+          "target": "README.md",
+          "exists": true
+        }
+      ],
+      "external_links": [
+        "https://github.com/xiaoyanghuangphys-create/canonical-purification-dynamics/pull/6"
+      ],
+      "errors": []
+    },
+    {
+      "document": "tangent_newton_witness/conditioning.md",
+      "sha256": "c3c6dc00e931f80ad66e2f0bc1a7de895625058021a601292460138ad06d6abf",
+      "inline_count": 32,
+      "display_count": 0,
+      "local_links": [
+        {
+          "line": 3,
+          "target": "report.md",
+          "exists": true
+        },
+        {
+          "line": 54,
+          "target": "tests/test_operator.py",
+          "exists": true
+        },
+        {
+          "line": 54,
+          "target": "results/conditioning_01/rows.jsonl",
+          "exists": true
+        }
+      ],
+      "external_links": [],
+      "errors": []
+    },
+    {
+      "document": "tangent_newton_witness/paired_methods.md",
+      "sha256": "c47cc3f8fb2161b973da4909d201b7727c63679c8903d0385df6d3a6c2722d0f",
+      "inline_count": 5,
+      "display_count": 0,
+      "local_links": [],
+      "external_links": [],
+      "errors": []
+    },
+    {
+      "document": "tangent_newton_witness/frozen_report.md",
+      "sha256": "c6662754e7cd366b9771c498a0b5a245b6e57da8a114b9b71def9c62b4eacbb0",
+      "inline_count": 23,
+      "display_count": 0,
+      "local_links": [
+        {
+          "line": 32,
+          "target": "results/frozen_summary/confirmation.csv",
+          "exists": true
+        },
+        {
+          "line": 32,
+          "target": "results/frozen_summary/screen_counts.csv",
+          "exists": true
+        },
+        {
+          "line": 34,
+          "target": "results/frozen_summary/frozen_merit.png",
+          "exists": true
+        },
+        {
+          "line": 40,
+          "target": "results/frozen_tolerance/measurements.json",
+          "exists": true
+        }
+      ],
+      "external_links": [],
+      "errors": []
+    }
+  ]
+}

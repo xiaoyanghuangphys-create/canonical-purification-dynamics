@@ -19,3 +19,5 @@ To check fresh files, select a new JSON output path. The validator uses a locall
 ```sh
 node tangent_newton_witness/results/validation_01/check_report.mjs /tmp/witness-math-replay.json tangent_newton_witness/report.md tangent_newton_witness/conditioning.md tangent_newton_witness/paired_methods.md tangent_newton_witness/frozen_report.md
 ```
+
+The final main report produced 130 inline and four display math elements in GitHub's GFM renderer. The first hosted page inspection exposed seven unparsed inline expressions. Replacing ambiguous norm and star notation resolved every raw dollar span in the render check. The final local check also covers the README and handoff. A separate clean Git clone passed all 40 new tests, verified all 500 paired archives, and completed two fresh endpoint smoke runs. [GitHub rendering record](github_render.json) · [Final local parsing and links](final_render_and_links.json) · [Clean clone](clean_checkout.json)

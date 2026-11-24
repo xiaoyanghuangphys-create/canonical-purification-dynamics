@@ -4,7 +4,7 @@
 
 ## Physical objective and algorithms
 
-A canonical purification has amplitude $X=\sqrt{\rho}$ and global error $\|X_c-\sqrt{\rho_*}\|_F$ in the fixed vectorization convention. Both predictors advance a stored root. A uses its native two-pass approximate ambient Sylvester force and Euclidean projection. B solves the constrained root-velocity equation inside the two-site tangent, retaining its normalization convention and the validated preparation-preconditioned PCG settings. The lower bounds on B's numerical stages come from the earlier stage audits. At restricted rank A and B can yield different predictors. The positive factor $W$ represents the root $X_W=WW^\dagger$. We distinguish its factor distance to a stored root, its implied physical density $X_W^2$, and the externally propagated target $\rho_*$.
+A canonical purification has amplitude $X=\sqrt{\rho}$ and global error $\lVert X_c-\sqrt{\rho_{\star}}\rVert_F$ in the fixed vectorization convention. Both predictors advance a stored root. A uses its native two-pass approximate ambient Sylvester force and Euclidean projection. B solves the constrained root-velocity equation inside the two-site tangent, retaining its normalization convention and the validated preparation-preconditioned PCG settings. The lower bounds on B's numerical stages come from the earlier stage audits. At restricted rank A and B can yield different predictors. The positive factor $W$ represents the root $X_W=WW^\dagger$. We distinguish its factor distance to a stored root, its implied physical density $X_W^2$, and the externally propagated target $\rho_{\star}$.
 
 | Pipeline | Predictor | Fit and physical correction |
 |---|---|---|
@@ -13,9 +13,9 @@ A canonical purification has amplitude $X=\sqrt{\rho}$ and global error $\|X_c-\
 | Old-only / New-only | Carry last accepted state | Legacy physical correction / fourth-power Newton |
 | GN | Selected predictor or carry | Real-linear damped LSQR on a general complex factor, up to six spins |
 
-The legacy fitter sandwiches $\widetilde X-WW^\dagger$ between $\rho_{\rm ref}^{-1/8}$ factors and scales by $1/2$. Its physical correction sandwiches the **stored-root** density defect $\rho_*-X_c^2$ between $\rho_{\rm ref}^{-3/8}$ factors and scales by $1/4$. For dephasing the proposal anchor stays at preparation. For loss we compare both the actual adaptive polarization proposal and genuinely fixed initial proposal anchors using the same time-dependent certificate metric. Every method can carry the previously accepted factor.
+The legacy fitter sandwiches $\widetilde X-WW^\dagger$ between $\rho_{\rm ref}^{-1/8}$ factors and scales by $1/2$. Its physical correction sandwiches the **stored-root** density defect $\rho_{\star}-X_c^2$ between $\rho_{\rm ref}^{-3/8}$ factors and scales by $1/4$. For dephasing the proposal anchor stays at preparation. For loss we compare both the actual adaptive polarization proposal and genuinely fixed initial proposal anchors using the same time-dependent certificate metric. Every method can carry the previously accepted factor.
 
-For a Hermitian $W$, define the unnormalized residual $R_m=T_m-W^m$, with $T_2=\widetilde X$ and $T_4=\rho_*$. Differentiating the products gives
+For a Hermitian $W$, define the unnormalized residual $R_m=T_m-W^m$, with $T_2=\widetilde X$ and $T_4=\rho_{\star}$. Differentiating the products gives
 
 $$
 D_2(K)=WK+KW,\qquad
@@ -28,7 +28,7 @@ $$
 (B^\dagger D_m B)v=B^\dagger R_m,\qquad K=Bv.
 $$
 
-The code builds fixed powers of the actual represented factor and contracts their action against the frame. $D_4=\mathcal S_{W^2}\mathcal S_W$ holds before projection. A three-site test measures a nonzero difference if a projector is inserted between the two maps. The raw MPO powers use QR gauge reduction without a numerical singular-value cutoff. Trimming the frame is separately budgeted and recorded. Each solve records the recomputed projected residual, ambient residual and outside-tangent component. The optional monitor that compresses $P=WW^\dagger$ to $Q$ charges $\|P-Q\|_F(2\|Q\|_F+\|P-Q\|_F)$ to intervals for $P^2$ and its discrepancy from $X_c^2$. Only the monitor uses this approximation.
+The code builds fixed powers of the actual represented factor and contracts their action against the frame. $D_4=\mathcal S_{W^2}\mathcal S_W$ holds before projection. A three-site test measures a nonzero difference if a projector is inserted between the two maps. The raw MPO powers use QR gauge reduction without a numerical singular-value cutoff. Trimming the frame is separately budgeted and recorded. Each solve records the recomputed projected residual, ambient residual and outside-tangent component. The optional monitor that compresses $P=WW^\dagger$ to $Q$ charges $\lVert P-Q\rVert_F(2\lVert Q\rVert_F+\lVert P-Q\rVert_F)$ to intervals for $P^2$ and its discrepancy from $X_c^2$. Only the monitor uses this approximation.
 
 Writing each site in the orthonormal Pauli basis turns Hermiticity into real string coefficients. Realification occurs on the represented train, allowing complex virtual gauges. Independent site/pair insertions use left complements, canonical right suffixes and an unrestricted final block. With local dimension $d=4$ the real dimensions are
 
@@ -41,7 +41,7 @@ The second formula holds for $N\ge2$. The single-site boundary uses the free sit
 
 In the eigenbasis of $W$, the derivative eigenvalues are $w_a+w_b$ and $(w_a+w_b)(w_a^2+w_b^2)$. For a positive definite witness, projection preserves positivity and the full quartic condition number is $(w_{\max}/w_{\min})^3=(p_{\max}/p_{\min})^{3/4}$ at the positive fourth root. Galerkin minimizes direction error in the derivative energy norm in this case. The projected residual can vanish while an ambient component remains. A positive $WW^\dagger$ gives no lower bound on $W$. CG requires a positive current-factor bound from its Pauli expansion or a supplied, checked small-system estimate. The scaled system retains its original residual check. With inconclusive positivity the Hermitian solver uses MINRES and tests original stationarity, including null forcing. Nonpositive CG curvature rejects a direction.
 
-GN instead minimizes $\|J_m(K)-R_m\|_F^2+\lambda^2\|K\|_F^2$. It uses $P=WW^\dagger$, $J_2(K)=KW^\dagger+WK^\dagger$ and $J_4(K)=PJ_2(K)+J_2(K)P$. With $H=(R+R^\dagger)/2$ the real adjoints are $2HW$ and $2(PH+HP)W$. Real and imaginary tangent coefficients are explicit. Physical right-unitary modes $W\Omega$, $\Omega^\dagger=-\Omega$, can remain after removing tensor bond gauge. Damping and a zero start regularize the solve, and original stationarity and attained improvement are rechecked. This optional fallback uses a capped dense residual space and matrix-free LSQR. The production Hermitian method has no dense codomain. [Operator and convergence tests](tests/test_operator.py) · [GN adjoint and null-space tests](tests/test_gn.py)
+GN instead minimizes $\lVert J_m(K)-R_m\rVert_F^2+\lambda^2\lVert K\rVert_F^2$. It uses $P=WW^\dagger$, $J_2(K)=KW^\dagger+WK^\dagger$ and $J_4(K)=PJ_2(K)+J_2(K)P$. With $H=(R+R^\dagger)/2$ the real adjoints are $2HW$ and $2(PH+HP)W$. Real and imaginary tangent coefficients are explicit. Physical right-unitary modes $W\Omega$, $\Omega^\dagger=-\Omega$, can remain after removing tensor bond gauge. Damping and a zero start regularize the solve, and original stationarity and attained improvement are rechecked. This optional fallback uses a capped dense residual space and matrix-free LSQR. The production Hermitian method has no dense codomain. [Operator and convergence tests](tests/test_operator.py) · [GN adjoint and null-space tests](tests/test_gn.py)
 
 ## Acceptance and support
 
@@ -53,11 +53,11 @@ GN instead minimizes $\|J_m(K)-R_m\|_F^2+\lambda^2\|K\|_F^2$. It uses $P=WW^\dag
 For a Hermitian stored root and a full-rank reference the numerical certificate is
 
 $$
-2\|X_c-WW^\dagger\|_F+
-\sqrt{\operatorname{Tr}(E^\dagger E M)},\qquad E=X_c^2-\rho_*,\quad M\succeq\rho_*^{-1}.
+2\lVert X_c-WW^\dagger\rVert_F+
+\sqrt{\operatorname{Tr}(E^\dagger E M)},\qquad E=X_c^2-\rho_{\star},\quad M\succeq\rho_{\star}^{-1}.
 $$
 
-The actual evaluation pays for symmetry repair, residual truncation and applicable reference error. For the circuit families we reused the earlier analytic channel MPO and positive-map metric. D/E dephasing uses the unital inverse bound. The loss audit normalizes the positive map with $\Phi(I)$ and also has a scalar spectral bound. For interacting loss the no-jump contribution implies $\lambda_{\min}(\rho_t)\ge\lambda_{\min}(\rho_0)\exp(-t\|\sum_j L_j^\dagger L_j\|_2)$. The pure control uses $\tau=I/d_{\rm Hilbert}$ in the gap-free bound, taking the square root of the weighted residual plus the trace-error allowance. Small-chain Taylor propagation charges its analytic tail, Hermitianization and conversion error. A separate matrix exponential supplies the scoring density. Certificates and support thresholds use ordinary double precision. They certify the global error conditional on the model and analytic bounds, with no interval enclosure of floating-point roundoff.
+The actual evaluation pays for symmetry repair, residual truncation and applicable reference error. For the circuit families we reused the earlier analytic channel MPO and positive-map metric. D/E dephasing uses the unital inverse bound. The loss audit normalizes the positive map with $\Phi(I)$ and also has a scalar spectral bound. For interacting loss the no-jump contribution implies $\lambda_{\min}(\rho_t)\ge\lambda_{\min}(\rho_0)\exp(-t\lVert \sum_j L_j^\dagger L_j\rVert_2)$. The pure control uses $\tau=I/d_{\rm Hilbert}$ in the gap-free bound, taking the square root of the weighted residual plus the trace-error allowance. Small-chain Taylor propagation charges its analytic tail, Hermitianization and conversion error. A separate matrix exponential supplies the scoring density. Certificates and support thresholds use ordinary double precision. They certify the global error conditional on the model and analytic bounds, with no interval enclosure of floating-point roundoff.
 
 ## Standard D and E at matched global accuracy
 
