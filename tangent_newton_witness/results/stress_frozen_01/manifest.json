@@ -1,0 +1,103 @@
+{
+ "configs": [
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Recentered-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Recentered-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  }
+ ],
+ "timeout": 35.0,
+ "base_sha": "23fbd4c89a630688e65d441d9edb6a0056808d21",
+ "sources": {
+  "support.py": "1eebc159a620acb9f34d095b32449455038e8e6dff44605586e66a0dd939c1a3",
+  "operator.py": "b965aeecdf49a18d1ba3264c5cec85f3f7599d4ca75f3affb3def20792fb0da9",
+  "stress.py": "0acae54b877bcd3e46028a80e9ac768d4a536c0895c6ed46cc88f1e942ad39c5",
+  "gn.py": "cc122878110c5ce8761bdbea8be2bf7fea6425aa9ce0477baaf58868a16fce9c",
+  "adaptive.py": "fa4947baef3cf2324a966671f29defd33e461f232acc48955efef4dfc35dac1a",
+  "endpoint.py": "64b9439aba28efe2c98b9c9164493bbc2eae2c1ba6c996eb16eda993ce1c642f",
+  "context.py": "611db3868b91daeadee919b1927f810d99b78e06c3966f31c2261de515f1f01f",
+  "paired.py": "9b77399c9a40a1706aa91fb36ed5e209b99448e601b44b99201ec9a0a2038e4f"
+ },
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "machine": "arm64",
+ "threads": 1,
+ "seeds": "deterministic inputs"
+}

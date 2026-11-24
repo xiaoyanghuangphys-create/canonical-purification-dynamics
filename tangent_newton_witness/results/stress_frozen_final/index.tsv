@@ -1,0 +1,9 @@
+worker	status	intended_time	reached_time	records	actual_error	certificate	result
+000_product2_Old-only	uncertified	4.0	3.5	1			000_product2_Old-only/row.json
+001_product2_Recentered-only	completed	4.0	4.0	1	4.2799238121067744e-07	3.286376068207305e-06	001_product2_Recentered-only/row.json
+002_product2_New-only	completed	4.0	4.0	1	1.4724084869231869e-10	1.1306023883167e-09	002_product2_New-only/row.json
+003_product2_GN-only	completed	4.0	4.0	1	1.4724085359814508e-10	1.1306019151564428e-09	003_product2_GN-only/row.json
+004_product4_Old-only	uncertified	4.0	3.5	1			004_product4_Old-only/row.json
+005_product4_Recentered-only	completed	4.0	4.0	1	7.397975326660016e-08	2.180948556809355e-06	005_product4_Recentered-only/row.json
+006_product4_New-only	completed	4.0	4.0	1	3.632786458500885e-09	1.0709578908303293e-07	006_product4_New-only/row.json
+007_product4_GN-only	completed	4.0	4.0	1	3.6303873594729608e-09	1.07025062726075e-07	007_product4_GN-only/row.json

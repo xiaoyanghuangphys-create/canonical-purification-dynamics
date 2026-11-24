@@ -1,0 +1,12 @@
+worker	status	intended_time	reached_time	records	actual_error	certificate	result
+000_product2_Old-only	uncertified	1.5	0.0	1			000_product2_Old-only/row.json
+001_product2_New-only	completed	1.5	1.5	3	5.0488375546475355e-09	3.7349669537169036e-08	001_product2_New-only/row.json
+002_strong-D2_Old-only	completed	0.3	0.3	3	9.024231982593161e-07	2.054430944304628e-06	002_strong-D2_Old-only/row.json
+003_strong-D2_New-only	completed	0.3	0.3	3	3.5422224171402526e-08	7.476882027338388e-08	003_strong-D2_New-only/row.json
+004_loss2_Old-only	completed	0.6	0.6	3	2.97846003262088e-06	6.1453875063914765e-06	004_loss2_Old-only/row.json
+005_loss2_Adaptive-only	uncertified	0.6	0.39999999999999997	3			005_loss2_Adaptive-only/row.json
+006_loss2_New-only	completed	0.6	0.6	3	2.985955650164196e-08	6.125157491937918e-08	006_loss2_New-only/row.json
+007_ising-near2_New-only	completed	0.03	0.03	3	5.585515867513108e-07	1.8762699576798722e-06	007_ising-near2_New-only/row.json
+008_ising-near2_GN-only	completed	0.03	0.03	3	5.733911031234523e-07	1.8828466113631465e-06	008_ising-near2_GN-only/row.json
+009_ising-pure2_New-only	uncertified	0.01	0.0	1			009_ising-pure2_New-only/row.json
+010_ising-pure2_GN-only	uncertified	0.01	0.0	1			010_ising-pure2_GN-only/row.json

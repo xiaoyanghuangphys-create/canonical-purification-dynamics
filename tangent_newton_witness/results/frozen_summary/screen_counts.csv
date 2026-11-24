@@ -1,0 +1,11 @@
+family,variant,status,count
+loss,adaptive,accepted,6
+loss,adaptive,witness_uncertified,40
+loss,all before witness,predictor_failed,2
+loss,fixed,accepted,2
+loss,fixed,witness_uncertified,44
+loss,new,accepted,37
+loss,new,nonconvergence,9
+strong-D,fixed,accepted,44
+strong-D,fixed,witness_uncertified,4
+strong-D,new,accepted,48

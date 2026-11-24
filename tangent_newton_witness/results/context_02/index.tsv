@@ -1,0 +1,5 @@
+worker	status	intended_time	reached_time	records	actual_error	certificate	result
+D_factor_explicit	completed	0.1	0.1	2	6.0959116914685825e-06		D_factor_explicit/measurement.json
+D_factor_lsqr	completed	0.1	0.1	2	6.095911693264215e-06		D_factor_lsqr/measurement.json
+E_factor_explicit	completed	1.0	1.0	2	0.008295139410471398		E_factor_explicit/measurement.json
+E_factor_lsqr	completed	1.0	1.0	2	0.008295139410471906		E_factor_lsqr/measurement.json

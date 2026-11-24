@@ -1,0 +1,20 @@
+worker	status	intended_time	reached_time	records	actual_error	certificate	result
+000_product2_A-old	uncertified	8.0	0.0	1			000_product2_A-old/row.json
+001_product2_A-new	uncertified	8.0	0.0	1			001_product2_A-new/row.json
+002_product2_B-old	uncertified	8.0	0.0	1			002_product2_B-old/row.json
+003_product2_B-new	completed	8.0	8.0	16	2.8939883752039477e-11	2.2228289489079497e-10	003_product2_B-new/row.json
+004_product2_Old-only	uncertified	8.0	0.0	1			004_product2_Old-only/row.json
+005_product2_New-only	completed	8.0	8.0	16	1.3135045281601928e-08	1.0088359820219001e-07	005_product2_New-only/row.json
+006_product1_Old-only	completed	4.0	4.0	8	1.3278223460422496e-06	5.203500337705545e-06	006_product1_Old-only/row.json
+007_product1_New-only	completed	4.0	4.0	8	8.508612111792184e-07	3.334374335821304e-06	007_product1_New-only/row.json
+008_product2_Old-only	uncertified	4.0	0.0	1			008_product2_Old-only/row.json
+009_product2_New-only	completed	4.0	4.0	4	1.0894472488250526e-08	8.365414355997649e-08	009_product2_New-only/row.json
+010_product2_Old-only	uncertified	4.0	0.0	1			010_product2_Old-only/row.json
+011_product2_New-only	completed	4.0	4.0	16	4.485392119306261e-12	3.444227277068378e-11	011_product2_New-only/row.json
+012_product4_Old-only	uncertified	4.0	0.0	1			012_product4_Old-only/row.json
+013_product4_New-only	completed	4.0	4.0	8	1.3344260414339926e-08	3.9339335752088e-07	013_product4_New-only/row.json
+014_strong-D2_Old-only	completed	4.0	4.0	8	1.6808765796554262e-06	3.753809200497884e-06	014_strong-D2_Old-only/row.json
+015_strong-D2_New-only	completed	4.0	4.0	8	1.0463375845404305e-06	2.3215560194824096e-06	015_strong-D2_New-only/row.json
+016_loss2_Old-only	uncertified	4.0	0.5	2			016_loss2_Old-only/row.json
+017_loss2_Adaptive-only	uncertified	4.0	0.0	1			017_loss2_Adaptive-only/row.json
+018_loss2_New-only	completed	4.0	4.0	8	1.5468741970426988e-06	3.2421623857746966e-06	018_loss2_New-only/row.json

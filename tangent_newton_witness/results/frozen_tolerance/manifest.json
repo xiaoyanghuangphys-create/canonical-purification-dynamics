@@ -1,0 +1,53 @@
+{
+ "family": "correlated loss",
+ "n": 3,
+ "previous": 3.75,
+ "time": 4.0,
+ "tolerance": 1e-07,
+ "polarization": 0.35,
+ "angle": 0.8,
+ "mode": "two",
+ "grid": [
+  [
+   1e-08,
+   "pauli"
+  ],
+  [
+   1e-08,
+   "dense"
+  ],
+  [
+   1e-08,
+   "dense-jacobi"
+  ],
+  [
+   1e-06,
+   "pauli"
+  ],
+  [
+   1e-06,
+   "dense"
+  ],
+  [
+   1e-06,
+   "dense-jacobi"
+  ],
+  [
+   0.0001,
+   "pauli"
+  ],
+  [
+   0.0001,
+   "dense"
+  ],
+  [
+   0.0001,
+   "dense-jacobi"
+  ]
+ ],
+ "source": "frozen_channels exact previous-factor oracle",
+ "predictor_hash": "6e6ae7cd031e1d1787e767a43ead96062c0adcf746257948b31b2cafa06bee5a",
+ "warm_hash": "b954f78df22b42dc8619a3356d23511aacafd6e0c0661376a3ea17c8e0d9139a",
+ "target_hash": "299db60e9b88ac5956f1f043e3050343c52cd64e05ae9e824882891a352d6a2f",
+ "spectral_checks": "small dense optional floor"
+}

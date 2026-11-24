@@ -1,0 +1,282 @@
+{
+  "source": "e00ed2d4072498e513e1840c6bc8b97df9aade11",
+  "cohorts": {
+    "release_n8": [
+      {
+        "family": "D",
+        "label": "A-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 0.254134333,
+        "witness_seconds": 0.1710052085,
+        "global_cp_error": 8.48229843678648e-07,
+        "global_cp_bound": 1.7640181400979559e-06,
+        "total_seconds": 0.30956614550000006
+      },
+      {
+        "family": "D",
+        "label": "A-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 1.6069833535,
+        "witness_seconds": 1.5310514165,
+        "global_cp_error": 5.495024206846464e-07,
+        "global_cp_bound": 1.1569615024952066e-06,
+        "total_seconds": 1.6592416665
+      },
+      {
+        "family": "D",
+        "label": "B-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 0.2796354795,
+        "witness_seconds": 0.167923625,
+        "global_cp_error": 9.974205578414304e-07,
+        "global_cp_bound": 2.057016023729909e-06,
+        "total_seconds": 0.3318523545
+      },
+      {
+        "family": "D",
+        "label": "B-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 1.6704932295,
+        "witness_seconds": 1.5594634794999997,
+        "global_cp_error": 5.495539231252705e-07,
+        "global_cp_bound": 1.1570705797284034e-06,
+        "total_seconds": 1.722817042
+      },
+      {
+        "family": "D",
+        "label": "Old-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 0.18285695849999997,
+        "witness_seconds": 0.17283016699999998,
+        "global_cp_error": 1.6686122415797448e-06,
+        "global_cp_bound": 3.447292370646532e-06,
+        "total_seconds": 0.238691271
+      },
+      {
+        "family": "D",
+        "label": "New-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 0.1,
+        "production_seconds": 2.235187979,
+        "witness_seconds": 2.2251208545,
+        "global_cp_error": 5.4950539833549e-07,
+        "global_cp_bound": 1.156967492677981e-06,
+        "total_seconds": 2.2872266665
+      },
+      {
+        "family": "E",
+        "label": "A-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.12408739599999999,
+        "witness_seconds": 0.09086668700000003,
+        "global_cp_error": 2.9354475073879567e-06,
+        "global_cp_bound": 7.356069196655163e-06,
+        "total_seconds": 0.1351266875
+      },
+      {
+        "family": "E",
+        "label": "A-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.607468479,
+        "witness_seconds": 0.5739915415000001,
+        "global_cp_error": 2.493543487042393e-06,
+        "global_cp_bound": 5.726715603719471e-06,
+        "total_seconds": 0.6182788960000001
+      },
+      {
+        "family": "E",
+        "label": "B-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.131683687,
+        "witness_seconds": 0.089726625,
+        "global_cp_error": 2.6575116611175722e-06,
+        "global_cp_bound": 6.659579785658224e-06,
+        "total_seconds": 0.14254866649999998
+      },
+      {
+        "family": "E",
+        "label": "B-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.6024695005,
+        "witness_seconds": 0.560698521,
+        "global_cp_error": 1.4819030356369432e-06,
+        "global_cp_bound": 3.4021918678594035e-06,
+        "total_seconds": 0.6131492919999999
+      },
+      {
+        "family": "E",
+        "label": "Old-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.08788170850000002,
+        "witness_seconds": 0.08101704150000001,
+        "global_cp_error": 2.061855796338648e-06,
+        "global_cp_bound": 5.166908213740676e-06,
+        "total_seconds": 0.09883487500000002
+      },
+      {
+        "family": "E",
+        "label": "New-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 1.0,
+        "production_seconds": 0.890090458,
+        "witness_seconds": 0.883323458,
+        "global_cp_error": 1.350608689507994e-07,
+        "global_cp_bound": 3.0808876694867926e-07,
+        "total_seconds": 0.9005867285
+      }
+    ],
+    "release_late": [
+      {
+        "family": "Dstress",
+        "label": "A-old",
+        "accepted": 0,
+        "repeats": 4,
+        "last_accepted": 1.0
+      },
+      {
+        "family": "Dstress",
+        "label": "A-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.37565047900000004,
+        "witness_seconds": 0.28235260449999994,
+        "global_cp_error": 3.6757890844745964e-15,
+        "global_cp_bound": 1.0086489318664183e-14,
+        "total_seconds": 0.380764479
+      },
+      {
+        "family": "Dstress",
+        "label": "B-old",
+        "accepted": 0,
+        "repeats": 4,
+        "last_accepted": 1.0
+      },
+      {
+        "family": "Dstress",
+        "label": "B-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.39409106399999994,
+        "witness_seconds": 0.26439100000000004,
+        "global_cp_error": 6.5651403327397305e-09,
+        "global_cp_bound": 1.505484193094006e-08,
+        "total_seconds": 0.399308729
+      },
+      {
+        "family": "Dstress",
+        "label": "Old-only",
+        "accepted": 0,
+        "repeats": 4,
+        "last_accepted": 0.5
+      },
+      {
+        "family": "Dstress",
+        "label": "New-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.2157862714999999,
+        "witness_seconds": 0.20016191600000005,
+        "global_cp_error": 7.48323438751461e-12,
+        "global_cp_bound": 1.721767210138244e-11,
+        "total_seconds": 0.220549542
+      },
+      {
+        "family": "E",
+        "label": "A-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.42542389550000004,
+        "witness_seconds": 0.34002087450000007,
+        "global_cp_error": 2.2451768805791115e-08,
+        "global_cp_bound": 5.763382167726843e-08,
+        "total_seconds": 0.4302246875
+      },
+      {
+        "family": "E",
+        "label": "A-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.29472427050000005,
+        "witness_seconds": 0.21037699799999987,
+        "global_cp_error": 4.781260476923829e-15,
+        "global_cp_bound": 1.1731564135290114e-14,
+        "total_seconds": 0.2994370415
+      },
+      {
+        "family": "E",
+        "label": "B-old",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.39903749999999993,
+        "witness_seconds": 0.3157826245,
+        "global_cp_error": 2.1806584332324772e-08,
+        "global_cp_bound": 5.597763107657295e-08,
+        "total_seconds": 0.4037768545
+      },
+      {
+        "family": "E",
+        "label": "B-new",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.28168006349999997,
+        "witness_seconds": 0.19799406200000014,
+        "global_cp_error": 6.382575588282749e-09,
+        "global_cp_bound": 1.474151417643284e-08,
+        "total_seconds": 0.286369
+      },
+      {
+        "family": "E",
+        "label": "Old-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.34855741749999997,
+        "witness_seconds": 0.3334338335,
+        "global_cp_error": 2.1432761198457613e-08,
+        "global_cp_bound": 5.5018022943480735e-08,
+        "total_seconds": 0.3530065
+      },
+      {
+        "family": "E",
+        "label": "New-only",
+        "accepted": 4,
+        "repeats": 4,
+        "last_accepted": 4.0,
+        "production_seconds": 0.15370091699999994,
+        "witness_seconds": 0.13937883350000002,
+        "global_cp_error": 9.426666138153537e-12,
+        "global_cp_bound": 2.17704999718998e-11,
+        "total_seconds": 0.15797947899999998
+      }
+    ]
+  }
+}

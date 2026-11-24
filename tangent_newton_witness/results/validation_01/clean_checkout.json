@@ -1,0 +1,21 @@
+{
+  "export_without_git": "The paired provenance recorder requires a Git checkout; git archive lacked HEAD. Retested in a clean clone.",
+  "source_commit": "c6dc9227344ad56864921f6b6a622b49b3c06745",
+  "pytest": "........................................                                 [100%]\n40 passed in 0.83s",
+  "clean_paired_workers_verified": 500,
+  "complete": 400,
+  "clean_smoke": [
+    {
+      "label": "A-new",
+      "status": "completed",
+      "global_cp_error": 3.2411986542232433e-10,
+      "global_cp_bound": 7.425102228648582e-10
+    },
+    {
+      "label": "New-only",
+      "status": "completed",
+      "global_cp_error": 3.4623060301941335e-06,
+      "global_cp_bound": 7.947905280177868e-06
+    }
+  ]
+}

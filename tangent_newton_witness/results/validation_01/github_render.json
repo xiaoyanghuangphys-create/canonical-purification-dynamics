@@ -1,0 +1,14 @@
+{
+  "renderer": "GitHub REST POST /markdown, GFM, repository context",
+  "source": "report.md",
+  "markdown_sha256": "35db730ce5a22dd531aa67dec01a3d4347245eea89bd4e9f760d6f7fd1115164",
+  "html_sha256": "5c0cc97b710044db8e69930b77368c092ab9def25bddb64c8645d90016951fff",
+  "renderer_nodes": {
+    "js-inline-math": 130,
+    "js-display-math": 4
+  },
+  "unparsed_dollar_spans": 0,
+  "error_elements": 0,
+  "prior_check": "Contents HTML on c6dc922 emitted only 123 inline nodes; revised norm and star notation.",
+  "scope": "GitHub math renderer elements in the returned HTML. Local KaTeX also parsed the TeX."
+}

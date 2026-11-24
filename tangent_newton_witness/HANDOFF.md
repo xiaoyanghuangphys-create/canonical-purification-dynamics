@@ -1,0 +1,35 @@
+# Research handoff
+
+**Branch** `research/tangent-newton-witness` in `xiaoyanghuangphys-create/canonical-purification-dynamics`. The fetched Method B base is `23fbd4c89a630688e65d441d9edb6a0056808d21`. The two final-source repeat cohorts were launched from `e00ed2d4072498e513e1840c6bc8b97df9aade11`. Later commits add the rank-loss regression, reports and immutable measurements. [Draft PR 6 against the Method B branch](https://github.com/xiaoyanghuangphys-create/canonical-purification-dynamics/pull/6) · [Report](report.md) · [Commands and API](README.md)
+
+## Reopen the work
+
+```sh
+git fetch origin research/tangent-newton-witness research/galerkin-sylvester-tdvp
+git switch research/tangent-newton-witness
+git rev-parse HEAD
+git diff --name-only 23fbd4c89a630688e65d441d9edb6a0056808d21...HEAD
+```
+
+All new code, tests and evidence are under this directory. The historical algorithms are called through their original entry points. Current-factor Newton can be exercised independently through `operator.solve_direction`. A failed endpoint returns the prior state and a numerical reason. Always consult `accepted` before interpreting a proposed time as physically reached.
+
+## Executed validation
+
+The final combined pytest run passed **187 tests**. This includes 40 new tests and 147 predecessor tests. The independent operator oracles cover one through four qubits, noncommuting complex data, the full-space inverse and quadratic convergence, explicit projected actions and current-factor Jacobi, indefinite and singular directions, both original tangent projectors, two-site growth, and a 16-spin no-dense guard. The rest cover general-factor LSQR, kernel and gauge forcing, compression, independent certificates, wrong-sign stored roots, nonlinear rejection, real rank loss in the finite bridge, and transaction rollback. The predecessor scripts separately checked the full-rank and gap-free witness bounds and automatic support classification and evolution. [Final pytest output](results/validation_01/final_pytest.log) · [Predecessor-only output](results/validation_01/predecessor.log) · [Standalone script output and math checks](results/validation_01/supplemental_checks.md)
+
+## Provenance
+
+* The 24 original paired cohorts contain 392 workers in 278 enrolled configuration groups. Together they produced 304 completed runs, 60 uncertified endpoints, 17 timeouts, three memory watchdog exits and eight failed legacy prefix builds. These totals include pilots and deliberate controls. Four-repeat medians require all four runs to complete the full requested horizon. Each launch used a new directory. The per-worker ZIPs contain configurations, events, bounds, scores and accepted tensor checkpoints. [Worker SHA-256 digests](results/paired_tables/archives.sha256) · [All original paired runs](results/paired_tables/runs.csv)
+* The final `release_n8` and `release_late` checks add 96 fresh single-worker executions from the committed code. Their source hashes matched at startup and exit. They yielded 84 completions and 12 numerical rejections. Independent CP scores were checked against the endpoint bound. [Release verification](results/validation_01/release_summary.json)
+* Twelve further standard-D workers covered long horizons at three and eight spins. All 12 reached their respective targets. Together the original paired cohorts, release repetitions and these standard-D controls comprise 500 worker runs. [Three spins](results/standard_d_long3/measurements.jsonl) · [Eight spins](results/standard_d_long8/measurements.jsonl)
+* The stress/control/context archives each have `workers.zip`, `index.tsv` and `archive_manifest.json`. The latter records individual member digests. The 12 archives preserve 123 workers and 693 files, including superseded pilot outcomes. The archived checkpoint loader verifies input digests without requiring unpacked scratch directories. For manual inspection, use `unzip -l` or `unzip -p`. [Stress archive example](results/stress_late_final/archive_manifest.json) · [Frozen channel experiments](frozen_report.md) · [Conditioning checkpoint sources](results/conditioning_01/manifest.json)
+* Early workers ran as the feature was being developed. Manifests record both checked-out HEAD and source-file digests. Some exploratory workers also recorded a source delta during execution. The final confirmation pairs and the release-check cohorts are the basis for cost statements. Early GN pilots used a thresholded dense-to-MPO cotangent conversion. The final GN checks use full geometric QR and the configured LSQR tolerance. Early product trials rejected a valid negative lower bound. The final path routes those factors through checked MINRES. The pure controls use the known exact initial projector. Both the unsuccessful short bridge and the successful whole-interval Kraus seed are retained. The initial contextual harness also preserved two worker failures from an invalid method label. [Corrected factor controls](results/context_02/index.tsv) · [Final GN replays](results/paired_gn_verified/measurements.jsonl)
+* The system was a Mac14,15 with Apple M2, eight CPU cores and 8 GiB RAM, using NumPy's Accelerate backend. Thread environment variables were pinned to one before worker startup. Host load varied during development, including concurrent screens on separate cores. Numerical outcomes were repeated separately. Hardware, Python/library versions, exact parameters, tolerances, memory caps, deadlines and full invocations are recorded in paired manifests. All D/E and stress preparations were deterministic. Individual randomized dense oracles specify their seeds in the tests. Native timings have their own clock boundaries. Strict comparative tables report shared-instrumentation results. The script-generated numbers are conditional floating-point certificates.
+
+## Remaining work
+
+1. Reduce ambient residual-audit expense, especially after two-site bond opening. The tight D8 worker spent about 10 s auditing directions and 2.1 s applying Krylov matvecs. A streamed contracted audit would need an explicit error bound and comparisons against the unrounded residuals.
+2. Develop stronger affordable lower bounds on the **current numerical factor**. The checked small-system floor recovered a difficult loss endpoint where the Pauli lower bound was inconclusive. Assess any new bound with its setup cost and compare against the existing MINRES and GN records.
+3. Expand tight large-chain coverage only when the production checks fit. The one-interval 16–64-spin grids already expose both resource ceilings and partial progress. The full two-interval large-chain tight matrix and $N=128$ remain unmeasured. Physical kernel detection and independently certified reference propagation for generic long chains also remain open.
+
+The shortest reproduction of the hard matched result is the frozen strong-D replay in [the benchmark protocol](paired_methods.md). The shortest reproduction of the expensive case is the higher-cap D8 A-old/A-new command in [the README](README.md).

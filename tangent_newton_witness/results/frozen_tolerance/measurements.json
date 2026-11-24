@@ -1,0 +1,83 @@
+[
+ {
+  "rtol": 1e-08,
+  "policy": "pauli",
+  "status": "nonconvergence",
+  "bound": 3.621634416946535e-07,
+  "actual": null,
+  "updates": 1,
+  "seconds": 0.08591020799999999
+ },
+ {
+  "rtol": 1e-08,
+  "policy": "dense",
+  "status": "accepted",
+  "bound": 1.0252529695766913e-11,
+  "actual": 4.591858774262045e-12,
+  "updates": 2,
+  "seconds": 0.06124258300000002
+ },
+ {
+  "rtol": 1e-08,
+  "policy": "dense-jacobi",
+  "status": "nonconvergence",
+  "bound": 0.0008744651417253727,
+  "actual": null,
+  "updates": 0,
+  "seconds": 0.08917495799999997
+ },
+ {
+  "rtol": 1e-06,
+  "policy": "pauli",
+  "status": "nonconvergence",
+  "bound": 3.6218047323197035e-07,
+  "actual": null,
+  "updates": 1,
+  "seconds": 0.07454787500000004
+ },
+ {
+  "rtol": 1e-06,
+  "policy": "dense",
+  "status": "accepted",
+  "bound": 1.0252687247279179e-11,
+  "actual": 4.591857278206854e-12,
+  "updates": 2,
+  "seconds": 0.05062562500000001
+ },
+ {
+  "rtol": 1e-06,
+  "policy": "dense-jacobi",
+  "status": "nonconvergence",
+  "bound": 0.0008744651417543227,
+  "actual": null,
+  "updates": 0,
+  "seconds": 0.08568091700000002
+ },
+ {
+  "rtol": 0.0001,
+  "policy": "pauli",
+  "status": "nonconvergence",
+  "bound": 0.0008744651455785278,
+  "actual": null,
+  "updates": 0,
+  "seconds": 0.053942708000000006
+ },
+ {
+  "rtol": 0.0001,
+  "policy": "dense",
+  "status": "accepted",
+  "bound": 1.090407414124257e-11,
+  "actual": 4.67117890382519e-12,
+  "updates": 2,
+  "seconds": 0.04724429200000002
+ },
+ {
+  "rtol": 0.0001,
+  "policy": "dense-jacobi",
+  "status": "nonconvergence",
+  "bound": 8.067808535281049e-07,
+  "actual": null,
+  "updates": 1,
+  "seconds": 0.108418542
+ }
+]
