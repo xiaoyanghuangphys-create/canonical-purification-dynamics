@@ -36,3 +36,15 @@ def test_newborn_and_stiff_scales_and_unsupported_size():
     big=sw.prepared_power(8,.5)
     with pytest.raises(GalerkinError,match="audited"):
         finite_start((big,big,0.),model,.01,.01,root_bond=2,factor_bond=2)
+
+
+def test_factor_bond_rounding_removes_a_newborn_physical_sector():
+    ground=matrix_to_mpo(np.diag([1.,0.,0.,0.]),2)
+    jump=np.zeros((4,4),complex)
+    jump[3,0]=1.
+    model=auto.Model(np.zeros((4,4)),[jump])
+    with pytest.raises(GalerkinError) as failure:
+        finite_start((ground,ground,0.),model,.0001,.01,root_bond=4,factor_bond=1)
+    assert failure.value.status=='bridge_support_lost'
+    assert failure.value.details['seeded_rank']==2
+    assert failure.value.details['post']['rank']==1

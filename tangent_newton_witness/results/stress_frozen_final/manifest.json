@@ -1,0 +1,110 @@
+{
+ "configs": [
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Recentered-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 1,
+   "total": 4.0,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "Recentered-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  },
+  {
+   "family": "product",
+   "n": 4,
+   "steps": 1,
+   "total": 4.0,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two",
+   "frozen_previous": 3.5
+  }
+ ],
+ "timeout": 35.0,
+ "base_sha": "23fbd4c89a630688e65d441d9edb6a0056808d21",
+ "sources": {
+  "controls.py": "051145dd61cf5f13104bb706185af368140b9c1e2681fb21839eadd30f8944a1",
+  "support.py": "1eebc159a620acb9f34d095b32449455038e8e6dff44605586e66a0dd939c1a3",
+  "paired_analysis.py": "d4fe2ce4640f6794f37a593d2b4fc914bfcb54f91e7217da139faee03c9012de",
+  "operator.py": "2399fa065ee42562332ac5be1e4f0106f6bac8d109f3704c3d75f5e3a299ec4a",
+  "frozen_tolerance.py": "a2101cbcb588a47033d7e7a58c3c056d503a2af05bddcb1ce5310edb37a62438",
+  "stress.py": "dc53acf056a7df03441a18657ba268f931c94b98f8c00aa81d34649d95d08a46",
+  "gn.py": "885801ba2b3a516dbf342bfd02ada810b2ca533c1a8810dca9294fd600f39c78",
+  "frozen_channels.py": "aa75d91f25c7aa38c6fc11bd102ce70974ff6408a79e3453424e11a78959323f",
+  "adaptive.py": "fa4947baef3cf2324a966671f29defd33e461f232acc48955efef4dfc35dac1a",
+  "endpoint.py": "c154c0ecc672ed71bde3781e3fa7bedf6a392526da7b3bc87730ab7b64b2fc2b",
+  "context.py": "611db3868b91daeadee919b1927f810d99b78e06c3966f31c2261de515f1f01f",
+  "figures.py": "846c8f60557ff391b393da3f8309c9f9a30f41b8c6ca8a0c61edc6d4e4d2af41",
+  "conditioning.py": "82c94590a3bd0ac6d43ea40b8fefd2b4eb1a40c64964d3a895d39185de98ec22",
+  "paired.py": "c9f7cb6d78a1013095d3974cc2440281abbb39ebc8ae6f1861684f5c173e7371",
+  "frozen_summary.py": "eb780b1996376efb6a92209f4eafa67425c7660bfab60af7fdd1485ad0e0e2b2"
+ },
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "machine": "arm64",
+ "threads": 1,
+ "seeds": "deterministic inputs"
+}

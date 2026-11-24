@@ -1,0 +1,31 @@
+{
+ "workers": 10,
+ "files": 23,
+ "zip_sha256": "227176318524d1e94763de202f33626cec7519f4503efbbeb702672919a6afc1",
+ "index_sha256": "92ef88d30a96e488228a415caa2034eb8fe98959e46a920edb04ecea740c93be",
+ "member_sha256": {
+  "D_A/raw.json": "de479aeac113015b42d7799967946fcfd66569a9563e503f98c3951de5f1b5ee",
+  "D_B/raw.json": "39b579ee7badc2a446e90d6f74202c5c85caf2778dd5b3583372450ba3660701",
+  "D_B/retractions.jsonl": "9f13455b7a375ed00386658e1b8b95095dfed4cd32ed014f8b4825fc667b4dee",
+  "D_B/solves.jsonl": "558077e4b1e9aa934684429de8afe554e32dbb816d4d46054e12c537103eaf45",
+  "D_B/stage_bounds.jsonl": "6b33fbaf4cdf1a587d60c2ba444bef54ba65f7be7722fc52852bb894f7bcff7b",
+  "Dstress_A/raw.json": "7ca17bc7eb3ef066fcf53233d8da208d15803fcf461d0f5671f281bcd77972da",
+  "Dstress_B/raw.json": "289bee22899319f56974fbec060ec529b9bd05225bb5e9e3e2bf782f66800f1b",
+  "Dstress_B/retractions.jsonl": "7150bfff94438d8f95b011f02f6be782b66f461f691f46a3d7f12a5bbe2b0753",
+  "Dstress_B/solves.jsonl": "d8f2485b6d8bc804e078943770bb29070ef6412c19b2502cb6693cf6b0ea162d",
+  "Dstress_B/stage_bounds.jsonl": "3020b695caa0fc81426fe9aa66fade22d0a1e3b4a5c5b8253eed2a112cc8e791",
+  "E_A/raw.json": "d410a9a2a8cb2b455399248e41715c2548c6780f95cb289e23ba5d7b5e86a282",
+  "E_B/raw.json": "4018967c7516a23191a490d993ce167ab621f25f9f2e2ff0b8e0a7f79b0ce63b",
+  "E_B/retractions.jsonl": "41602bb6cdfbab85e3864a6375f20465596c3e51cd0a11cc63e27dc7069b3618",
+  "E_B/solves.jsonl": "a6834321fc932c17badd63c9ef8084b90ca21a33677b5bdacffc05e7c04ba085",
+  "E_B/stage_bounds.jsonl": "4109a01f7285cb20a4f355f434c792c557a3f577bf4ebd1552e9a826ef9b9674",
+  "adaptive_new/attempts.json": "d03bd22bc614b6e5e071a3af6f2684c4fc9981243d38757683cf62a3110ab11c",
+  "adaptive_new/last_accepted.npz": "503730f9c5712eefcd2025677c504f653be26ee458b2874013d971366d7b7670",
+  "adaptive_old/attempts.json": "5a0ddaffe12944753d14a7b8b5c6188d530822f1956c77db8a2a3133809c57a9",
+  "adaptive_old/last_accepted.npz": "fbc9ff8084581d5d25940a34077cd11435d221f08fe4921e38d0144a17168a34",
+  "pure_gn/last_accepted.npz": "81e16ae4506464fb4c1b7f7f35ff05b701c02cd77073b4637a90f0c263f1bf8a",
+  "pure_gn/pure.json": "6419a374e9e269f7f511b79a797c0148929fec186e97840f72fb5d3e21d7f3d4",
+  "pure_new/last_accepted.npz": "cb3a125b4aebb7fce0eaff1f2984c072c574b0bb3b03abd3c45adc4a7ae007fa",
+  "pure_new/pure.json": "6381a30cff4a06d2ce241f44c21ac70ce6c1307f378e42b82c7d10647383f7e3"
+ }
+}

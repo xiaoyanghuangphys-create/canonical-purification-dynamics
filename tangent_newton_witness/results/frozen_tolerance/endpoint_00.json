@@ -1,0 +1,862 @@
+{
+ "bound": 3.621634416946535e-07,
+ "witness": 6.761565489269389e-15,
+ "weighted_residual": 3.6216342817152253e-07,
+ "scalar_bound": 1.1513385337578907e-05,
+ "no_error_mass": null,
+ "residual_rounding": 0.0,
+ "skew_allowance": 0.0,
+ "accepted": false,
+ "status": "nonconvergence",
+ "rollback": true,
+ "time": 4.0,
+ "prior_root_bound": 0.08764098978629085,
+ "predictor_bound": 0.0008744651417255587,
+ "predictor_selected": true,
+ "fit_updates": 3,
+ "correction_updates": 1,
+ "correction_trials": 1,
+ "root_bond": 4,
+ "factor_bond": 4,
+ "attempts": [
+  {
+   "phase": "carry",
+   "bound": 0.08764098978629085,
+   "witness": 1.3958264095313104e-15,
+   "factor_fourth_residual": [
+    0.0073332357868133675,
+    0.0073332357868133675
+   ],
+   "stored_square_residual": 0.007333235786815316,
+   "fourth_vs_stored_square": [
+    4.393314945496878e-15,
+    4.393314945496878e-15
+   ],
+   "fourth_diagnostic_allowance": 0.0,
+   "diagnostic_positive_bond": 16,
+   "diagnostic_fourth_bond": 16,
+   "stored_root_norm": 0.9999999999999996,
+   "elapsed_seconds": 0.002475749999999999
+  },
+  {
+   "phase": "fit_start",
+   "square_residual": 0.01904328781159051,
+   "elapsed_seconds": 0.00276350000000003
+  },
+  {
+   "phase": "fit_solve",
+   "iteration": 1,
+   "solve": {
+    "power": 2,
+    "mode": "two",
+    "solver": "minres",
+    "factor_lower_bound": -0.483598501208385,
+    "floor_provenance": "current_pauli_triangle",
+    "enclosure_margin": 4.836312619338736e-14,
+    "verified_spd": false,
+    "target_hermiticity": 1.3926898441058687e-16,
+    "scale": 0.8021542962775229,
+    "preconditioner": "none",
+    "regularization_shift": 0.0,
+    "iterations": 22,
+    "history": null,
+    "condition_estimate": null,
+    "frame_metadata": {
+     "mode": "two",
+     "width": 2,
+     "dimension": 64,
+     "stored_ranks": [
+      1,
+      8,
+      8,
+      1
+     ],
+     "active_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "block_shapes": [
+      [
+       0,
+       16
+      ],
+      [
+       16,
+       4
+      ]
+     ],
+     "offsets": [
+      0,
+      0,
+      64
+     ],
+     "rank_rtol": 1e-13,
+     "rank_discard_bound": 0.0,
+     "input_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "factor_hermiticity": 2.160114944765671e-16,
+     "factor_norm": 1.1344174849115187,
+     "coordinates": "real_orthonormal_pauli"
+    },
+    "projected_rhs_norm": 0.019043287811590526,
+    "rhs_norm": 0.019043287811590523,
+    "projected_residual": 4.674199756481575e-12,
+    "full_linear_residual": 4.674199756523713e-12,
+    "outside_tangent_residual": 1.9846797773766105e-17,
+    "linear_tolerance": 1.9043287811590527e-10,
+    "hermiticity_defect": 1.3328065301026147e-17,
+    "dimension": 64,
+    "max_elements": 2000000,
+    "peak_guarded_elements": 1024,
+    "peak_product_bond": 32,
+    "factor_power_bond": 4,
+    "direction_bond": 8,
+    "matvec_count": 22,
+    "frame_seconds": 0.0006170420000000121,
+    "operator_setup_seconds": 0.0004171250000000182,
+    "source_seconds": 0.0005477919999999914,
+    "support_seconds": 0.00044633300000002096,
+    "preconditioner_setup_seconds": 2.090000000287695e-07,
+    "solve_seconds": 0.0029586659999999987,
+    "matvec_seconds_inclusive_in_solve": 0.002388416999999976,
+    "audit_seconds": 0.001167499999999988
+   },
+   "elapsed_seconds": 0.011599125000000043
+  },
+  {
+   "phase": "fit_trial",
+   "iteration": 1,
+   "scale": 1.0,
+   "improved": true,
+   "square_residual": 0.0005594292679382977,
+   "factor_retraction_error": 3.7603865080969826e-16,
+   "factor_cap": 4,
+   "factor_bond": 4,
+   "elapsed_seconds": 0.012270083000000043
+  },
+  {
+   "phase": "fit_solve",
+   "iteration": 2,
+   "solve": {
+    "power": 2,
+    "mode": "two",
+    "solver": "minres",
+    "factor_lower_bound": -0.5035868449945989,
+    "floor_provenance": "current_pauli_triangle",
+    "enclosure_margin": 4.773321849948459e-14,
+    "verified_spd": false,
+    "target_hermiticity": 1.3926898441058687e-16,
+    "scale": 0.7917066018728659,
+    "preconditioner": "none",
+    "regularization_shift": 0.0,
+    "iterations": 23,
+    "history": null,
+    "condition_estimate": null,
+    "frame_metadata": {
+     "mode": "two",
+     "width": 2,
+     "dimension": 64,
+     "stored_ranks": [
+      1,
+      8,
+      8,
+      1
+     ],
+     "active_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "block_shapes": [
+      [
+       0,
+       16
+      ],
+      [
+       16,
+       4
+      ]
+     ],
+     "offsets": [
+      0,
+      0,
+      64
+     ],
+     "rank_rtol": 1e-13,
+     "rank_discard_bound": 0.0,
+     "input_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "factor_hermiticity": 4.095758527096999e-16,
+     "factor_norm": 1.1196422137889233,
+     "coordinates": "real_orthonormal_pauli"
+    },
+    "projected_rhs_norm": 0.0005594292679382062,
+    "rhs_norm": 0.0005594292679382063,
+    "projected_residual": 1.4383137298966416e-14,
+    "full_linear_residual": 1.438313784280111e-14,
+    "outside_tangent_residual": 3.95526209903815e-18,
+    "linear_tolerance": 5.594292679382062e-12,
+    "hermiticity_defect": 4.557400917560306e-19,
+    "dimension": 64,
+    "max_elements": 2000000,
+    "peak_guarded_elements": 1024,
+    "peak_product_bond": 32,
+    "factor_power_bond": 4,
+    "direction_bond": 8,
+    "matvec_count": 23,
+    "frame_seconds": 0.00042799999999998395,
+    "operator_setup_seconds": 0.00035933399999998894,
+    "source_seconds": 0.0005293749999999986,
+    "support_seconds": 0.0003239170000000069,
+    "preconditioner_setup_seconds": 2.0800000000154029e-07,
+    "solve_seconds": 0.0026965409999999967,
+    "matvec_seconds_inclusive_in_solve": 0.0021867909999999102,
+    "audit_seconds": 0.0009341249999999524
+   },
+   "elapsed_seconds": 0.017642458000000028
+  },
+  {
+   "phase": "fit_trial",
+   "iteration": 2,
+   "scale": 1.0,
+   "improved": true,
+   "square_residual": 8.408794979611798e-07,
+   "factor_retraction_error": 2.2076862567783984e-16,
+   "factor_cap": 4,
+   "factor_bond": 4,
+   "elapsed_seconds": 0.018320208000000004
+  },
+  {
+   "phase": "fit_solve",
+   "iteration": 3,
+   "solve": {
+    "power": 2,
+    "mode": "two",
+    "solver": "minres",
+    "factor_lower_bound": -0.5030361516050883,
+    "floor_provenance": "current_pauli_triangle",
+    "enclosure_margin": 4.770965280304315e-14,
+    "verified_spd": false,
+    "target_hermiticity": 1.3926898441058687e-16,
+    "scale": 0.791315739533453,
+    "preconditioner": "none",
+    "regularization_shift": 0.0,
+    "iterations": 23,
+    "history": null,
+    "condition_estimate": null,
+    "frame_metadata": {
+     "mode": "two",
+     "width": 2,
+     "dimension": 64,
+     "stored_ranks": [
+      1,
+      8,
+      8,
+      1
+     ],
+     "active_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "block_shapes": [
+      [
+       0,
+       16
+      ],
+      [
+       16,
+       4
+      ]
+     ],
+     "offsets": [
+      0,
+      0,
+      64
+     ],
+     "rank_rtol": 1e-13,
+     "rank_discard_bound": 0.0,
+     "input_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "factor_hermiticity": 2.2684545448615697e-16,
+     "factor_norm": 1.1190894509675047,
+     "coordinates": "real_orthonormal_pauli"
+    },
+    "projected_rhs_norm": 8.408794979272384e-07,
+    "rhs_norm": 8.408794979272384e-07,
+    "projected_residual": 4.805374428519716e-17,
+    "full_linear_residual": 4.824314001871738e-17,
+    "outside_tangent_residual": 4.270622792807804e-18,
+    "linear_tolerance": 8.408794979272384e-15,
+    "hermiticity_defect": 1.635768335051867e-21,
+    "dimension": 64,
+    "max_elements": 2000000,
+    "peak_guarded_elements": 1024,
+    "peak_product_bond": 32,
+    "factor_power_bond": 4,
+    "direction_bond": 8,
+    "matvec_count": 23,
+    "frame_seconds": 0.0004303339999999767,
+    "operator_setup_seconds": 0.00033004199999997486,
+    "source_seconds": 0.0004474159999999783,
+    "support_seconds": 0.0003186659999999675,
+    "preconditioner_setup_seconds": 1.669999999953653e-07,
+    "solve_seconds": 0.002556916999999992,
+    "matvec_seconds_inclusive_in_solve": 0.0020652910000000246,
+    "audit_seconds": 0.0010257089999999858
+   },
+   "elapsed_seconds": 0.023535500000000042
+  },
+  {
+   "phase": "fit_trial",
+   "iteration": 3,
+   "scale": 1.0,
+   "improved": true,
+   "square_residual": 1.3730038769302822e-11,
+   "factor_retraction_error": 4.841946954124898e-16,
+   "factor_cap": 4,
+   "factor_bond": 4,
+   "elapsed_seconds": 0.024131833000000047
+  },
+  {
+   "phase": "predictor",
+   "bound": 0.0008744651417255587,
+   "witness": 1.3730038769302822e-11,
+   "selected": true,
+   "factor_fourth_residual": [
+    1.7083964703092213e-05,
+    1.7083964703092213e-05
+   ],
+   "stored_square_residual": 1.7083964659564352e-05,
+   "fourth_vs_stored_square": [
+    1.5922226405374392e-13,
+    1.5922226405374392e-13
+   ],
+   "fourth_diagnostic_allowance": 0.0,
+   "diagnostic_positive_bond": 16,
+   "diagnostic_fourth_bond": 16,
+   "stored_root_norm": 1.0,
+   "elapsed_seconds": 0.025815542000000025
+  },
+  {
+   "phase": "correction_solve",
+   "solve": {
+    "power": 4,
+    "mode": "two",
+    "solver": "minres",
+    "factor_lower_bound": -0.5030433217899145,
+    "floor_provenance": "current_pauli_triangle",
+    "enclosure_margin": 4.7709611991862205e-14,
+    "verified_spd": false,
+    "target_hermiticity": 4.190336052923235e-16,
+    "scale": 0.24775264635090583,
+    "preconditioner": "none",
+    "regularization_shift": 0.0,
+    "iterations": 45,
+    "history": null,
+    "condition_estimate": null,
+    "frame_metadata": {
+     "mode": "two",
+     "width": 2,
+     "dimension": 64,
+     "stored_ranks": [
+      1,
+      8,
+      8,
+      1
+     ],
+     "active_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "block_shapes": [
+      [
+       0,
+       16
+      ],
+      [
+       16,
+       4
+      ]
+     ],
+     "offsets": [
+      0,
+      0,
+      64
+     ],
+     "rank_rtol": 1e-13,
+     "rank_discard_bound": 0.0,
+     "input_ranks": [
+      1,
+      4,
+      4,
+      1
+     ],
+     "factor_hermiticity": 2.0622418904687726e-16,
+     "factor_norm": 1.1190884936903207,
+     "coordinates": "real_orthonormal_pauli"
+    },
+    "projected_rhs_norm": 1.7083964701985486e-05,
+    "rhs_norm": 1.708396470198549e-05,
+    "projected_residual": 2.324606850669004e-14,
+    "full_linear_residual": 2.324606952623074e-14,
+    "outside_tangent_residual": 6.884811300787492e-18,
+    "linear_tolerance": 1.7083964701985486e-13,
+    "hermiticity_defect": 8.652798399495037e-20,
+    "dimension": 64,
+    "max_elements": 2000000,
+    "peak_guarded_elements": 4096,
+    "peak_product_bond": 32,
+    "factor_power_bond": 4,
+    "direction_bond": 8,
+    "matvec_count": 45,
+    "frame_seconds": 0.00040650000000003184,
+    "operator_setup_seconds": 0.0008402920000000202,
+    "source_seconds": 0.0004910410000000254,
+    "support_seconds": 0.0003258339999999693,
+    "preconditioner_setup_seconds": 2.0800000000154029e-07,
+    "solve_seconds": 0.010634334000000023,
+    "matvec_seconds_inclusive_in_solve": 0.00960241400000017,
+    "audit_seconds": 0.0015525000000000122
+   },
+   "factor_cap": 4,
+   "root_cap": 6,
+   "work_cap": 10,
+   "iteration": 1,
+   "elapsed_seconds": 0.04017437500000004
+  },
+  {
+   "phase": "correction_trial",
+   "scale": 1.0,
+   "improved": true,
+   "factor_retraction_error": 2.695486211925353e-15,
+   "trace_before_normalization": 1.0000000050257203,
+   "root_bond": 4,
+   "factor_bond": 4,
+   "bound": 3.621634416946535e-07,
+   "witness": 6.761565489269389e-15,
+   "weighted_residual": 3.6216342817152253e-07,
+   "scalar_bound": 1.1513385337578907e-05,
+   "no_error_mass": null,
+   "residual_rounding": 0.0,
+   "skew_allowance": 0.0,
+   "factor_cap": 4,
+   "root_cap": 6,
+   "work_cap": 10,
+   "iteration": 1,
+   "factor_fourth_residual": [
+    5.287633635771715e-09,
+    5.287633635771715e-09
+   ],
+   "stored_square_residual": 5.287631610382558e-09,
+   "fourth_vs_stored_square": [
+    8.659686367839364e-15,
+    8.659686367839364e-15
+   ],
+   "fourth_diagnostic_allowance": 0.0,
+   "diagnostic_positive_bond": 16,
+   "diagnostic_fourth_bond": 16,
+   "stored_root_norm": 0.9999999999999999,
+   "fourth_before_normalization": [
+    2.3118635321057964e-09,
+    2.3118635321057964e-09
+   ],
+   "elapsed_seconds": 0.043150083000000006
+  },
+  {
+   "phase": "correction_solve",
+   "failure": {
+    "status": "nonconvergence",
+    "message": "Original projected residual failed (possible unresolved null forcing)",
+    "details": {
+     "status": "nonconvergence",
+     "power": 4,
+     "mode": "two",
+     "solver": "minres",
+     "factor_lower_bound": -0.5034032420620486,
+     "floor_provenance": "current_pauli_triangle",
+     "enclosure_margin": 4.7707029079202914e-14,
+     "verified_spd": false,
+     "target_hermiticity": 4.190336052923235e-16,
+     "scale": 0.24771240988012533,
+     "preconditioner": "none",
+     "regularization_shift": 0.0,
+     "iterations": 43,
+     "history": null,
+     "condition_estimate": null,
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 64,
+      "stored_ranks": [
+       1,
+       8,
+       8,
+       1
+      ],
+      "active_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "block_shapes": [
+       [
+        0,
+        16
+       ],
+       [
+        16,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       0,
+       64
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0,
+      "input_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "factor_hermiticity": 9.952456689249237e-16,
+      "factor_norm": 1.119027908250269,
+      "coordinates": "real_orthonormal_pauli"
+     },
+     "projected_rhs_norm": 5.287632415102822e-09,
+     "rhs_norm": 5.287632415102824e-09,
+     "projected_residual": 9.51429190394834e-16,
+     "full_linear_residual": 9.514659744219424e-16,
+     "outside_tangent_residual": 8.366370020920352e-18,
+     "linear_tolerance": 5.287632415102822e-17,
+     "hermiticity_defect": 6.58643690057096e-22,
+     "dimension": 64,
+     "max_elements": 2000000,
+     "peak_guarded_elements": 4096,
+     "peak_product_bond": 32,
+     "factor_power_bond": 4,
+     "direction_bond": 8,
+     "matvec_count": 43,
+     "frame_seconds": 0.00045833300000003296,
+     "operator_setup_seconds": 0.0009137909999999971,
+     "source_seconds": 0.0005147910000000144,
+     "support_seconds": 0.00035400000000002096,
+     "preconditioner_setup_seconds": 1.669999999953653e-07,
+     "solve_seconds": 0.010013916000000012,
+     "matvec_seconds_inclusive_in_solve": 0.009061790999999986,
+     "audit_seconds": 0.0014859580000000094
+    }
+   },
+   "factor_cap": 4,
+   "root_cap": 6,
+   "work_cap": 10,
+   "iteration": 2,
+   "elapsed_seconds": 0.05704162500000004
+  },
+  {
+   "phase": "correction_solve",
+   "failure": {
+    "status": "nonconvergence",
+    "message": "Original projected residual failed (possible unresolved null forcing)",
+    "details": {
+     "status": "nonconvergence",
+     "power": 4,
+     "mode": "two",
+     "solver": "minres",
+     "factor_lower_bound": -0.5034032420620486,
+     "floor_provenance": "current_pauli_triangle",
+     "enclosure_margin": 4.7707029079202914e-14,
+     "verified_spd": false,
+     "target_hermiticity": 4.190336052923235e-16,
+     "scale": 0.24771240988012533,
+     "preconditioner": "none",
+     "regularization_shift": 0.0,
+     "iterations": 43,
+     "history": null,
+     "condition_estimate": null,
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 64,
+      "stored_ranks": [
+       1,
+       8,
+       8,
+       1
+      ],
+      "active_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "block_shapes": [
+       [
+        0,
+        16
+       ],
+       [
+        16,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       0,
+       64
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0,
+      "input_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "factor_hermiticity": 9.952456689249237e-16,
+      "factor_norm": 1.119027908250269,
+      "coordinates": "real_orthonormal_pauli"
+     },
+     "projected_rhs_norm": 5.287632415102822e-09,
+     "rhs_norm": 5.287632415102824e-09,
+     "projected_residual": 9.51429190394834e-16,
+     "full_linear_residual": 9.514659744219424e-16,
+     "outside_tangent_residual": 8.366370020920352e-18,
+     "linear_tolerance": 5.287632415102822e-17,
+     "hermiticity_defect": 6.58643690057096e-22,
+     "dimension": 64,
+     "max_elements": 2000000,
+     "peak_guarded_elements": 4096,
+     "peak_product_bond": 32,
+     "factor_power_bond": 4,
+     "direction_bond": 8,
+     "matvec_count": 43,
+     "frame_seconds": 0.000405875,
+     "operator_setup_seconds": 0.0008345419999999937,
+     "source_seconds": 0.0005149170000000036,
+     "support_seconds": 0.00032433300000001,
+     "preconditioner_setup_seconds": 1.669999999953653e-07,
+     "solve_seconds": 0.009653499999999982,
+     "matvec_seconds_inclusive_in_solve": 0.008756042999999991,
+     "audit_seconds": 0.0016676669999999838
+    }
+   },
+   "factor_cap": 6,
+   "root_cap": 8,
+   "work_cap": 12,
+   "iteration": 1,
+   "elapsed_seconds": 0.07061029200000002
+  },
+  {
+   "phase": "correction_solve",
+   "failure": {
+    "status": "nonconvergence",
+    "message": "Original projected residual failed (possible unresolved null forcing)",
+    "details": {
+     "status": "nonconvergence",
+     "power": 4,
+     "mode": "two",
+     "solver": "minres",
+     "factor_lower_bound": -0.5034032420620486,
+     "floor_provenance": "current_pauli_triangle",
+     "enclosure_margin": 4.7707029079202914e-14,
+     "verified_spd": false,
+     "target_hermiticity": 4.190336052923235e-16,
+     "scale": 0.24771240988012533,
+     "preconditioner": "none",
+     "regularization_shift": 0.0,
+     "iterations": 43,
+     "history": null,
+     "condition_estimate": null,
+     "frame_metadata": {
+      "mode": "two",
+      "width": 2,
+      "dimension": 64,
+      "stored_ranks": [
+       1,
+       8,
+       8,
+       1
+      ],
+      "active_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "block_shapes": [
+       [
+        0,
+        16
+       ],
+       [
+        16,
+        4
+       ]
+      ],
+      "offsets": [
+       0,
+       0,
+       64
+      ],
+      "rank_rtol": 1e-13,
+      "rank_discard_bound": 0.0,
+      "input_ranks": [
+       1,
+       4,
+       4,
+       1
+      ],
+      "factor_hermiticity": 9.952456689249237e-16,
+      "factor_norm": 1.119027908250269,
+      "coordinates": "real_orthonormal_pauli"
+     },
+     "projected_rhs_norm": 5.287632415102822e-09,
+     "rhs_norm": 5.287632415102824e-09,
+     "projected_residual": 9.51429190394834e-16,
+     "full_linear_residual": 9.514659744219424e-16,
+     "outside_tangent_residual": 8.366370020920352e-18,
+     "linear_tolerance": 5.287632415102822e-17,
+     "hermiticity_defect": 6.58643690057096e-22,
+     "dimension": 64,
+     "max_elements": 2000000,
+     "peak_guarded_elements": 4096,
+     "peak_product_bond": 32,
+     "factor_power_bond": 4,
+     "direction_bond": 8,
+     "matvec_count": 43,
+     "frame_seconds": 0.0004802499999999599,
+     "operator_setup_seconds": 0.0010243340000000156,
+     "source_seconds": 0.0005466249999999673,
+     "support_seconds": 0.00037558300000001266,
+     "preconditioner_setup_seconds": 2.090000000287695e-07,
+     "solve_seconds": 0.01025858399999996,
+     "matvec_seconds_inclusive_in_solve": 0.009289497000000035,
+     "audit_seconds": 0.001753624999999981
+    }
+   },
+   "factor_cap": 8,
+   "root_cap": 12,
+   "work_cap": 16,
+   "iteration": 1,
+   "elapsed_seconds": 0.08523075000000002
+  }
+ ],
+ "last_failure": {
+  "status": "nonconvergence",
+  "message": "Original projected residual failed (possible unresolved null forcing)",
+  "details": {
+   "status": "nonconvergence",
+   "power": 4,
+   "mode": "two",
+   "solver": "minres",
+   "factor_lower_bound": -0.5034032420620486,
+   "floor_provenance": "current_pauli_triangle",
+   "enclosure_margin": 4.7707029079202914e-14,
+   "verified_spd": false,
+   "target_hermiticity": 4.190336052923235e-16,
+   "scale": 0.24771240988012533,
+   "preconditioner": "none",
+   "regularization_shift": 0.0,
+   "iterations": 43,
+   "history": null,
+   "condition_estimate": null,
+   "frame_metadata": {
+    "mode": "two",
+    "width": 2,
+    "dimension": 64,
+    "stored_ranks": [
+     1,
+     8,
+     8,
+     1
+    ],
+    "active_ranks": [
+     1,
+     4,
+     4,
+     1
+    ],
+    "block_shapes": [
+     [
+      0,
+      16
+     ],
+     [
+      16,
+      4
+     ]
+    ],
+    "offsets": [
+     0,
+     0,
+     64
+    ],
+    "rank_rtol": 1e-13,
+    "rank_discard_bound": 0.0,
+    "input_ranks": [
+     1,
+     4,
+     4,
+     1
+    ],
+    "factor_hermiticity": 9.952456689249237e-16,
+    "factor_norm": 1.119027908250269,
+    "coordinates": "real_orthonormal_pauli"
+   },
+   "projected_rhs_norm": 5.287632415102822e-09,
+   "rhs_norm": 5.287632415102824e-09,
+   "projected_residual": 9.51429190394834e-16,
+   "full_linear_residual": 9.514659744219424e-16,
+   "outside_tangent_residual": 8.366370020920352e-18,
+   "linear_tolerance": 5.287632415102822e-17,
+   "hermiticity_defect": 6.58643690057096e-22,
+   "dimension": 64,
+   "max_elements": 2000000,
+   "peak_guarded_elements": 4096,
+   "peak_product_bond": 32,
+   "factor_power_bond": 4,
+   "direction_bond": 8,
+   "matvec_count": 43,
+   "frame_seconds": 0.0004802499999999599,
+   "operator_setup_seconds": 0.0010243340000000156,
+   "source_seconds": 0.0005466249999999673,
+   "support_seconds": 0.00037558300000001266,
+   "preconditioner_setup_seconds": 2.090000000287695e-07,
+   "solve_seconds": 0.01025858399999996,
+   "matvec_seconds_inclusive_in_solve": 0.009289497000000035,
+   "audit_seconds": 0.001753624999999981
+  }
+ },
+ "timings": {
+  "fit_seconds": 0.021396418000000028,
+  "correction_seconds": 0.056211206999999985,
+  "reconstruction_seconds": 0.0009299580000000085,
+  "certification_seconds": 0.0026868339999999713,
+  "diagnostics_seconds": 0.0033931670000000302,
+  "event_io_seconds": 0.0
+ },
+ "endpoint_seconds": 0.08530441700000002
+}

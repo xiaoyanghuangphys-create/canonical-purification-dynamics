@@ -1,0 +1,11 @@
+worker	status	intended_time	reached_time	records	actual_error	certificate	result
+D_A	raw_completed	0.1	0.1	2	1.1993311346320526e-05	0.016705545017449218	D_A/raw.json
+D_B	raw_completed	0.1	0.1	2	1.1235658251619074e-05	0.016705579003659557	D_B/raw.json
+Dstress_A	raw_completed	4.0	4.0	8	0.003740735276908756	0.3897099319791595	Dstress_A/raw.json
+Dstress_B	raw_completed	4.0	4.0	8	0.002160296948734183	0.3880803170182202	Dstress_B/raw.json
+E_A	raw_completed	1.0	1.0	2	0.00999461654935895	0.2905942362414493	E_A/raw.json
+E_B	raw_completed	1.0	1.0	2	0.006918126255306439	0.28860101610006006	E_B/raw.json
+adaptive_new	completed	0.5	0.5	1	3.3015014295950085e-11	1.8457984678865473e-10	adaptive_new/attempts.json
+adaptive_old	uncertified	0.5	0.1875	7	2.5285749774373053e-06	9.548867045822647e-06	adaptive_old/attempts.json
+pure_gn	completed	0.01	0.01	3	7.229581904182453e-11	6.232167516897856e-07	pure_gn/pure.json
+pure_new	completed	0.01	0.01	3	7.251049536022663e-11	6.247233833288735e-07	pure_new/pure.json

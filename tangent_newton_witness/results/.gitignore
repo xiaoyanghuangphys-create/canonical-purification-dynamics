@@ -1,0 +1,4 @@
+# Verified worker archives retain every file in these local scratch directories.
+/stress_*/*/
+/controls_*/*/
+/context_0[12]/*/

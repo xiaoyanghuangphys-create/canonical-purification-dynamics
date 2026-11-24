@@ -1,0 +1,22 @@
+{
+ "workers": 4,
+ "files": 14,
+ "zip_sha256": "6f66ccae91441515c8e857610c15ef317e99cdef9ffc0d4c4f4e41047605877b",
+ "index_sha256": "d94c11baf4d9346ec06fa7a1ecf7eb0b201a8d8692d36501efb4e35542f4812f",
+ "member_sha256": {
+  "D_factor_lsqr/config.json": "587f219c8f1fd7d91bc56650f89346736fde92ba3672ba61404dd9ae48f9b79a",
+  "D_factor_lsqr/events.jsonl": "bae19549296c628b832ae4a3b3c357cd8e6890cfbdd30488138760d7ca41bddb",
+  "D_factor_lsqr/measurement.json": "111355fd8ca52d92f8d139a93505c80d5ccd8516391473e7bd082beff225d52a",
+  "D_factor_lsqr/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "D_factor_svd/config.json": "18346719210bf56f0b06676733bd566d242d94c2900aea06fc264c6820910720",
+  "D_factor_svd/measurement.json": "4402bfb2357d560d6abd2e8e015bd32694edba74ff6b709f39ca4de48f5516c4",
+  "D_factor_svd/worker.log": "384ffd5eaf5184d382a6fe3f0d9aefc802d68d04a0be33e5b480b34a48d3f8d7",
+  "E_factor_lsqr/config.json": "3f529eeea4eeea4811c962c8e1aac4d047d5ad56fef57daa7e4d7d1eadc0dcfd",
+  "E_factor_lsqr/events.jsonl": "28633196a2e0b19494331a334f0ae062807416c32cd67310ed641f62ec9560e4",
+  "E_factor_lsqr/measurement.json": "3a4e4074c811001798a3143577e26cc7112ee949a134fb4767f1e1a60d469cb1",
+  "E_factor_lsqr/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "E_factor_svd/config.json": "ff9ec4918f16c94014bc541bf53b8b3db586765dc9adf50ebacb03f073325976",
+  "E_factor_svd/measurement.json": "543e8ee51773178475964144650b67576de02e9e19d6194edbeb3ba5cab0e7b2",
+  "E_factor_svd/worker.log": "384ffd5eaf5184d382a6fe3f0d9aefc802d68d04a0be33e5b480b34a48d3f8d7"
+ }
+}

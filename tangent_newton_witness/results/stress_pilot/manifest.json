@@ -1,0 +1,121 @@
+{
+ "configs": [
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 3,
+   "total": 1.5,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "product",
+   "n": 2,
+   "steps": 3,
+   "total": 1.5,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "strong-D",
+   "n": 2,
+   "steps": 3,
+   "total": 0.3,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "strong-D",
+   "n": 2,
+   "steps": 3,
+   "total": 0.3,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "loss",
+   "n": 2,
+   "steps": 3,
+   "total": 0.6,
+   "label": "Old-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "loss",
+   "n": 2,
+   "steps": 3,
+   "total": 0.6,
+   "label": "Adaptive-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "loss",
+   "n": 2,
+   "steps": 3,
+   "total": 0.6,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "ising-near",
+   "n": 2,
+   "steps": 3,
+   "total": 0.03,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "ising-near",
+   "n": 2,
+   "steps": 3,
+   "total": 0.03,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "ising-pure",
+   "n": 2,
+   "steps": 3,
+   "total": 0.01,
+   "label": "New-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  },
+  {
+   "family": "ising-pure",
+   "n": 2,
+   "steps": 3,
+   "total": 0.01,
+   "label": "GN-only",
+   "tolerance": 1e-05,
+   "mode": "two"
+  }
+ ],
+ "timeout": 30.0,
+ "base_sha": "23fbd4c89a630688e65d441d9edb6a0056808d21",
+ "sources": {
+  "support.py": "1eebc159a620acb9f34d095b32449455038e8e6dff44605586e66a0dd939c1a3",
+  "operator.py": "8a112a536914bed985f8a36dcfe32801381c578a850916245acfb659b2a0203a",
+  "stress.py": "1432bca23b7aeef613ca8a6bb2584b1cb85376e0648359c5280ec0878304e80b",
+  "gn.py": "cc122878110c5ce8761bdbea8be2bf7fea6425aa9ce0477baaf58868a16fce9c",
+  "endpoint.py": "64b9439aba28efe2c98b9c9164493bbc2eae2c1ba6c996eb16eda993ce1c642f",
+  "context.py": "611db3868b91daeadee919b1927f810d99b78e06c3966f31c2261de515f1f01f",
+  "paired.py": "38a07d9f27c13ebd80677b48c557017c5cec293ba9b8656336e143b5399b6cb4"
+ },
+ "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+ "numpy": "2.0.2",
+ "scipy": "1.13.1",
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "machine": "arm64",
+ "threads": 1,
+ "seeds": "deterministic inputs"
+}
