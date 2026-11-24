@@ -104,7 +104,8 @@ def prepare(c):
     n,kind=c['n'],c['family']
     if kind.startswith('ising'):
         audit=InteractingAudit(n,'pure' if kind=='ising-pure' else 'near')
-        w=ts.matrix_to_mpo(spectral_power(audit.rho0,.25),n)
+        # The pure input is a known projector. Its fourth root is itself.
+        w=ts.matrix_to_mpo(audit.rho0 if audit.floor==0 else spectral_power(audit.rho0,.25),n)
         return audit,sw.factor_to_root(w,8),audit.target
     noise='loss' if kind=='loss' else 'dephasing'
     p,angle=(.86,0.) if kind=='product' else (.35,.8)

@@ -5,6 +5,7 @@ import argparse
 from collections import defaultdict
 from functools import partial
 import hashlib
+from io import BytesIO
 import json
 import os
 from pathlib import Path
@@ -52,7 +53,7 @@ def configuration(args, family, n, steps, tol, label):
                 fit=fit if predictor else 'none',correction=correction,levels=levels,mode=args.mode,
                 chi=2 if family=='E' else 4,work=work,passes=8 if family=='E' else 4,rtol=trained_tolerance(family,n,steps,tol),
                 atol=2e-13*2.**(-n/2),maxiter=80,max_elements=args.max_elements,timeout=args.timeout,
-                memory_mib=args.memory_mib,freeze_step=args.freeze_step,new_rtol=args.new_rtol,native=args.native,preconditioner=args.preconditioner)
+                memory_mib=args.memory_mib,freeze_step=args.freeze_step,new_rtol=args.new_rtol,native=args.native,preconditioner=args.preconditioner,checkpoint=str(args.checkpoint) if args.checkpoint else None)
 
 
 def timed_call(row, key, fun, *args, **kwargs):
@@ -68,6 +69,25 @@ def save_state(path, state, time, bound):
     np.savez_compressed(path,time=time,bound=bound,eta=eta,
                         **{f'w{i}':a for i,a in enumerate(factor.tensors)},
                         **{f'x{i}':a for i,a in enumerate(root.tensors)})
+
+
+def load_checkpoint(path, c, step, t):
+    """Read a previously certified native-format trajectory endpoint and its provenance."""
+    with ZipFile(path) as archive:
+        origin=json.loads(archive.read('config.json'))
+        for field in ('family','n','steps','total'):
+            if origin[field]!=c[field]:
+                raise ValueError(f'Checkpoint {field} differs from requested physical grid')
+        with np.load(BytesIO(archive.read(f'accepted_{step}.npz')),allow_pickle=False) as arrays:
+            if not np.isclose(float(arrays['time']),t,atol=1e-14,rtol=0):
+                raise ValueError('Checkpoint time differs from replay origin')
+            def train(name):
+                cores=[arrays[f'{name}{i}'] for i in range(c['n'])]
+                result=tn.MPS(c['n'],max_bond=max(a.shape[-1] for a in cores))
+                result.tensors,result.center=cores,c['n']-1
+                return result
+            state=(train('w'),train('x'),float(arrays['eta']))
+            return state,float(arrays['bound'])
 
 
 def score(model, engine, carried, pred, state, target, t):
@@ -144,7 +164,18 @@ def worker(c, folder):
         row['setup_seconds']=perf_counter()-tic
         grid=np.linspace(0,c['total'],c['steps']+1)
         
-        for i,(t0,t1) in enumerate(zip(grid[:-1],grid[1:]),1):
+        start_step=0
+        if c.get('checkpoint'):
+            start_step=c['freeze_step']-1
+            tic=perf_counter()
+            state,bound=load_checkpoint(ROOT/c['checkpoint'],c,start_step,grid[start_step])
+            audit,_=previous._audit(engine,state[1],state[2],witness.channel(engine.physical,grid[start_step]),
+                                    grid[start_step],c['cert_tol'])
+            if audit['bound']>c['cert_tol'] or abs(audit['bound']-bound)>2e-11:
+                raise ValueError('Frozen input failed independent certificate replay')
+            row.update(reached_time=grid[start_step],last_accepted_bound=bound,prefix_accepted_steps=start_step,
+                       frozen_prefix_seconds=perf_counter()-tic)
+        for i,(t0,t1) in enumerate(zip(grid[start_step:-1],grid[start_step+1:]),start_step+1):
             tic=perf_counter()
             frozen=c['freeze_step'] is not None
             # A carried root from the native old A trajectory supplies a common
@@ -223,6 +254,8 @@ def run(args):
             source_files_sha256=hashes,hardware=subprocess.run(['sysctl','-n','machdep.cpu.brand_string'],capture_output=True,text=True).stdout.strip() if sys.platform=='darwin' else platform.processor(),python=sys.version,platform=platform.platform(),machine=platform.machine(),
             numpy=np.__version__,scipy=bm.scipy.__version__,blas=np.__config__.show(mode='dicts')['Build Dependencies']['blas'],
             threads=THREADS,argv=sys.argv,seed=None,cohort=args.phase,grid=configs,repeats=args.repeats))
+    if args.checkpoint and (not args.freeze_step or args.freeze_step<2):
+        raise ValueError('--checkpoint requires a positive previous endpoint index')
     if args.freeze_step and (args.freeze_step<1 or any(s<args.freeze_step for s in args.steps)):
         raise ValueError('freeze-step must index an endpoint in each grid')
     for rep in range(1,args.repeats+1):
@@ -279,6 +312,7 @@ def main():
     p.add_argument('--max-elements',type=int,default=2_000_000); p.add_argument('--new-rtol',type=float,default=1e-8)
     p.add_argument('--preconditioner',choices=['none','jacobi'],default='none')
     p.add_argument('--mode',choices=['one','two'],default='two'); p.add_argument('--phase',default='screen')
+    p.add_argument('--checkpoint',type=Path,help='replay a certified previous endpoint in this worker ZIP')
     p.add_argument('--freeze-step',type=int); p.add_argument('--repeats',type=int,default=1)
     args=p.parse_args()
     if args.worker: worker(json.loads((args.worker/'config.json').read_text()),args.worker)

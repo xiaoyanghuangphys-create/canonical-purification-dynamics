@@ -136,7 +136,7 @@ def test_fit_only_ablation_and_infeasible_target():
                              fit='new', correction='none', tolerance=1e-8, fit_iterations=4)
     assert info['accepted'] and not info['predictor_selected'] and info['correction_trials'] == 0
     attained = [r['square_residual'] for r in info['attempts'] if r['phase'] == 'fit_trial' and r['improved']]
-    assert all(d >= 1. - 1e-12 for d in attained)
+    assert attained and all(d >= 1. - 1e-12 for d in attained)
     assert tn.distance(out[0], state[0]) < 1e-13
 
 
@@ -158,3 +158,54 @@ def test_explicit_core_limit_returns_frozen_state():
     out, info = run_endpoint(e, state, None, e.physical, 0., levels=[(4, 4, 4)],
                              max_elements=1, tolerance=1e-8)
     assert out is state and info['status'] == 'memory_budget' and info['rollback']
+
+
+def test_invalid_certificate_rolls_back_engine_and_returns_rejection():
+    class BadAudit:
+        def __init__(self):
+            self.time = 0.
+        def endpoint(self, root, eta, target, time, tol):
+            self.time = time
+            return dict(bound=float('nan')), target
+    e, state = parity(2)
+    bad = BadAudit()
+    out, info = run_endpoint(bad, state, None, e.physical, .1, levels=[(4,4,8)],
+                             tolerance=1.e-8, correction='new')
+    assert out is state and bad.time == 0.
+    assert info['rollback'] and info['status'] == 'invalid_certificate'
+    json.dumps(info, allow_nan=False)
+
+
+@pytest.mark.parametrize('time', [0., .35])
+def test_failed_fit_trials_preserve_carry_and_allow_later_correction(monkeypatch, time):
+    from tangent_newton_witness import endpoint
+    e, state = parity(2)
+    target = witness.channel(e.physical, time)
+    prediction = tn.scale(state[1], -1.)
+    retraction = endpoint._retract
+    attempts = []
+    def fail_only_fit(factor, direction, scale, bond, kind):
+        if len(attempts) < 3:
+            attempts.append(scale)
+            raise np.linalg.LinAlgError('Simulated fit trial SVD failure')
+        return retraction(factor, direction, scale, bond, kind)
+    monkeypatch.setattr(endpoint, '_retract', fail_only_fit)
+    out, info = run_endpoint(e, state, prediction, target, time, levels=[(4, 4, 8)],
+                             fit='new', correction='new', tolerance=1e-7, passes=8)
+    assert info['accepted'] and not info['predictor_selected']
+    assert attempts == [1., .5, .25]
+    assert len([a for a in info['attempts'] if a['phase']=='fit_trial' and a.get('failure')])==3
+    assert info['correction_updates'] > 0 if time else out[0] is state[0]
+    assert np.linalg.norm(matrix(out[1]) - positive_power(matrix(target), .5)) <= info['bound']+3e-12
+
+
+def test_oversized_prediction_does_not_invalidate_certified_carry():
+    e = witness.WitnessAudit(3, 0., 0.)
+    from galerkin_sylvester_tdvp.models import kron_state
+    state = witness.factor_to_root(kron_state([mpo.I/2**.25]*3), 1)
+    pred = witness.parity_power(3, .5)
+    out, info = run_endpoint(e, state, pred, e.physical, 0., levels=[(4,4,8)],
+                             tolerance=1e-8, fit='old', correction='none', max_elements=32)
+    assert info['accepted'] and out[0] is state[0]
+    assert any(x.get('failure',{}).get('status')=='memory_budget' for x in info['attempts'])
+    assert not info['predictor_selected']

@@ -8,7 +8,7 @@ from time import perf_counter
 import numpy as np
 from scipy.sparse.linalg import LinearOperator, lsqr
 
-from factor_tdvp.tangent_solver import matrix, matrix_to_mpo
+from factor_tdvp.tangent_solver import matrix, tn
 from galerkin_sylvester_tdvp.galerkin_solver import GalerkinError
 from galerkin_sylvester_tdvp.tangent_frame import build_frame
 
@@ -42,6 +42,27 @@ def unpack(v):
     return re + 1j * im
 
 
+def _untruncated_mpo(value, n):
+    """Represent a small dense cotangent with all geometric QR columns.
+
+    LSQR needs the adjoint of the same linear map at every iteration. Even
+    a relative machine-scale TT-SVD cutoff can erase a small Schmidt sector
+    of the cotangent when an unrelated sector becomes large.
+    """
+    block = tn.to_interleaved(value, n)
+    left = 1
+    cores = []
+    for _ in range(n-1):
+        basis, block = np.linalg.qr(block.reshape(4*left, -1), mode='reduced')
+        right = basis.shape[1]
+        cores.append(basis.reshape(left, 4, right))
+        left = right
+    cores.append(block.reshape(left, 4, 1))
+    out = tn.MPS(n, max_bond=max(core.shape[-1] for core in cores))
+    out.tensors, out.center = cores, n-1
+    return out
+
+
 def solve_direction(factor, target, power, *, mode="two", damping=1.e-8,
                     maxiter=100, max_elements=2_000_000, rtol=1.e-8):
     """Zero-start LSQR; return only independently verified descent directions."""
@@ -66,7 +87,7 @@ def solve_direction(factor, target, power, *, mode="two", damping=1.e-8,
     def adjoint(u):
         residual = unpack(u).reshape(w.shape)
         jstar = jacobian_adjoint(w, residual, power, x)
-        return pack(frame.encode(matrix_to_mpo(jstar, n)))
+        return pack(frame.encode(_untruncated_mpo(jstar, n)))
 
     design = LinearOperator(dimensions, matvec=apply, rmatvec=adjoint, dtype=float)
     b = pack(rhs)

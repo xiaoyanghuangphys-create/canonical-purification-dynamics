@@ -11,6 +11,7 @@ from time import perf_counter
 
 import numpy as np
 
+from galerkin_sylvester_tdvp.evolution import EvolutionError
 from galerkin_sylvester_tdvp.galerkin_solver import GalerkinError, _evidence
 from galerkin_sylvester_tdvp.models import tn, mpo, witness
 from galerkin_sylvester_tdvp.witness_pair_worker import _audit
@@ -88,7 +89,7 @@ def _direction(kind, factor, target, power, *, engine, legacy_source, anchor,
     if kind == 'gn':
         from .gn import solve_direction
         return solve_direction(factor, target, power, mode=mode, damping=damping,
-                               maxiter=maxiter, max_elements=max_elements)
+                               rtol=rtol, maxiter=maxiter, max_elements=max_elements)
     from .operator import solve_direction
     lower = factor_floor(factor) if factor_floor is not None else None
     return solve_direction(factor, target, power, mode=mode, lower_bound=lower,
@@ -186,12 +187,12 @@ def run_endpoint(engine, previous, prediction, target, time, *, levels, toleranc
         with _timed(times, 'diagnostics_seconds'):
             try:
                 return _fourth_diagnostics(factor, root, target, work, max_elements, raw_trace)
-            except GalerkinError as error:
-                return {'fourth_diagnostic_status': error.details}
+            except numerical as error:
+                return {'fourth_diagnostic_status': rejected(error)}
     def rejected(error):
         return dict(status=getattr(error, 'status', 'numeric_failure'),
                     message=str(error), details=getattr(error, 'details', {}))
-    numerical = (ArithmeticError, np.linalg.LinAlgError, GalerkinError, MemoryError)
+    numerical = (ArithmeticError, np.linalg.LinAlgError, GalerkinError, EvolutionError, MemoryError)
     factor, root, eta = previous
     best = previous
     carry_bound = pred_bound = None
@@ -208,49 +209,65 @@ def run_endpoint(engine, previous, prediction, target, time, *, levels, toleranc
         emit(dict(phase='carry', bound=carry_bound, witness=eta,
                   **diagnostic(factor, root, levels[0][2])))
         if prediction is not None:
-            fb = max(levels[0][0], factor.bond_dimension())
-            work = max(levels[0][2], fb, prediction.bond_dimension())
-            fitted = factor
-            with _timed(times, 'fit_seconds'):
-                difference = tn.add(prediction, _positive(fitted, max_elements), beta=-1.)
-                fit_distance = tn.norm(difference)
-            emit(dict(phase='fit_start', square_residual=fit_distance))
-            for i in range(fit_iterations if fit != 'none' else 0):
-                if fit_distance == 0.:
-                    break
-                try:
-                    with _timed(times, 'fit_seconds'):
-                        source = tn.compress(difference, work)[0] if fit == 'old' else None
-                        update, solve = direction(fit, fitted, prediction, 2, source, anchor2, work)
-                    emit(dict(phase='fit_solve', iteration=i+1, solve=solve))
-                except numerical as error:
-                    last_error = rejected(error)
-                    emit(dict(phase='fit_solve', iteration=i+1, failure=last_error))
-                    break
-                scales = (1.,) if fit == 'old' else backtracks
-                for scale in scales:
-                    with _timed(times, 'fit_seconds'):
-                        trial, rounding = _retract(fitted, update, scale, fb, fit)
-                        diff = tn.add(prediction, _positive(trial, max_elements), beta=-1.)
-                        distance = tn.norm(diff)
-                    better = distance < fit_distance
-                    emit(dict(phase='fit_trial', iteration=i+1, scale=scale, improved=better,
-                              square_residual=distance, factor_retraction_error=rounding,
-                              factor_cap=fb, factor_bond=trial.bond_dimension()))
-                    if better:
-                        fitted, difference, fit_distance = trial, diff, distance
-                        fit_updates += 1
+            carry_engine = vars(engine).copy()
+            try:
+                fb = max(levels[0][0], factor.bond_dimension())
+                work = max(levels[0][2], fb, prediction.bond_dimension())
+                fitted = factor
+                with _timed(times, 'fit_seconds'):
+                    difference = tn.add(prediction, _positive(fitted, max_elements), beta=-1.)
+                    fit_distance = tn.norm(difference)
+                emit(dict(phase='fit_start', square_residual=fit_distance))
+                for i in range(fit_iterations if fit != 'none' else 0):
+                    if fit_distance == 0.:
                         break
-                else:
-                    break
-            proposal, pr = audit(prediction, fit_distance)
-            pred_bound = proposal['bound']
-            predictor_selected = pred_bound < carry_bound
-            emit(dict(phase='predictor', bound=pred_bound, witness=fit_distance,
-                      selected=predictor_selected, **diagnostic(fitted, prediction, work)))
-            if predictor_selected:
-                factor, root, eta = fitted, prediction, fit_distance
-                best, check, residual = (factor, root, eta), proposal, pr
+                    try:
+                        with _timed(times, 'fit_seconds'):
+                            source = tn.compress(difference, work)[0] if fit == 'old' else None
+                            update, solve = direction(fit, fitted, prediction, 2, source, anchor2, work)
+                        emit(dict(phase='fit_solve', iteration=i+1, solve=solve))
+                    except numerical as error:
+                        last_error = rejected(error)
+                        emit(dict(phase='fit_solve', iteration=i+1, failure=last_error))
+                        break
+                    scales = (1.,) if fit == 'old' else backtracks
+                    for scale in scales:
+                        try:
+                            with _timed(times, 'fit_seconds'):
+                                trial, rounding = _retract(fitted, update, scale, fb, fit)
+                                diff = tn.add(prediction, _positive(trial, max_elements), beta=-1.)
+                                distance = tn.norm(diff)
+                                if not np.isfinite(distance):
+                                    raise ArithmeticError('Nonfinite square fit residual')
+                        except numerical as error:
+                            last_error = rejected(error)
+                            emit(dict(phase='fit_trial', iteration=i+1, scale=scale, improved=False,
+                                      failure=last_error, factor_cap=fb))
+                            continue
+                        better = distance < fit_distance
+                        emit(dict(phase='fit_trial', iteration=i+1, scale=scale, improved=better,
+                                  square_residual=distance, factor_retraction_error=rounding,
+                                  factor_cap=fb, factor_bond=trial.bond_dimension()))
+                        if better:
+                            fitted, difference, fit_distance = trial, diff, distance
+                            fit_updates += 1
+                            break
+                    else:
+                        break
+                proposal, pr = audit(prediction, fit_distance)
+                pred_bound = proposal['bound']
+                predictor_selected = pred_bound < carry_bound
+                emit(dict(phase='predictor', bound=pred_bound, witness=fit_distance,
+                          selected=predictor_selected, **diagnostic(fitted, prediction, work)))
+                if predictor_selected:
+                    factor, root, eta = fitted, prediction, fit_distance
+                    best, check, residual = (factor, root, eta), proposal, pr
+            except numerical as error:
+                last_error = rejected(error)
+                vars(engine).clear()
+                vars(engine).update(carry_engine)
+                pred_bound, predictor_selected = None, False
+                emit(dict(phase='predictor', selected=False, failure=last_error))
         for fb, rb, work in levels:
             if check['bound'] <= tolerance or correction == 'none':
                 break

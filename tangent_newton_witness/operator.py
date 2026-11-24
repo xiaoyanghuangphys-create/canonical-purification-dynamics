@@ -260,7 +260,8 @@ def solve_direction(factor, target, power, *, mode='two', lower_bound=None, rtol
                     preconditioner='none'):
     """Return (Hermitian K, diagnostics); reject unresolved original equations.
 
-    A supplied positive lower_bound must apply to the actual current W.
+    A supplied lower_bound must apply to the actual current W. A valid
+    nonpositive floor selects indefinite MINRES without an SPD guarantee.
     With no bound the solver first tries a current-factor Pauli enclosure.
     The indefinite MINRES alternative has the same Galerkin objective and
     must pass the original residual check. Endpoint merit is a separate test.
@@ -285,8 +286,9 @@ def solve_direction(factor, target, power, *, mode='two', lower_bound=None, rtol
     t = perf_counter()
     bound_source = 'caller_current_witness' if lower_bound is not None else 'current_pauli_triangle'
     floor = lower_bound if lower_bound is not None else _factor_floor(factor, frame)
-    if lower_bound is not None and (not np.isfinite(lower_bound) or lower_bound <= 0
-            or lower_bound > mpo.trace(factor).real*2.**(-factor.n)*(1+1e-10)):
+    mean = mpo.trace(factor).real*2.**(-factor.n)
+    trace_margin = 64*np.finfo(float).eps*factor.n*frame.metadata['factor_norm']
+    if lower_bound is not None and (not np.isfinite(lower_bound) or lower_bound > mean+trace_margin):
         raise GalerkinError('invalid_floor', 'Supplied current-factor floor is invalid', lower_bound=lower_bound)
     # A triangle bound at cancellation scale cannot distinguish a singular
     # factor from a positive one in floating point. Treat this case as unknown.

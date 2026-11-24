@@ -45,3 +45,27 @@ def test_unresolved_kernel_forcing_rejected():
     t = matrix_to_mpo(np.diag([1.,.01]),1)
     with pytest.raises(GalerkinError, match="Unresolved forcing"):
         solve_direction(w,t,4)
+
+
+@pytest.mark.parametrize('weight', [3e-15, 3e-14])
+def test_qr_adjoint_retains_forcing_above_and_below_a_relative_svd_cutoff(weight):
+    from tangent_newton_witness.gn import _untruncated_mpo
+    from galerkin_sylvester_tdvp.tangent_frame import build_frame
+
+    # Orthogonal rank-one Schmidt sectors. The second stays resolvable in
+    # double precision because its physical matrix entry is separate.
+    large = np.diag([1.,0.,0.,0.]).astype(complex)
+    small = np.diag([0.,0.,0.,weight]).astype(complex)
+    w = np.eye(4)
+    frame = build_frame(matrix_to_mpo(w,2), 'two')
+    columns = np.column_stack([matrix(frame.decode(z)).ravel() for z in np.eye(frame.dimension)])
+
+    def adjoint(r):
+        dense = jacobian_adjoint(w,r,4)
+        return frame.encode(_untruncated_mpo(dense,2))
+
+    together = adjoint(large+small)
+    dense_reference = columns.conj().T@jacobian_adjoint(w,large+small,4).ravel()
+    np.testing.assert_allclose(together, dense_reference, rtol=1e-14, atol=1e-30)
+    np.testing.assert_allclose(together-adjoint(large), adjoint(small), rtol=1e-14, atol=1e-30)
+    assert np.linalg.norm(adjoint(small)) > 3*weight
