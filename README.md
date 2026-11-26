@@ -1,5 +1,7 @@
 # Canonical purification dynamics
 
+[Global TDVP and finite local lifts at infinite Markov length](parity_local_lift_comparison/report.md) compares canonical-root accuracy, local error floors and matched computation times on a parity ensemble. [Reproduce the measurements](parity_local_lift_comparison/README.md).
+
 **Latest: [factor versus positive-witness scaling study](factor_tdvp_accelerated/scaling_report.md)** —
 recovered Actions experiments, repeated comparisons at matched global error,
 separate witness/force/physical-reference costs, and explicit resource limits.
