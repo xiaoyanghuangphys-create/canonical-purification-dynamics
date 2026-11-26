@@ -1,0 +1,386 @@
+{
+  "cases": [
+    {
+      "kind": "dense-hp",
+      "n": 2,
+      "width": 1,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 2,
+      "width": 2,
+      "intervals": 2
+    },
+    {
+      "kind": "dense-hp",
+      "n": 3,
+      "width": 1,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 3,
+      "width": 2,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 3,
+      "width": 3,
+      "intervals": 2
+    },
+    {
+      "kind": "dense-hp",
+      "n": 4,
+      "width": 1,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 4,
+      "width": 3,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 4,
+      "width": 4,
+      "intervals": 2
+    },
+    {
+      "kind": "dense-hp",
+      "n": 6,
+      "width": 1,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 6,
+      "width": 3,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 6,
+      "width": 6,
+      "intervals": 2
+    },
+    {
+      "kind": "dense-hp",
+      "n": 8,
+      "width": 1,
+      "intervals": 3
+    },
+    {
+      "kind": "dense-hp",
+      "n": 8,
+      "width": 3,
+      "intervals": 3
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 5,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "native",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.0,
+      "completion": "alternate",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "native",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "active"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "uniform"
+    },
+    {
+      "kind": "completion",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3,
+      "b": 0.4,
+      "completion": "alternate",
+      "protocol": "uniform-skip"
+    },
+    {
+      "kind": "fit-data",
+      "n": 6,
+      "width": 2,
+      "fit_width": 2
+    },
+    {
+      "kind": "fit-data",
+      "n": 6,
+      "width": 2,
+      "fit_width": 3
+    },
+    {
+      "kind": "fit-data",
+      "n": 6,
+      "width": 2,
+      "fit_width": 5
+    },
+    {
+      "kind": "fit-data",
+      "n": 6,
+      "width": 2,
+      "fit_width": 6
+    },
+    {
+      "kind": "fit-data",
+      "n": 6,
+      "width": 6,
+      "fit_width": 6
+    },
+    {
+      "kind": "cluster",
+      "n": 8,
+      "method": "Half-Petz",
+      "width": 2,
+      "fit_width": 2,
+      "intervals": 2,
+      "horizon": 0.6
+    },
+    {
+      "kind": "cluster",
+      "n": 8,
+      "method": "Half-Petz",
+      "width": 3,
+      "fit_width": 3,
+      "intervals": 2,
+      "horizon": 0.6
+    },
+    {
+      "kind": "cluster",
+      "n": 8,
+      "method": "Local-fit",
+      "width": 3,
+      "fit_width": 5,
+      "intervals": 2,
+      "horizon": 0.6
+    },
+    {
+      "kind": "cluster",
+      "n": 8,
+      "method": "Local-fit",
+      "width": 3,
+      "fit_width": 7,
+      "intervals": 2,
+      "horizon": 0.6
+    }
+  ],
+  "timeout_s": 45,
+  "max_elements": 2000000,
+  "revision": "8ad2e03117d0e3a2ea2336cdda7a64fe44d66445",
+  "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "threads": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "sha256": {
+    "parity_local_lift_comparison/local_controls.py": "91833e93990d606f1d2bde3c0e6631bf233fa2c38b86c1a7e8522970d900dce2",
+    "parity_local_lift_comparison/local.py": "6bc091807ca304d0474863c576fae9a03a7c0c6198e20f9649b36167ec476cfd",
+    "parity_local_lift_comparison/oracles.py": "46493014c158336f33037dab51376638b60da5f53f7a9031ca8d28efc7a773ab",
+    "local_cp_large/local_cp_large.py": "34b1b9948e8aba8df8e43b294da7e9217f7b623b15c15afa725dbc70cbd08f4c",
+    "local_cp_large/ising_cp_study.py": "0441c8166dc453468e74aa8702d7c8815c5e5ad07b04c7566cbc7dedf7b15c04",
+    "half_petz_evolution/half_petz_evolution.py": "ac6a63e29399b081704cfa4f6e95675881df31d4a095309644f6f1da15c6f208",
+    "scalable_cp_witness/code/cluster_dephasing.py": "84918b9e23a69debe97bea42bdb515392514066e64a0482ad97bb0ad55d9a439"
+  }
+}

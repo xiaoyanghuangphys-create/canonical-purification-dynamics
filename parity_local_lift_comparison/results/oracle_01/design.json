@@ -1,0 +1,93 @@
+{
+  "design": {
+    "dense_n": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "dense_physical_dimension_cap": 256,
+    "dense_gate_element_cap": 65536,
+    "cmi_chain_sizes": [
+      3,
+      4,
+      6,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "horizons": [
+      0.0,
+      0.1,
+      0.3,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "controls": [
+      [
+        0.6,
+        0.4
+      ],
+      [
+        0.0,
+        0.4
+      ],
+      [
+        0.1,
+        0.4
+      ],
+      [
+        0.85,
+        0.4
+      ],
+      [
+        0.6,
+        0.0
+      ]
+    ],
+    "primary_p": 0.6,
+    "primary_b0": 0.4,
+    "subdivisions": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "historical_grid": [
+      0,
+      0.02,
+      0.1,
+      0.3,
+      0.6,
+      1.0
+    ],
+    "tolerance": 3e-12,
+    "dense_width_rule": "1, 2, 3, 5, 7, N//2, N-1 and N when 1 <= width <= N",
+    "cmi_width_rule": "A={1}, contiguous B of every length 1 through N-2, nonempty exterior"
+  },
+  "code_commit": "8ad2e03117d0e3a2ea2336cdda7a64fe44d66445",
+  "source_hashes": {
+    "oracle_validation.py": "00e0331e98b1a2917a50fd7301d390376dd001c4efa784c9e06183ab5b57354b",
+    "oracles.py": "46493014c158336f33037dab51376638b60da5f53f7a9031ca8d28efc7a773ab",
+    "test_oracles.py": "30ef276dadd63fb07404d88d326bbdb40c05fb79a0643fd0381337ad167f1890"
+  },
+  "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+  "numpy": "2.0.2",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "blas_env": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

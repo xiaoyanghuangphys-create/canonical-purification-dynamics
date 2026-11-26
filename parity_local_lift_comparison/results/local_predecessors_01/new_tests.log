@@ -1,0 +1,13 @@
+test_existing_cluster_positive_control (test_local.LocalKernelTests) ... ok
+test_fit_rank_completion_and_whole_controls (test_local.LocalKernelTests) ... ok
+test_full_sweep_inactive_motion_and_correct_caches (test_local.LocalKernelTests) ... ok
+test_generic_complex_input_and_independent_cache (test_local.LocalKernelTests) ... ok
+test_half_petz_native_doubled_amplitude_and_grid (test_local.LocalKernelTests) ... ok
+test_preallocation_guard_and_windows (test_local.LocalKernelTests) ... ok
+test_stationary_alt_completion_and_explicit_identity (test_local.LocalKernelTests) ... ok
+test_stationary_and_product_controls (test_local.LocalKernelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.508s
+
+OK

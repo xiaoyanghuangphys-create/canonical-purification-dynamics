@@ -1,0 +1,65 @@
+{
+  "settings": [
+    "--n",
+    "512",
+    "--parity",
+    "--tdvp",
+    "--times",
+    ".02",
+    ".1",
+    ".3",
+    ".6",
+    "1",
+    "--tol",
+    "1e-6",
+    "--levels",
+    "4,6,8:6,8,12",
+    "--passes",
+    "8"
+  ],
+  "memory_mib": 1000,
+  "wall_seconds_per_stage": 240,
+  "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "git_head": "23fbd4c89a630688e65d441d9edb6a0056808d21",
+  "source_sha256": {
+    "cluster_dephasing.py": "84918b9e23a69debe97bea42bdb515392514066e64a0482ad97bb0ad55d9a439",
+    "cp_accuracy_refinement.py": "bd17b0ece7f5e160ec2359e61c137db1087f1e730cdd7b3e92a3664eca740f59",
+    "critical_ising_dmrg.py": "132084db0e84e4736557cf1aea0311eb73b62a779b94ec0a272564597a389a83",
+    "critical_uniform_tdvp.py": "42e55f9fe75895caa0a98acc322ed792792f75a4d169620c12090760f578d3a9",
+    "guarded_cp_tdvp.py": "ffdb6ad4ef35cad65646736bf5f398505fd33dbbf28b669ddad43b7361379731",
+    "guarded_force_trials.py": "83102e4f5641f5382eb655fbfad4135a6cc9826d8557999a1656c2b4ab3d5917",
+    "guarded_trajectories.py": "b6c29c4e0f72ecfcfc39f3e0194d3296c25127be514b5633f3c42f2289c7da8b",
+    "half_petz_evolution.py": "ac6a63e29399b081704cfa4f6e95675881df31d4a095309644f6f1da15c6f208",
+    "long_markov_defect.py": "e6ff8ced5019dbccd097e77fa33f683e87a9798abca68483d9daaea3714914d3",
+    "mpo_cp_force.py": "34f536512f10fbb951f5d0a260fc6d8781b71b57b7e0c33597311184cac14f8e",
+    "plot_scaling.py": "2883cc9e2f99aa902701fe1ba255486db67bf7edcadffc394bdbe3666abd886d",
+    "scalable_cp_witness.py": "408fd0c18437d158d9263ed35d87a8e18cd5d45a8fcaa853b1219c3bd785cd15",
+    "tdvp_core.py": "2aa8cc3550ac96ca0a498f204deb4d470deefe330b4d00d130d040de4834b7db",
+    "validate_scalable_cp.py": "c791f5b505c1fbe24e1e9608e65efc98920528089d8988d4b2a99e2ae81a01f3"
+  },
+  "timing": "Legacy reported time includes its analytic per-checkpoint scoring and earlier I/O.",
+  "runs": [
+    {
+      "stage": "trajectory",
+      "exit": 0,
+      "elapsed_seconds": 23.970406583,
+      "peak_children_to_date_mib": 132.515625
+    },
+    {
+      "stage": "qr",
+      "exit": 0,
+      "elapsed_seconds": 0.514450625000002,
+      "peak_children_to_date_mib": 132.515625
+    }
+  ]
+}

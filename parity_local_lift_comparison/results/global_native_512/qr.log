@@ -1,0 +1,1 @@
+{'n': 512, 'time': 1.0, 'stored_bound': 5.805322638162251e-07, 'kraus_qr_bound': np.float64(5.805325206981782e-07), 'branch_distance': 1.0683385224655466e-13, 'rehermitization': 9.114442168364848e-14, 'weighted_residual': np.float64(5.805322158860521e-07)}

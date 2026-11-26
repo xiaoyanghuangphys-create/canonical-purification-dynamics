@@ -1,0 +1,1 @@
+sanity {'max_local_fit': 0.00020437321909998063, 'max_discarded': 3.433685947824195e-34, 'sum_sqrt_discarded': np.float64(6.786421251798753e-17), 'bond': 8, 'dense_cp_error': np.float64(0.0003281020017420642)}

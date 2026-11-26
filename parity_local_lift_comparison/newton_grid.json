@@ -1,0 +1,202 @@
+[
+  {
+    "method": "A+Newton",
+    "n": 4,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "B+Newton",
+    "n": 4,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "A+Newton",
+    "n": 8,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "B+Newton",
+    "n": 8,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "A+Newton",
+    "n": 16,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "B+Newton",
+    "n": 16,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "A+Newton",
+    "n": 32,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "B+Newton",
+    "n": 32,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "A+Newton",
+    "n": 64,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  },
+  {
+    "method": "B+Newton",
+    "n": 64,
+    "p": 0.6,
+    "b0": 0.4,
+    "times": [
+      1.0
+    ],
+    "cert_tol": 1e-07,
+    "chi": 2,
+    "width": 1,
+    "fit_width": 1,
+    "protocol": "generator",
+    "completion": "native",
+    "audit_inactive": false,
+    "max_elements": 2000000,
+    "memory_mib": 768,
+    "timeout": 75,
+    "save_tensors": false
+  }
+]

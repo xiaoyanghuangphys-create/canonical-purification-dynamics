@@ -1,0 +1,10 @@
+{
+  "n": 8,
+  "t": 1.0,
+  "true_p": 0.6,
+  "alternative_p": -0.6,
+  "b": 0.14715177646857694,
+  "max_physical_marginal_difference_over_single_spin_removals": 0.0,
+  "global_cp_error": 0.6348673146923531,
+  "analytic_global_cp_error": 0.6348673146923529
+}

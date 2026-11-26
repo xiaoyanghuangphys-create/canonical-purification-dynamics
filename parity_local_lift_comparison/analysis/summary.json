@@ -1,0 +1,58 @@
+{
+  "workers": 527,
+  "checkpoints": 5304,
+  "outcomes": {
+    "completed": 502,
+    "rank_support_uncertain": 18,
+    "memory_limit": 7
+  },
+  "by_run": {
+    "bond_and_skip_01": {
+      "completed": 18
+    },
+    "confirm_01": {
+      "completed": 112
+    },
+    "confirm_large_01": {
+      "completed": 92,
+      "rank_support_uncertain": 12
+    },
+    "controls_01": {
+      "completed": 28
+    },
+    "global_newton_01": {
+      "completed": 23,
+      "memory_limit": 7
+    },
+    "historical_01": {
+      "completed": 12
+    },
+    "horizon_01": {
+      "completed": 42
+    },
+    "local_smoke_01": {
+      "completed": 4
+    },
+    "raw_refinement_01": {
+      "completed": 6
+    },
+    "refine_01": {
+      "completed": 28
+    },
+    "scale_01": {
+      "completed": 57,
+      "rank_support_uncertain": 6
+    },
+    "screen_01": {
+      "completed": 50
+    },
+    "smoke_01": {
+      "completed": 9
+    },
+    "width_01": {
+      "completed": 21
+    }
+  },
+  "certificates": 338,
+  "max_actual_minus_bound": -4.2183441762423887e-16
+}
