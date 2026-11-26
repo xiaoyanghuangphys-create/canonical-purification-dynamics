@@ -1,0 +1,117 @@
+{
+  "tool": {
+    "library": "VS Code markdown-math / KaTeX",
+    "version": "0.16.21",
+    "bundle_sha256": "5afec7f3a69465b399df31c1fab6b0199a3e5ee1fde509780fae28270b65ed1b"
+  },
+  "scope": "Local KaTeX rendered the extracted protected/dollar-delimited inline and fenced/dollar-delimited display expressions to MathML. Checked relative links and heading targets on disk. Ordinary program code was excluded. This checks the mathematical payload, with live GitHub inspection recorded separately if available.",
+  "files": [
+    {
+      "document": "parity_local_lift_comparison/global_methods.md",
+      "sha256": "2e8e5290a084679f4823f7d4b40c7c7903e0c34fbf20e1c6b18761eb330b26ad",
+      "inline_count": 47,
+      "display_count": 0,
+      "local_links": [
+        {
+          "line": 5,
+          "target": "global_methods.py",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "../galerkin_sylvester_tdvp/witness_pair_worker.py",
+          "exists": true
+        },
+        {
+          "line": 5,
+          "target": "../galerkin_sylvester_tdvp/witness_precond_solver.py",
+          "exists": true
+        },
+        {
+          "line": 7,
+          "target": "../galerkin_sylvester_tdvp/models.py",
+          "exists": true
+        },
+        {
+          "line": 7,
+          "target": "tests/test_global_methods.py",
+          "exists": true
+        },
+        {
+          "line": 9,
+          "target": "../scalable_cp_witness/code/scalable_cp_witness.py",
+          "exists": true
+        },
+        {
+          "line": 9,
+          "target": "tests/test_global_methods.py",
+          "exists": true
+        },
+        {
+          "line": 11,
+          "target": "benchmark.py",
+          "exists": true
+        },
+        {
+          "line": 11,
+          "target": "oracles.py",
+          "exists": true
+        },
+        {
+          "line": 15,
+          "target": "results/global_native_512/n512_t1_s5_parity0.6_x0.4_jensen_tdvp.csv",
+          "exists": true
+        },
+        {
+          "line": 15,
+          "target": "results/global_native_512/n512_t1_s5_parity0.6_x0.4_jensen_tdvp_settings.json",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "results/global_native_512/n512_t1_s5_parity0.6_x0.4_jensen_tdvp_verification.csv",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "../scalable_cp_witness/n512_t1_s5_parity0.6_x0.4_jensen_tdvp.csv",
+          "exists": true
+        },
+        {
+          "line": 25,
+          "target": "results/global_native_512/provenance.json",
+          "exists": true
+        },
+        {
+          "line": 29,
+          "target": "global_newton.py",
+          "exists": true
+        },
+        {
+          "line": 33,
+          "target": "newton_grid.json",
+          "exists": true
+        },
+        {
+          "line": 33,
+          "target": "results/global_newton_01/measurements.jsonl",
+          "exists": true
+        },
+        {
+          "line": 37,
+          "target": "results/global_newton_01/workers.zip",
+          "exists": true
+        },
+        {
+          "line": 37,
+          "target": "results/global_newton_01/manifest.json",
+          "exists": true
+        }
+      ],
+      "external_links": [
+        "https://github.com/xiaoyanghuangphys-create/canonical-purification-dynamics/blob/ba0d08c6b6cce07733204a7e2a9334dabb046134/tangent_newton_witness/operator.py"
+      ],
+      "errors": []
+    }
+  ]
+}

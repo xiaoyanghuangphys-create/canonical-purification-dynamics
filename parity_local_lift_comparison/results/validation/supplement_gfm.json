@@ -1,0 +1,48 @@
+{
+  "renderer": "cmark-gfm",
+  "version": "0.29.0.gfm.13",
+  "extension": "table",
+  "scope": "Offline GFM HTML output. Compared source and rendered TeX in document order, including table cells. Client-side GitHub MathJax and browser layout are outside this check.",
+  "documents": [
+    {
+      "document": "parity_local_lift_comparison/math.md",
+      "sha256": "4d0099cb8f613f3c55539ff4aac618e60aa76c72ac29db5ad44a1fe78dda765c",
+      "rendered_html_sha256": "d16afd4b7f8c2830c9112a251351cb284f7d78675fd1bc6f5174f2757c1e54c2",
+      "inline_payloads": 142,
+      "display_payloads": 7,
+      "table_inline_payloads": 6,
+      "tables": [
+        {
+          "rows": 6,
+          "columns": 4
+        },
+        {
+          "rows": 5,
+          "columns": 2
+        }
+      ],
+      "exact_tex_payloads_preserved": true,
+      "table_geometry_preserved": true
+    },
+    {
+      "document": "parity_local_lift_comparison/local_methods.md",
+      "sha256": "1d56021eb92b04d07f5365610e036db0089e2158ef17ec2e774746afed78700d",
+      "rendered_html_sha256": "cda1687f13dccb7e83dd8511d85919fcdb345dd7a94d442b3f9da96aadc745f3",
+      "inline_payloads": 88,
+      "display_payloads": 1,
+      "table_inline_payloads": 13,
+      "tables": [
+        {
+          "rows": 6,
+          "columns": 7
+        },
+        {
+          "rows": 5,
+          "columns": 4
+        }
+      ],
+      "exact_tex_payloads_preserved": true,
+      "table_geometry_preserved": true
+    }
+  ]
+}

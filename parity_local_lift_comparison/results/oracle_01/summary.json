@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "dense_widths": 21,
+  "physical_cmi_checks": 26,
+  "dense_polar_checks": 16,
+  "guarded_polar_checks": 5,
+  "max_dense_cmi_discrepancy": 2.55351295663786e-15,
+  "max_dense_half_petz_raw_discrepancy": 2.220446049250313e-16,
+  "max_half_petz_two_step_change": 3.9939347471368736e-16,
+  "max_explicit_unitary_discrepancy": 5.263506649564565e-16,
+  "max_dense_polar_discrepancy": 1.7711618687653223e-15,
+  "max_dense_root_discrepancy": 7.432718241313057e-16,
+  "max_dense_schmidt_discrepancy": 1.3322676295501878e-15,
+  "steps_checked": 193,
+  "analytic_cases": 35,
+  "buffer_cases": 2018,
+  "validation_elapsed_s": 0.420891917
+}

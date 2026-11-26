@@ -1,0 +1,28 @@
+{
+  "renderer": "cmark-gfm",
+  "version": "0.29.0.gfm.13",
+  "extension": "table",
+  "scope": "Offline GFM HTML output. Compared source and rendered TeX in document order, including table cells. Client-side GitHub MathJax and browser layout are outside this check.",
+  "documents": [
+    {
+      "document": "parity_local_lift_comparison/global_methods.md",
+      "sha256": "2e8e5290a084679f4823f7d4b40c7c7903e0c34fbf20e1c6b18761eb330b26ad",
+      "rendered_html_sha256": "b3af5d40a29c845b6b08325306586e4a3e8b972606d83c305ad879d88780a86c",
+      "inline_payloads": 47,
+      "display_payloads": 0,
+      "table_inline_payloads": 11,
+      "tables": [
+        {
+          "rows": 6,
+          "columns": 3
+        },
+        {
+          "rows": 9,
+          "columns": 6
+        }
+      ],
+      "exact_tex_payloads_preserved": true,
+      "table_geometry_preserved": true
+    }
+  ]
+}

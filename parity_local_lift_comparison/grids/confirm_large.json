@@ -1,0 +1,522 @@
+[
+ {
+  "method": "A+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "A+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "A+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "A+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "A+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "A+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "B+witness",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 0.001,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Witness-only",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-07,
+  "chi": 2,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "generator",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 95.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Half-Petz",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "active",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Half-Petz",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "uniform",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Local-fit",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "active",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Local-fit",
+  "n": 32,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "uniform",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Half-Petz",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "active",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Half-Petz",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "uniform",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Local-fit",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "active",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ },
+ {
+  "method": "Local-fit",
+  "n": 512,
+  "p": 0.6,
+  "b0": 0.4,
+  "times": [
+   1.0
+  ],
+  "cert_tol": 1e-06,
+  "chi": 4,
+  "width": 1,
+  "fit_width": 1,
+  "protocol": "uniform",
+  "completion": "native",
+  "audit_inactive": false,
+  "max_elements": 2000000,
+  "memory_mib": 768,
+  "timeout": 45.0,
+  "save_tensors": false
+ }
+]
